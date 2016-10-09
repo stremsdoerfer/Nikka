@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Route{
+public struct Route{
     let headers:[String:String]?
     let method:HTTPMethod
     let path:String

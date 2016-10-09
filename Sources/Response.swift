@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class Response<Value>{
+public class Response<Value>{
     open let response:HTTPURLResponse?
     open let data: Data
     open let result:Result<Value>

@@ -31,7 +31,7 @@ func +<K, V>(left: [K: V], right: [K: V]?) -> [K: V] {
     return dict
 }
 
-extension HTTPProvider{
+public extension HTTPProvider{
     
     var session : URLSession {
         get {
@@ -40,7 +40,7 @@ extension HTTPProvider{
     }
     
     
-    func request(_ route:Route) -> Request {
+    public func request(_ route:Route) -> Request {
         
         let path = baseURL.appendingPathComponent(route.path)
         
@@ -97,45 +97,6 @@ class SessionManager:NSObject, URLSessionDataDelegate{
         request.onComplete(response: task.response, error: error)
     }
 }
-
-
-class Networking{
-    
-    let session:URLSession
-    
-    init(){
-        session = URLSession(configuration: URLSessionConfiguration.default)
-    }
-    
-//    func sendRequest<T:Mappable>(item:NetworkObject, encoding:ParameterEncoding) -> Future<T> {
-//        let future = Future<T>()
-//        
-//        self.sendRequest(item, encoding: encoding) { (data, response, error) in
-//            if let _ = response as? NSHTTPURLResponse, data = data{
-//                let jsonObject = try! NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments)
-//                let value = T.from(jsonObject)
-//                future.fill(value != nil ? Result.Success(value!) : Result.Failure(JustaError.ParameterEncodingError))
-//            }
-//        }
-//        
-//        return future
-//    }
-//    
-//    func sendRequest<T:Mappable>(item:NetworkObject, encoding:ParameterEncoding) -> Future<[T]>{
-//        let future = Future<[T]>()
-//
-//        self.sendRequest(item, encoding: encoding) { (data, response, error) in
-//            if let _ = response as? NSHTTPURLResponse, data = data{
-//                let jsonObject = try! NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments)
-//                let value = [T].from(jsonObject)
-//                future.fill(value != nil ? Result.Success(value!) : Result.Failure(JustaError.ParameterEncodingError))
-//            }
-//        }
-//        
-//        return future
-//    }
-}
-
 
 public enum HTTPMethod: String {
     case OPTIONS, GET, HEAD, POST, PUT, PATCH, DELETE, TRACE, CONNECT
