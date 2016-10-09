@@ -1,5 +1,5 @@
 //
-//  JustaError.swift
+//  StreemError.swift
 //  HerPlayground
 //
 //  Created by Emilien on 10/1/16.
@@ -8,12 +8,12 @@
 
 import Foundation
 
-public protocol JustaError : Error{
+public protocol StreemError : Error{
     var domain:String { get }
     var description:String { get }
 }
 
-enum JustaNetworkingError: JustaError {
+enum StreemNetworkingError: StreemError {
     var domain: String { get { return "com.justalab.JustaNetworking" } }
     var description:String {
         switch self {

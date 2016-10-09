@@ -23,9 +23,9 @@ public enum ParameterEncoding {
 
 extension URLRequest{
     
-    mutating func encode(parameters:[String:Any]?, encoding:ParameterEncoding) -> JustaError? {
+    mutating func encode(parameters:[String:Any]?, encoding:ParameterEncoding) -> StreemError? {
         guard let parameters = parameters else {return nil}
-        var err:JustaError?
+        var err:StreemError?
         switch encoding{
         case .url:
             var urlComponents = URLComponents(url: self.url!, resolvingAgainstBaseURL: false)
@@ -47,7 +47,7 @@ extension URLRequest{
                 
                 self.httpBody = data
             } catch {
-                err = JustaNetworkingError.parameterEncoding(parameters)
+                err = StreemNetworkingError.parameterEncoding(parameters)
             }
         case .urLinBody:
             

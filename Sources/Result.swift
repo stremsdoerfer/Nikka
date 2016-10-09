@@ -10,7 +10,7 @@ import Foundation
 
 public enum Result<Value> {
     case success(Value)
-    case failure(JustaError)
+    case failure(StreemError)
     
     public var value: Value? {
         switch self {
@@ -21,7 +21,7 @@ public enum Result<Value> {
         }
     }
     
-    public var error: JustaError? {
+    public var error: StreemError? {
         switch self {
         case .success:
             return nil

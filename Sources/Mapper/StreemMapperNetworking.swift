@@ -44,7 +44,7 @@ extension Request {
                 if let responseObject:T = T.from(JSON:value) {
                     return .success(responseObject)
                 } else {
-                    return .failure(JustaNetworkingMapperError.deserialization(value))
+                    return .failure(StreemNetworkingMapperError.deserialization(value))
                 }
             })
             completionHandler(Response(response: response.response, data: response.data, result: newResult))
@@ -64,7 +64,7 @@ extension Request {
                 if let responseObject:[T] = [T].from(JSON:value) {
                     return .success(responseObject)
                 } else {
-                    return .failure(JustaNetworkingMapperError.deserialization(value))
+                    return .failure(StreemNetworkingMapperError.deserialization(value))
                 }
             })
             completionHandler(Response(response: response.response, data: response.data, result: newResult))
@@ -72,7 +72,7 @@ extension Request {
     }
 }
 
-enum JustaNetworkingMapperError: JustaError {
+enum StreemNetworkingMapperError: StreemError {
     var domain: String { get { return "com.justalab.JustaNetworkingMapper" } }
     var description:String {
         switch self {
