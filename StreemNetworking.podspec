@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.subspec "Mapper" do |ss|
     ss.source_files = "Sources/Mapper/*.swift"
     ss.dependency 'StreemNetworking/Core'
-    ss.dependency "Mapper"
+    ss.dependency "ModelMapper"
   end
 
 end
