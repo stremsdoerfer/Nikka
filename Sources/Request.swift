@@ -37,7 +37,11 @@ open class Request{
         if error == nil {
             if let json = try? JSONSerialization.jsonObject(with: buffer as Data, options: JSONSerialization.ReadingOptions.allowFragments){
                 onCompleteJSON?(Response(response: response, data: buffer, result: .success(json)))
+            }else{
+                onCompleteJSON?(Response(response: response, data: buffer, result: .failure(StreemNetworkingError.jsonDeserialization)))
             }
+        }else{
+            onCompleteJSON?(Response(response: response, data: buffer, result: .failure(StreemNetworkingError.errorWith(error: error!))))
         }
     }
     

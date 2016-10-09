@@ -18,8 +18,14 @@ enum StreemNetworkingError: StreemError {
     var description:String {
         switch self {
             case .parameterEncoding(let value): return "An error occurred while encoding parameter: \(value)"
+            case .jsonDeserialization: return "Could not parse data to JSON."
+            case .unknown(let description): return description
         }
     }
     
-    case parameterEncoding(Any)
+    case parameterEncoding(Any), jsonDeserialization, unknown(String)
+    
+    static func errorWith(error:Error) -> StreemNetworkingError{
+        return StreemNetworkingError.unknown(error.localizedDescription)
+    }
 }
