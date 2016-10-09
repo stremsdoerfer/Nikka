@@ -13,7 +13,7 @@ public class Response<Value>{
     open let data: Data
     open let result:Result<Value>
     
-    init(response:HTTPURLResponse?, data:Data, result:Result<Value>){
+    public init(response:HTTPURLResponse?, data:Data, result:Result<Value>){
         self.response = response
         self.data = data
         self.result = result

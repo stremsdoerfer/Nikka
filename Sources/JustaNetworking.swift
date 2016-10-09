@@ -39,6 +39,7 @@ public extension HTTPProvider{
         }
     }
     
+    var defaultHeaders:[String:String]{ get { return [String:String]() } }
     
     public func request(_ route:Route) -> Request {
         
