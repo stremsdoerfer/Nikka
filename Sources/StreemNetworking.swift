@@ -19,6 +19,7 @@ public protocol HTTPProvider {
     var baseURL:URL { get }
     var session:URLSession { get }
     var defaultHeaders:[String:String] { get }
+    var additionalParams:[String:Any] { get }
 }
 
 func +<K, V>(left: [K: V], right: [K: V]?) -> [K: V] {
@@ -40,13 +41,14 @@ public extension HTTPProvider{
     }
     
     var defaultHeaders:[String:String]{ get { return [String:String]() } }
+    var additionalParams:[String:Any]{ get { return [String:Any]() } }
     
     public func request(_ route:Route) -> Request {
         
         let path = baseURL.appendingPathComponent(route.path)
         
         var request = URLRequest(url: path)
-        request.encode(parameters: route.params, encoding: route.encoding)
+        request.encode(parameters: additionalParams + route.params, encoding: route.encoding)
         
         request.httpMethod = route.method.rawValue
         
