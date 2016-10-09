@@ -21,4 +21,16 @@ Pod::Spec.new do |s|
     ss.dependency "ModelMapper"
   end
 
+  s.subspec "Futures" do |ss|
+    ss.source_files = "Sources/Futures/*.swift"
+    ss.dependency 'StreemNetworking/Core'
+  end
+
+  s.subspec "Rx" do |ss|
+    ss.source_files = "Sources/Rx/*.swift"
+    ss.dependency 'StreemNetworking/Core'
+    ss.dependency "RxSwift"
+    ss.dependency "RxCocoa"
+  end
+
 end

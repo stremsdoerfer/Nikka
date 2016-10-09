@@ -20,8 +20,9 @@
 		EBFCB4A41DA9DF6D009036BD /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB49D1DA9DF6D009036BD /* Result.swift */; };
 		EBFCB4A51DA9DF6D009036BD /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB49E1DA9DF6D009036BD /* Route.swift */; };
 		EBFCB4AF1DA9EE19009036BD /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4AA1DA9EE19009036BD /* Future.swift */; };
-		EBFCB4B01DA9EE19009036BD /* JustaNetworking+Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4AB1DA9EE19009036BD /* JustaNetworking+Future.swift */; };
-		EBFCB4B11DA9EE19009036BD /* JustaNetworking+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4AD1DA9EE19009036BD /* JustaNetworking+Mapper.swift */; };
+		EBFCB4B01DA9EE19009036BD /* JustaFutureNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4AB1DA9EE19009036BD /* JustaFutureNetworking.swift */; };
+		EBFCB4B11DA9EE19009036BD /* StreemMapperNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4AD1DA9EE19009036BD /* StreemMapperNetworking.swift */; };
+		EBFCB4B31DA9F7CB009036BD /* StreemRxNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4B21DA9F7CB009036BD /* StreemRxNetworking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,8 +56,9 @@
 		EBFCB49D1DA9DF6D009036BD /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		EBFCB49E1DA9DF6D009036BD /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		EBFCB4AA1DA9EE19009036BD /* Future.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Future.swift; sourceTree = "<group>"; };
-		EBFCB4AB1DA9EE19009036BD /* JustaNetworking+Future.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JustaNetworking+Future.swift"; sourceTree = "<group>"; };
-		EBFCB4AD1DA9EE19009036BD /* JustaNetworking+Mapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JustaNetworking+Mapper.swift"; sourceTree = "<group>"; };
+		EBFCB4AB1DA9EE19009036BD /* JustaFutureNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JustaFutureNetworking.swift; sourceTree = "<group>"; };
+		EBFCB4AD1DA9EE19009036BD /* StreemMapperNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreemMapperNetworking.swift; sourceTree = "<group>"; };
+		EBFCB4B21DA9F7CB009036BD /* StreemRxNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreemRxNetworking.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,7 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				EBFCB4AA1DA9EE19009036BD /* Future.swift */,
-				EBFCB4AB1DA9EE19009036BD /* JustaNetworking+Future.swift */,
+				EBFCB4AB1DA9EE19009036BD /* JustaFutureNetworking.swift */,
 			);
 			path = Futures;
 			sourceTree = "<group>";
@@ -160,7 +162,7 @@
 		EBFCB4AC1DA9EE19009036BD /* Mapper */ = {
 			isa = PBXGroup;
 			children = (
-				EBFCB4AD1DA9EE19009036BD /* JustaNetworking+Mapper.swift */,
+				EBFCB4AD1DA9EE19009036BD /* StreemMapperNetworking.swift */,
 			);
 			path = Mapper;
 			sourceTree = "<group>";
@@ -168,6 +170,7 @@
 		EBFCB4AE1DA9EE19009036BD /* Rx */ = {
 			isa = PBXGroup;
 			children = (
+				EBFCB4B21DA9F7CB009036BD /* StreemRxNetworking.swift */,
 			);
 			path = Rx;
 			sourceTree = "<group>";
@@ -372,11 +375,12 @@
 				EBFCB4A11DA9DF6D009036BD /* ParameterEncoding.swift in Sources */,
 				EBFCB4AF1DA9EE19009036BD /* Future.swift in Sources */,
 				EBFCB4A21DA9DF6D009036BD /* Request.swift in Sources */,
-				EBFCB4B11DA9EE19009036BD /* JustaNetworking+Mapper.swift in Sources */,
+				EBFCB4B11DA9EE19009036BD /* StreemMapperNetworking.swift in Sources */,
 				EBFCB49F1DA9DF6D009036BD /* JustaError.swift in Sources */,
-				EBFCB4B01DA9EE19009036BD /* JustaNetworking+Future.swift in Sources */,
+				EBFCB4B01DA9EE19009036BD /* JustaFutureNetworking.swift in Sources */,
 				EBFCB4A01DA9DF6D009036BD /* JustaNetworking.swift in Sources */,
 				EBFCB4A51DA9DF6D009036BD /* Route.swift in Sources */,
+				EBFCB4B31DA9F7CB009036BD /* StreemRxNetworking.swift in Sources */,
 				EBFCB4A31DA9DF6D009036BD /* Response.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

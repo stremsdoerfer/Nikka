@@ -38,7 +38,7 @@ extension Request {
      - returns: The request.
      */
     @discardableResult
-    public func response<T: Mappable>(_ completionHandler:@escaping (Response<T>) -> Void) -> Self {
+    public func responseObject<T: Mappable>(_ completionHandler:@escaping (Response<T>) -> Void) -> Self {
         return responseJSON { (response:Response<Any>) in
             let newResult = response.result.flatMap({ (value) -> Result<T> in
                 if let responseObject:T = T.from(JSON:value) {
@@ -58,7 +58,7 @@ extension Request {
      - returns: The request.
      */
     @discardableResult
-    public func response<T: Mappable>(_ completionHandler:@escaping (Response<[T]>) -> Void) -> Self {
+    public func responseArray<T: Mappable>(_ completionHandler:@escaping (Response<[T]>) -> Void) -> Self {
         return responseJSON { (response:Response<Any>) in
             let newResult = response.result.flatMap({ (value) -> Result<[T]> in
                 if let responseObject:[T] = [T].from(JSON:value) {

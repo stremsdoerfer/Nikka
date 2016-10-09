@@ -9,13 +9,13 @@
 import Foundation
 import Mapper
 
-extension Request{
+public extension Request{
     
     public func response<T: Mappable>() -> Future<T> {
         let future = Future<T>()
         self.progress({ (receivedSize, expectedSize) in
             
-        }).response { (response:Response<T>) in
+        }).responseObject { (response:Response<T>) in
             future.fill(response.result)
         }
         return future
@@ -25,7 +25,7 @@ extension Request{
         let future = Future<[T]>()
         self.progress({ (receivedSize, expectedSize) in
             
-        }).response { (response:Response<[T]>) in
+        }).responseArray { (response:Response<[T]>) in
             future.fill(response.result)
         }
         return future

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol JustaError {
+public protocol JustaError : Error{
     var domain:String { get }
     var description:String { get }
 }
