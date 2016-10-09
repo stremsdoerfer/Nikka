@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D7C3FEB5C7491CBB8B76CA6 /* Pods_StreemNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF32517FCB847BC376070184 /* Pods_StreemNetworking.framework */; };
+		C4B26E13582F01B3767135A3 /* Pods_StreemNetworkingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA56C691899914F8B4F5679 /* Pods_StreemNetworkingTests.framework */; };
 		EBFCB4841DA9DE18009036BD /* StreemNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBFCB47A1DA9DE18009036BD /* StreemNetworking.framework */; };
 		EBFCB48B1DA9DE18009036BD /* StreemNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = EBFCB47D1DA9DE18009036BD /* StreemNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EBFCB4961DA9DE89009036BD /* StreemNetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4941DA9DE87009036BD /* StreemNetworkingTests.swift */; };
-		EBFCB4971DA9DEAC009036BD /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EBFCB47E1DA9DE18009036BD /* Info.plist */; };
 		EBFCB49F1DA9DF6D009036BD /* JustaError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4981DA9DF6D009036BD /* JustaError.swift */; };
 		EBFCB4A01DA9DF6D009036BD /* JustaNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4991DA9DF6D009036BD /* JustaNetworking.swift */; };
 		EBFCB4A11DA9DF6D009036BD /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB49A1DA9DF6D009036BD /* ParameterEncoding.swift */; };
@@ -18,6 +19,9 @@
 		EBFCB4A31DA9DF6D009036BD /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB49C1DA9DF6D009036BD /* Response.swift */; };
 		EBFCB4A41DA9DF6D009036BD /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB49D1DA9DF6D009036BD /* Result.swift */; };
 		EBFCB4A51DA9DF6D009036BD /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB49E1DA9DF6D009036BD /* Route.swift */; };
+		EBFCB4AF1DA9EE19009036BD /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4AA1DA9EE19009036BD /* Future.swift */; };
+		EBFCB4B01DA9EE19009036BD /* JustaNetworking+Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4AB1DA9EE19009036BD /* JustaNetworking+Future.swift */; };
+		EBFCB4B11DA9EE19009036BD /* JustaNetworking+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4AD1DA9EE19009036BD /* JustaNetworking+Mapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +35,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B50E894C5D99E781543444E /* Pods-StreemNetworkingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreemNetworkingTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StreemNetworkingTests/Pods-StreemNetworkingTests.debug.xcconfig"; sourceTree = "<group>"; };
+		321C213DA10E1B5FD349FE8F /* Pods-StreemNetworking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreemNetworking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StreemNetworking/Pods-StreemNetworking.debug.xcconfig"; sourceTree = "<group>"; };
+		4AA56C691899914F8B4F5679 /* Pods_StreemNetworkingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StreemNetworkingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BECF5B30F6BC8A8E7700A1D /* Pods-StreemNetworking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreemNetworking.release.xcconfig"; path = "Pods/Target Support Files/Pods-StreemNetworking/Pods-StreemNetworking.release.xcconfig"; sourceTree = "<group>"; };
+		B75727FA4DDF397FB0824CAC /* Pods-StreemNetworkingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreemNetworkingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StreemNetworkingTests/Pods-StreemNetworkingTests.release.xcconfig"; sourceTree = "<group>"; };
+		DF32517FCB847BC376070184 /* Pods_StreemNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StreemNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBFCB47A1DA9DE18009036BD /* StreemNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StreemNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBFCB47D1DA9DE18009036BD /* StreemNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StreemNetworking.h; sourceTree = "<group>"; };
 		EBFCB47E1DA9DE18009036BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -44,6 +54,9 @@
 		EBFCB49C1DA9DF6D009036BD /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		EBFCB49D1DA9DF6D009036BD /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		EBFCB49E1DA9DF6D009036BD /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		EBFCB4AA1DA9EE19009036BD /* Future.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Future.swift; sourceTree = "<group>"; };
+		EBFCB4AB1DA9EE19009036BD /* JustaNetworking+Future.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JustaNetworking+Future.swift"; sourceTree = "<group>"; };
+		EBFCB4AD1DA9EE19009036BD /* JustaNetworking+Mapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JustaNetworking+Mapper.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D7C3FEB5C7491CBB8B76CA6 /* Pods_StreemNetworking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,18 +73,41 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBFCB4841DA9DE18009036BD /* StreemNetworking.framework in Frameworks */,
+				C4B26E13582F01B3767135A3 /* Pods_StreemNetworkingTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0093380EF03B455B5AFA07C5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DF32517FCB847BC376070184 /* Pods_StreemNetworking.framework */,
+				4AA56C691899914F8B4F5679 /* Pods_StreemNetworkingTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D7C6FDEC16E01EE80AF6D18E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				321C213DA10E1B5FD349FE8F /* Pods-StreemNetworking.debug.xcconfig */,
+				8BECF5B30F6BC8A8E7700A1D /* Pods-StreemNetworking.release.xcconfig */,
+				0B50E894C5D99E781543444E /* Pods-StreemNetworkingTests.debug.xcconfig */,
+				B75727FA4DDF397FB0824CAC /* Pods-StreemNetworkingTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		EBFCB4701DA9DE18009036BD = {
 			isa = PBXGroup;
 			children = (
 				EBFCB47C1DA9DE18009036BD /* Sources */,
 				EBFCB4871DA9DE18009036BD /* Tests */,
 				EBFCB47B1DA9DE18009036BD /* Products */,
+				D7C6FDEC16E01EE80AF6D18E /* Pods */,
+				0093380EF03B455B5AFA07C5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,6 +123,9 @@
 		EBFCB47C1DA9DE18009036BD /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				EBFCB4A91DA9EE19009036BD /* Futures */,
+				EBFCB4AC1DA9EE19009036BD /* Mapper */,
+				EBFCB4AE1DA9EE19009036BD /* Rx */,
 				EBFCB4981DA9DF6D009036BD /* JustaError.swift */,
 				EBFCB4991DA9DF6D009036BD /* JustaNetworking.swift */,
 				EBFCB49A1DA9DF6D009036BD /* ParameterEncoding.swift */,
@@ -108,6 +148,30 @@
 			path = Tests;
 			sourceTree = "<group>";
 		};
+		EBFCB4A91DA9EE19009036BD /* Futures */ = {
+			isa = PBXGroup;
+			children = (
+				EBFCB4AA1DA9EE19009036BD /* Future.swift */,
+				EBFCB4AB1DA9EE19009036BD /* JustaNetworking+Future.swift */,
+			);
+			path = Futures;
+			sourceTree = "<group>";
+		};
+		EBFCB4AC1DA9EE19009036BD /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				EBFCB4AD1DA9EE19009036BD /* JustaNetworking+Mapper.swift */,
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
+		EBFCB4AE1DA9EE19009036BD /* Rx */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Rx;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -126,10 +190,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBFCB48E1DA9DE18009036BD /* Build configuration list for PBXNativeTarget "StreemNetworking" */;
 			buildPhases = (
+				D4CB39767BFA3B3DB1BB0DA1 /* [CP] Check Pods Manifest.lock */,
 				EBFCB4751DA9DE18009036BD /* Sources */,
 				EBFCB4761DA9DE18009036BD /* Frameworks */,
 				EBFCB4771DA9DE18009036BD /* Headers */,
 				EBFCB4781DA9DE18009036BD /* Resources */,
+				C7F4A6D84F393560C90F2B4B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -144,9 +210,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBFCB4911DA9DE18009036BD /* Build configuration list for PBXNativeTarget "StreemNetworkingTests" */;
 			buildPhases = (
+				5399229C090C20021626CD70 /* [CP] Check Pods Manifest.lock */,
 				EBFCB47F1DA9DE18009036BD /* Sources */,
 				EBFCB4801DA9DE18009036BD /* Frameworks */,
 				EBFCB4811DA9DE18009036BD /* Resources */,
+				31D3E7F205EE2DAB3FD69A9A /* [CP] Embed Pods Frameworks */,
+				DC17BF0BDE6EB643E4B4A606 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -204,7 +273,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBFCB4971DA9DEAC009036BD /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +285,84 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		31D3E7F205EE2DAB3FD69A9A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StreemNetworkingTests/Pods-StreemNetworkingTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5399229C090C20021626CD70 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C7F4A6D84F393560C90F2B4B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StreemNetworking/Pods-StreemNetworking-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D4CB39767BFA3B3DB1BB0DA1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DC17BF0BDE6EB643E4B4A606 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StreemNetworkingTests/Pods-StreemNetworkingTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EBFCB4751DA9DE18009036BD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -224,8 +370,11 @@
 			files = (
 				EBFCB4A41DA9DF6D009036BD /* Result.swift in Sources */,
 				EBFCB4A11DA9DF6D009036BD /* ParameterEncoding.swift in Sources */,
+				EBFCB4AF1DA9EE19009036BD /* Future.swift in Sources */,
 				EBFCB4A21DA9DF6D009036BD /* Request.swift in Sources */,
+				EBFCB4B11DA9EE19009036BD /* JustaNetworking+Mapper.swift in Sources */,
 				EBFCB49F1DA9DF6D009036BD /* JustaError.swift in Sources */,
+				EBFCB4B01DA9EE19009036BD /* JustaNetworking+Future.swift in Sources */,
 				EBFCB4A01DA9DF6D009036BD /* JustaNetworking.swift in Sources */,
 				EBFCB4A51DA9DF6D009036BD /* Route.swift in Sources */,
 				EBFCB4A31DA9DF6D009036BD /* Response.swift in Sources */,
@@ -269,6 +418,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -323,6 +473,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -354,7 +505,9 @@
 		};
 		EBFCB48F1DA9DE18009036BD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 321C213DA10E1B5FD349FE8F /* Pods-StreemNetworking.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
@@ -375,7 +528,9 @@
 		};
 		EBFCB4901DA9DE18009036BD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8BECF5B30F6BC8A8E7700A1D /* Pods-StreemNetworking.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
@@ -395,8 +550,9 @@
 		};
 		EBFCB4921DA9DE18009036BD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B50E894C5D99E781543444E /* Pods-StreemNetworkingTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				DEVELOPMENT_TEAM = R69K2ALL6R;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -408,8 +564,9 @@
 		};
 		EBFCB4931DA9DE18009036BD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B75727FA4DDF397FB0824CAC /* Pods-StreemNetworkingTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				DEVELOPMENT_TEAM = R69K2ALL6R;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -438,6 +595,7 @@
 				EBFCB4901DA9DE18009036BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EBFCB4911DA9DE18009036BD /* Build configuration list for PBXNativeTarget "StreemNetworkingTests" */ = {
 			isa = XCConfigurationList;
@@ -446,6 +604,7 @@
 				EBFCB4931DA9DE18009036BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

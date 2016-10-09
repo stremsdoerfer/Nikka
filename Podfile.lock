@@ -1,0 +1,22 @@
+PODS:
+  - ModelMapper (4.0.0)
+
+DEPENDENCIES:
+  - ModelMapper (from `https://github.com/JustaLab/mapper.git`, branch `swift3`)
+
+EXTERNAL SOURCES:
+  ModelMapper:
+    :branch: swift3
+    :git: https://github.com/JustaLab/mapper.git
+
+CHECKOUT OPTIONS:
+  ModelMapper:
+    :commit: 6c345eb89d53d8dbf954cccfdd5325715e72cdd7
+    :git: https://github.com/JustaLab/mapper.git
+
+SPEC CHECKSUMS:
+  ModelMapper: 047e26a92f48e3ac16af3ac07e8e049ecc33feae
+
+PODFILE CHECKSUM: 496d6aea74dbc65ac81775f7bd927f6eb66230d7
+
+COCOAPODS: 1.1.0.rc.2

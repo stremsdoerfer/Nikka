@@ -8,6 +8,18 @@ Pod::Spec.new do |s|
   s.ios.deployment_target     = "8.0"
   s.source                    = { :git => "https://github.com/Justalab/StreemNetworkinggit", :tag => s.version}
   s.requires_arc              = true
-  s.source_files              = "Sources/**/*.swift"
   s.module_name               = "StreemNetworking"
+  s.default_subspec           = "Core"
+
+  s.subspec "Core" do |ss|
+    ss.source_files  = "Sources/*.swift"
+    ss.framework  = "Foundation"
+  end
+
+  s.subspec "Mapper" do |ss|
+    ss.source_files = "Sources/Mapper/*.swift"
+    ss.dependency 'StreemNetworking/Core'
+    ss.dependency "Mapper", "~> 3.0.0-beta.1", :git => 'https://github.com/JustaLab/mapper.git', :branch => 'swift3'
+  end
+
 end
