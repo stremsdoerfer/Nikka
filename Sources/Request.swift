@@ -34,7 +34,11 @@ open class Request{
     func onComplete(response:URLResponse?, error:Error?){
         guard let response = response as? HTTPURLResponse else {return}
         onCompleteData?(response, buffer, error)
+        
         if error == nil {
+            if response.statusCode >= 400 {
+                onCompleteJSON?(Response(response: response, data: buffer, result: .failure(StreemNetworkingError.errorWith(httpCode: response.statusCode))))
+            }
             if let json = try? JSONSerialization.jsonObject(with: buffer as Data, options: JSONSerialization.ReadingOptions.allowFragments){
                 onCompleteJSON?(Response(response: response, data: buffer, result: .success(json)))
             }else{

@@ -19,13 +19,18 @@ enum StreemNetworkingError: StreemError {
         switch self {
             case .parameterEncoding(let value): return "An error occurred while encoding parameter: \(value)"
             case .jsonDeserialization: return "Could not parse data to JSON."
+            case .http(let code): return "HTTP Error occured with code:\(code)"
             case .unknown(let description): return description
         }
     }
     
-    case parameterEncoding(Any), jsonDeserialization, unknown(String)
+    case parameterEncoding(Any), jsonDeserialization, http(Int) ,unknown(String)
     
     static func errorWith(error:Error) -> StreemNetworkingError{
         return StreemNetworkingError.unknown(error.localizedDescription)
+    }
+    
+    static func errorWith(httpCode:Int) -> StreemNetworkingError{
+        return .http(httpCode)
     }
 }
