@@ -13,9 +13,9 @@ public protocol StreemError : Error{
     var description:String { get }
 }
 
-enum StreemNetworkingError: StreemError {
-    var domain: String { get { return "com.justalab.JustaNetworking" } }
-    var description:String {
+public enum StreemNetworkingError: StreemError {
+    public var domain: String { get { return "com.justalab.JustaNetworking" } }
+    public var description:String {
         switch self {
             case .parameterEncoding(let value): return "An error occurred while encoding parameter: \(value)"
             case .jsonDeserialization: return "Could not parse data to JSON."
@@ -32,5 +32,15 @@ enum StreemNetworkingError: StreemError {
     
     static func errorWith(httpCode:Int) -> StreemNetworkingError{
         return .http(httpCode)
+    }
+}
+
+public func ==(lhs: StreemNetworkingError, rhs: StreemNetworkingError) -> Bool {
+    switch (lhs, rhs) {
+    case (.jsonDeserialization, .jsonDeserialization) : return true
+    case (.http(let codeA), .http(let codeB)) : return codeA == codeB
+    case (.unknown(_), .unknown(_)): return true
+    case (.parameterEncoding(_), .parameterEncoding(_)): return true
+    default: return false
     }
 }

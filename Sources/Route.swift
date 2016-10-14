@@ -15,7 +15,7 @@ public struct Route{
     let params:[String:Any]?
     let encoding:ParameterEncoding
     
-    public init(path:String, method:HTTPMethod = .GET, params:[String:Any]? = nil, headers:[String:String]? = nil, encoding:ParameterEncoding? = nil){
+    public init(path:String, method:HTTPMethod = .get, params:[String:Any]? = nil, headers:[String:String]? = nil, encoding:ParameterEncoding? = nil){
         self.method = method
         self.path = path
         self.params = params

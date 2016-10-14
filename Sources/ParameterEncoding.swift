@@ -13,9 +13,9 @@ public enum ParameterEncoding {
     
     static func defaultEncodingForMethod(_ method:HTTPMethod) -> ParameterEncoding{
         switch method {
-        case .GET, .CONNECT, .HEAD, .OPTIONS, .PATCH, .DELETE, .TRACE :
+        case .get, .connect, .head, .options, .patch, .delete, .trace :
             return .url
-        case .POST, .PUT :
+        case .post, .put :
             return .json
         }
     }

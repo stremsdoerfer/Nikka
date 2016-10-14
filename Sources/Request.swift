@@ -11,6 +11,7 @@ import Foundation
 open class Request{
     
     let urlRequest:URLRequest
+    let provider:HTTPProvider
     
     private var buffer = Data()
     var expectedContentSize:Int?
@@ -19,8 +20,9 @@ open class Request{
     var onCompleteJSON:((Response<Any>)->Void)?
     var onCompleteData:((HTTPURLResponse?, Data, Error?) -> Void)?
     
-    init(urlRequest:URLRequest){
+    init(urlRequest:URLRequest, provider:HTTPProvider){
         self.urlRequest = urlRequest
+        self.provider = provider
     }
     
     func append(receivedData:Data){
@@ -33,19 +35,20 @@ open class Request{
     
     func onComplete(response:URLResponse?, error:Error?){
         guard let response = response as? HTTPURLResponse else {return}
-        onCompleteData?(response, buffer, error)
+        let validatedError = provider.validate(response: response, data: buffer, error: error)
+ 
+        if let err = validatedError {
+            if provider.shouldContinue(with: err){
+                onCompleteJSON?(Response(response: response, data: buffer, result: .failure(err)))
+                onCompleteData?(response, buffer, validatedError)
+            }
+            return
+        }
         
-        if error == nil {
-            if response.statusCode >= 400 {
-                onCompleteJSON?(Response(response: response, data: buffer, result: .failure(StreemNetworkingError.errorWith(httpCode: response.statusCode))))
-            }
-            if let json = try? JSONSerialization.jsonObject(with: buffer as Data, options: JSONSerialization.ReadingOptions.allowFragments){
-                onCompleteJSON?(Response(response: response, data: buffer, result: .success(json)))
-            }else{
-                onCompleteJSON?(Response(response: response, data: buffer, result: .failure(StreemNetworkingError.jsonDeserialization)))
-            }
+        if let json = try? JSONSerialization.jsonObject(with: buffer as Data, options: JSONSerialization.ReadingOptions.allowFragments){
+            onCompleteJSON?(Response(response: response, data: buffer, result: .success(json)))
         }else{
-            onCompleteJSON?(Response(response: response, data: buffer, result: .failure(StreemNetworkingError.errorWith(error: error!))))
+            onCompleteJSON?(Response(response: response, data: buffer, result: .failure(StreemNetworkingError.jsonDeserialization)))
         }
     }
     

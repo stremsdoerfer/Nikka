@@ -20,6 +20,8 @@ public protocol HTTPProvider {
     var session:URLSession { get }
     var defaultHeaders:[String:String] { get }
     var additionalParams:[String:Any] { get }
+    func validate(response:HTTPURLResponse, data:Data, error: Error?) -> StreemError?
+    func shouldContinue(with error:StreemError) -> Bool
 }
 
 func +<K, V>(left: [K: V], right: [K: V]?) -> [K: V] {
@@ -48,7 +50,13 @@ public extension HTTPProvider{
         let path = baseURL.appendingPathComponent(route.path)
         
         var request = URLRequest(url: path)
-        request.encode(parameters: additionalParams + route.params, encoding: route.encoding)
+        
+        let error = request.encode(parameters: additionalParams + route.params, encoding: route.encoding)
+        guard error == nil else {
+            let r = Request(urlRequest: request, provider:self)
+            r.onComplete(response: nil, error: error)
+            return r
+        }
         
         request.httpMethod = route.method.rawValue
         
@@ -57,13 +65,25 @@ public extension HTTPProvider{
             request.setValue($1, forHTTPHeaderField: $0)
         })
         
-        let r = Request(urlRequest: request)
+        let r = Request(urlRequest: request, provider:self)
         
         let task = session.dataTask(with: request)
         SessionManager.sharedInstance.requests[task] = r
         task.resume()
         
         return r
+    }
+    
+    func validate(response:HTTPURLResponse, data:Data, error: Error?) -> StreemError?{
+        if let error = error {
+            return StreemNetworkingError.errorWith(error: error)
+        }else{
+            return response.statusCode >= 400 ? StreemNetworkingError.errorWith(httpCode: response.statusCode) : nil
+        }
+    }
+    
+    func shouldContinue(with error:StreemError) -> Bool{
+        return true
     }
 }
 
@@ -102,5 +122,5 @@ class SessionManager:NSObject, URLSessionDataDelegate{
 }
 
 public enum HTTPMethod: String {
-    case OPTIONS, GET, HEAD, POST, PUT, PATCH, DELETE, TRACE, CONNECT
+    case options, get, head, post, put, patch, delete, trace, connect
 }
