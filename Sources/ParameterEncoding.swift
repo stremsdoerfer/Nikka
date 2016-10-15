@@ -9,7 +9,7 @@
 import Foundation
 
 public enum ParameterEncoding {
-    case url, json, urLinBody
+    case url, json, urlInBody
     
     static func defaultEncodingForMethod(_ method:HTTPMethod) -> ParameterEncoding{
         switch method {
@@ -49,7 +49,7 @@ extension URLRequest{
             } catch {
                 err = StreemNetworkingError.parameterEncoding(parameters)
             }
-        case .urLinBody:
+        case .urlInBody:
             
             let paramString = (parameters.map { "\($0)=\($1)" } as [String]).joined(separator: "&")
             if self.value(forHTTPHeaderField: "Content-Type") == nil {
