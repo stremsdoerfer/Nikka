@@ -74,7 +74,6 @@ public extension HTTPProvider{
     */
     var additionalParams:[String:Any]{ get { return [String:Any]() } }
     
-    
     /**
      Default validation, it will return an StreemError if the HTTP status code is greater than 399 (400+: client errors, 500+: server errors)
      */
@@ -92,7 +91,6 @@ public extension HTTPProvider{
     func shouldContinue(with error:StreemError) -> Bool{
         return true
     }
-    
     
     /**
      This is the method that needs to be called from a provider to send the request.

@@ -9,9 +9,20 @@
 /* Begin PBXBuildFile section */
 		3D7C3FEB5C7491CBB8B76CA6 /* Pods_StreemNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF32517FCB847BC376070184 /* Pods_StreemNetworking.framework */; };
 		C4B26E13582F01B3767135A3 /* Pods_StreemNetworkingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA56C691899914F8B4F5679 /* Pods_StreemNetworkingTests.framework */; };
+		EB11F5C71DB2CD5E00D034C2 /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB11F5C31DB2CD5E00D034C2 /* Future.swift */; };
+		EB11F5C81DB2CD5E00D034C2 /* StreemFutureNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB11F5C41DB2CD5E00D034C2 /* StreemFutureNetworking.swift */; };
+		EB11F5C91DB2CD5E00D034C2 /* StreemRxNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB11F5C61DB2CD5E00D034C2 /* StreemRxNetworking.swift */; };
+		EB11F5CB1DB2CD7700D034C2 /* HTTPProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB11F5CA1DB2CD7700D034C2 /* HTTPProvider.swift */; };
+		EB11F5CE1DB2CE8A00D034C2 /* MockProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB11F5CC1DB2CE4A00D034C2 /* MockProviders.swift */; };
+		EB11F5D11DB2DA3900D034C2 /* RequestSendingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB11F5CF1DB2DA1F00D034C2 /* RequestSendingTests.swift */; };
+		EB11F5D51DB2E18B00D034C2 /* ProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB11F5D41DB2E18B00D034C2 /* ProviderTests.swift */; };
+		EB11F5D71DB2E56B00D034C2 /* MockRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB11F5D61DB2E56B00D034C2 /* MockRoutes.swift */; };
+		EB11F5DD1DB2F1F800D034C2 /* MapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB11F5DC1DB2F1F800D034C2 /* MapperTests.swift */; };
+		EB11F5DF1DB2FFB700D034C2 /* MapperRxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB11F5DE1DB2FFB700D034C2 /* MapperRxTests.swift */; };
+		EB11F5E11DB2FFED00D034C2 /* MapperFuturesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB11F5E01DB2FFED00D034C2 /* MapperFuturesTests.swift */; };
 		EBFCB4841DA9DE18009036BD /* StreemNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBFCB47A1DA9DE18009036BD /* StreemNetworking.framework */; };
 		EBFCB48B1DA9DE18009036BD /* StreemNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = EBFCB47D1DA9DE18009036BD /* StreemNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EBFCB4961DA9DE89009036BD /* StreemNetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4941DA9DE87009036BD /* StreemNetworkingTests.swift */; };
+		EBFCB4961DA9DE89009036BD /* RequestBuildingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4941DA9DE87009036BD /* RequestBuildingTests.swift */; };
 		EBFCB49F1DA9DF6D009036BD /* StreemError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4981DA9DF6D009036BD /* StreemError.swift */; };
 		EBFCB4A01DA9DF6D009036BD /* StreemNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4991DA9DF6D009036BD /* StreemNetworking.swift */; };
 		EBFCB4A11DA9DF6D009036BD /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB49A1DA9DF6D009036BD /* ParameterEncoding.swift */; };
@@ -19,10 +30,7 @@
 		EBFCB4A31DA9DF6D009036BD /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB49C1DA9DF6D009036BD /* Response.swift */; };
 		EBFCB4A41DA9DF6D009036BD /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB49D1DA9DF6D009036BD /* Result.swift */; };
 		EBFCB4A51DA9DF6D009036BD /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB49E1DA9DF6D009036BD /* Route.swift */; };
-		EBFCB4AF1DA9EE19009036BD /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4AA1DA9EE19009036BD /* Future.swift */; };
-		EBFCB4B01DA9EE19009036BD /* StreemFutureNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4AB1DA9EE19009036BD /* StreemFutureNetworking.swift */; };
 		EBFCB4B11DA9EE19009036BD /* StreemMapperNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4AD1DA9EE19009036BD /* StreemMapperNetworking.swift */; };
-		EBFCB4B31DA9F7CB009036BD /* StreemRxNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4B21DA9F7CB009036BD /* StreemRxNetworking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,12 +50,23 @@
 		8BECF5B30F6BC8A8E7700A1D /* Pods-StreemNetworking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreemNetworking.release.xcconfig"; path = "Pods/Target Support Files/Pods-StreemNetworking/Pods-StreemNetworking.release.xcconfig"; sourceTree = "<group>"; };
 		B75727FA4DDF397FB0824CAC /* Pods-StreemNetworkingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreemNetworkingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StreemNetworkingTests/Pods-StreemNetworkingTests.release.xcconfig"; sourceTree = "<group>"; };
 		DF32517FCB847BC376070184 /* Pods_StreemNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StreemNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB11F5C31DB2CD5E00D034C2 /* Future.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Future.swift; sourceTree = "<group>"; };
+		EB11F5C41DB2CD5E00D034C2 /* StreemFutureNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreemFutureNetworking.swift; sourceTree = "<group>"; };
+		EB11F5C61DB2CD5E00D034C2 /* StreemRxNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreemRxNetworking.swift; sourceTree = "<group>"; };
+		EB11F5CA1DB2CD7700D034C2 /* HTTPProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPProvider.swift; sourceTree = "<group>"; };
+		EB11F5CC1DB2CE4A00D034C2 /* MockProviders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockProviders.swift; sourceTree = "<group>"; };
+		EB11F5CF1DB2DA1F00D034C2 /* RequestSendingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestSendingTests.swift; sourceTree = "<group>"; };
+		EB11F5D41DB2E18B00D034C2 /* ProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderTests.swift; sourceTree = "<group>"; };
+		EB11F5D61DB2E56B00D034C2 /* MockRoutes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockRoutes.swift; sourceTree = "<group>"; };
+		EB11F5DC1DB2F1F800D034C2 /* MapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapperTests.swift; sourceTree = "<group>"; };
+		EB11F5DE1DB2FFB700D034C2 /* MapperRxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapperRxTests.swift; sourceTree = "<group>"; };
+		EB11F5E01DB2FFED00D034C2 /* MapperFuturesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapperFuturesTests.swift; sourceTree = "<group>"; };
 		EBFCB47A1DA9DE18009036BD /* StreemNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StreemNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBFCB47D1DA9DE18009036BD /* StreemNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StreemNetworking.h; sourceTree = "<group>"; };
 		EBFCB47E1DA9DE18009036BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBFCB4831DA9DE18009036BD /* StreemNetworkingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StreemNetworkingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBFCB48A1DA9DE18009036BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EBFCB4941DA9DE87009036BD /* StreemNetworkingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreemNetworkingTests.swift; sourceTree = "<group>"; };
+		EBFCB4941DA9DE87009036BD /* RequestBuildingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestBuildingTests.swift; sourceTree = "<group>"; };
 		EBFCB4981DA9DF6D009036BD /* StreemError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreemError.swift; sourceTree = "<group>"; };
 		EBFCB4991DA9DF6D009036BD /* StreemNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreemNetworking.swift; sourceTree = "<group>"; };
 		EBFCB49A1DA9DF6D009036BD /* ParameterEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
@@ -55,10 +74,7 @@
 		EBFCB49C1DA9DF6D009036BD /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		EBFCB49D1DA9DF6D009036BD /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		EBFCB49E1DA9DF6D009036BD /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
-		EBFCB4AA1DA9EE19009036BD /* Future.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Future.swift; sourceTree = "<group>"; };
-		EBFCB4AB1DA9EE19009036BD /* StreemFutureNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreemFutureNetworking.swift; sourceTree = "<group>"; };
 		EBFCB4AD1DA9EE19009036BD /* StreemMapperNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreemMapperNetworking.swift; sourceTree = "<group>"; };
-		EBFCB4B21DA9F7CB009036BD /* StreemRxNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreemRxNetworking.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +118,59 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		EB11F5C21DB2CD5E00D034C2 /* MapperFutures */ = {
+			isa = PBXGroup;
+			children = (
+				EB11F5C31DB2CD5E00D034C2 /* Future.swift */,
+				EB11F5C41DB2CD5E00D034C2 /* StreemFutureNetworking.swift */,
+			);
+			path = MapperFutures;
+			sourceTree = "<group>";
+		};
+		EB11F5C51DB2CD5E00D034C2 /* MapperRx */ = {
+			isa = PBXGroup;
+			children = (
+				EB11F5C61DB2CD5E00D034C2 /* StreemRxNetworking.swift */,
+			);
+			path = MapperRx;
+			sourceTree = "<group>";
+		};
+		EB11F5D81DB2F03D00D034C2 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				EBFCB4941DA9DE87009036BD /* RequestBuildingTests.swift */,
+				EB11F5CF1DB2DA1F00D034C2 /* RequestSendingTests.swift */,
+				EB11F5D41DB2E18B00D034C2 /* ProviderTests.swift */,
+				EB11F5CC1DB2CE4A00D034C2 /* MockProviders.swift */,
+				EB11F5D61DB2E56B00D034C2 /* MockRoutes.swift */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		EB11F5D91DB2F04700D034C2 /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				EB11F5DC1DB2F1F800D034C2 /* MapperTests.swift */,
+			);
+			name = Mapper;
+			sourceTree = "<group>";
+		};
+		EB11F5DA1DB2F04D00D034C2 /* MapperRx */ = {
+			isa = PBXGroup;
+			children = (
+				EB11F5DE1DB2FFB700D034C2 /* MapperRxTests.swift */,
+			);
+			name = MapperRx;
+			sourceTree = "<group>";
+		};
+		EB11F5DB1DB2F05400D034C2 /* MapperFutures */ = {
+			isa = PBXGroup;
+			children = (
+				EB11F5E01DB2FFED00D034C2 /* MapperFuturesTests.swift */,
+			);
+			name = MapperFutures;
+			sourceTree = "<group>";
+		};
 		EBFCB4701DA9DE18009036BD = {
 			isa = PBXGroup;
 			children = (
@@ -125,9 +194,9 @@
 		EBFCB47C1DA9DE18009036BD /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				EBFCB4A91DA9EE19009036BD /* Futures */,
+				EB11F5C21DB2CD5E00D034C2 /* MapperFutures */,
+				EB11F5C51DB2CD5E00D034C2 /* MapperRx */,
 				EBFCB4AC1DA9EE19009036BD /* Mapper */,
-				EBFCB4AE1DA9EE19009036BD /* Rx */,
 				EBFCB4981DA9DF6D009036BD /* StreemError.swift */,
 				EBFCB4991DA9DF6D009036BD /* StreemNetworking.swift */,
 				EBFCB49A1DA9DF6D009036BD /* ParameterEncoding.swift */,
@@ -135,6 +204,7 @@
 				EBFCB49C1DA9DF6D009036BD /* Response.swift */,
 				EBFCB49D1DA9DF6D009036BD /* Result.swift */,
 				EBFCB49E1DA9DF6D009036BD /* Route.swift */,
+				EB11F5CA1DB2CD7700D034C2 /* HTTPProvider.swift */,
 				EBFCB47D1DA9DE18009036BD /* StreemNetworking.h */,
 				EBFCB47E1DA9DE18009036BD /* Info.plist */,
 			);
@@ -144,19 +214,13 @@
 		EBFCB4871DA9DE18009036BD /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				EBFCB4941DA9DE87009036BD /* StreemNetworkingTests.swift */,
+				EB11F5D81DB2F03D00D034C2 /* Core */,
+				EB11F5D91DB2F04700D034C2 /* Mapper */,
+				EB11F5DA1DB2F04D00D034C2 /* MapperRx */,
+				EB11F5DB1DB2F05400D034C2 /* MapperFutures */,
 				EBFCB48A1DA9DE18009036BD /* Info.plist */,
 			);
 			path = Tests;
-			sourceTree = "<group>";
-		};
-		EBFCB4A91DA9EE19009036BD /* Futures */ = {
-			isa = PBXGroup;
-			children = (
-				EBFCB4AA1DA9EE19009036BD /* Future.swift */,
-				EBFCB4AB1DA9EE19009036BD /* StreemFutureNetworking.swift */,
-			);
-			path = Futures;
 			sourceTree = "<group>";
 		};
 		EBFCB4AC1DA9EE19009036BD /* Mapper */ = {
@@ -165,14 +229,6 @@
 				EBFCB4AD1DA9EE19009036BD /* StreemMapperNetworking.swift */,
 			);
 			path = Mapper;
-			sourceTree = "<group>";
-		};
-		EBFCB4AE1DA9EE19009036BD /* Rx */ = {
-			isa = PBXGroup;
-			children = (
-				EBFCB4B21DA9F7CB009036BD /* StreemRxNetworking.swift */,
-			);
-			path = Rx;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -371,16 +427,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB11F5CB1DB2CD7700D034C2 /* HTTPProvider.swift in Sources */,
 				EBFCB4A41DA9DF6D009036BD /* Result.swift in Sources */,
 				EBFCB4A11DA9DF6D009036BD /* ParameterEncoding.swift in Sources */,
-				EBFCB4AF1DA9EE19009036BD /* Future.swift in Sources */,
+				EB11F5C81DB2CD5E00D034C2 /* StreemFutureNetworking.swift in Sources */,
+				EB11F5C91DB2CD5E00D034C2 /* StreemRxNetworking.swift in Sources */,
 				EBFCB4A21DA9DF6D009036BD /* Request.swift in Sources */,
 				EBFCB4B11DA9EE19009036BD /* StreemMapperNetworking.swift in Sources */,
 				EBFCB49F1DA9DF6D009036BD /* StreemError.swift in Sources */,
-				EBFCB4B01DA9EE19009036BD /* StreemFutureNetworking.swift in Sources */,
 				EBFCB4A01DA9DF6D009036BD /* StreemNetworking.swift in Sources */,
+				EB11F5C71DB2CD5E00D034C2 /* Future.swift in Sources */,
 				EBFCB4A51DA9DF6D009036BD /* Route.swift in Sources */,
-				EBFCB4B31DA9F7CB009036BD /* StreemRxNetworking.swift in Sources */,
 				EBFCB4A31DA9DF6D009036BD /* Response.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,7 +446,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBFCB4961DA9DE89009036BD /* StreemNetworkingTests.swift in Sources */,
+				EB11F5CE1DB2CE8A00D034C2 /* MockProviders.swift in Sources */,
+				EB11F5E11DB2FFED00D034C2 /* MapperFuturesTests.swift in Sources */,
+				EB11F5D71DB2E56B00D034C2 /* MockRoutes.swift in Sources */,
+				EB11F5DD1DB2F1F800D034C2 /* MapperTests.swift in Sources */,
+				EB11F5D11DB2DA3900D034C2 /* RequestSendingTests.swift in Sources */,
+				EB11F5D51DB2E18B00D034C2 /* ProviderTests.swift in Sources */,
+				EBFCB4961DA9DE89009036BD /* RequestBuildingTests.swift in Sources */,
+				EB11F5DF1DB2FFB700D034C2 /* MapperRxTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,6 +585,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.justalab.StreemNetworking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -544,6 +609,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.justalab.StreemNetworking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -559,6 +625,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				DEVELOPMENT_TEAM = R69K2ALL6R;
 				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.justalab.StreemNetworkingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -573,6 +640,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				DEVELOPMENT_TEAM = R69K2ALL6R;
 				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.justalab.StreemNetworkingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

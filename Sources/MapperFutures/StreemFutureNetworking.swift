@@ -21,11 +21,11 @@ public extension Request{
         return future
     }
     
-    public func response<T: Mappable>() -> Future<[T]> {
+    public func response<T: Mappable>(rootKey:String? = nil) -> Future<[T]> {
         let future = Future<[T]>()
         self.progress({ (receivedSize, expectedSize) in
             
-        }).responseArray { (response:Response<[T]>) in
+        }).responseArray(rootKey:rootKey) { (response:Response<[T]>) in
             future.fill(response.result)
         }
         return future

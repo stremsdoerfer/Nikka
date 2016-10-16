@@ -58,10 +58,10 @@ extension Request {
      - returns: The request.
      */
     @discardableResult
-    public func responseArray<T: Mappable>(_ completionHandler:@escaping (Response<[T]>) -> Void) -> Self {
+    public func responseArray<T: Mappable>(rootKey:String? = nil, _ completionHandler:@escaping (Response<[T]>) -> Void) -> Self {
         return responseJSON { (response:Response<Any>) in
             let newResult = response.result.flatMap({ (value) -> Result<[T]> in
-                if let responseObject:[T] = [T].from(JSON:value) {
+                if let responseObject:[T] = [T].from(JSON:value, rootKey: rootKey) {
                     return .success(responseObject)
                 } else {
                     return .failure(StreemNetworkingMapperError.deserialization(value))

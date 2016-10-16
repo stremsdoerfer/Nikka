@@ -20,11 +20,12 @@ public enum StreemNetworkingError: StreemError {
             case .parameterEncoding(let value): return "An error occurred while encoding parameter: \(value)"
             case .jsonDeserialization: return "Could not parse data to JSON."
             case .http(let code): return "HTTP Error occured with code:\(code)"
+            case .emptyResponse: return "Tried to deserialize response, but no data was found"
             case .unknown(let description): return description
         }
     }
     
-    case parameterEncoding(Any), jsonDeserialization, http(Int) ,unknown(String)
+    case parameterEncoding(Any), jsonDeserialization, emptyResponse, http(Int) ,unknown(String)
     
     static func errorWith(error:Error) -> StreemNetworkingError{
         return StreemNetworkingError.unknown(error.localizedDescription)
@@ -41,6 +42,7 @@ public func ==(lhs: StreemNetworkingError, rhs: StreemNetworkingError) -> Bool {
     case (.http(let codeA), .http(let codeB)) : return codeA == codeB
     case (.unknown(_), .unknown(_)): return true
     case (.parameterEncoding(_), .parameterEncoding(_)): return true
+    case (.emptyResponse, .emptyResponse): return true
     default: return false
     }
 }

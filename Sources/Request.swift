@@ -18,7 +18,7 @@ open class Request{
     
     var onPogress:((_ receivedSize:Int, _ expectedSize:Int) -> Void)?
     var onCompleteJSON:((Response<Any>)->Void)?
-    var onCompleteData:((HTTPURLResponse?, Data, Error?) -> Void)?
+    var onCompleteData:((HTTPURLResponse?, Data, StreemError?) -> Void)?
     
     init(urlRequest:URLRequest, provider:HTTPProvider){
         self.urlRequest = urlRequest
@@ -45,8 +45,11 @@ open class Request{
             return
         }
         
+        onCompleteData?(response, buffer, validatedError)
         if let json = try? JSONSerialization.jsonObject(with: buffer as Data, options: JSONSerialization.ReadingOptions.allowFragments){
             onCompleteJSON?(Response(response: response, data: buffer, result: .success(json)))
+        }else if buffer.count == 0{
+            onCompleteJSON?(Response(response: response, data: buffer, result: .failure(StreemNetworkingError.emptyResponse)))
         }else{
             onCompleteJSON?(Response(response: response, data: buffer, result: .failure(StreemNetworkingError.jsonDeserialization)))
         }
@@ -59,7 +62,7 @@ open class Request{
     }
     
     @discardableResult
-    open func response(_ handler:@escaping ((URLResponse?, Data, Error?)->Void)) -> Self {
+    open func response(_ handler:@escaping ((URLResponse?, Data, StreemError?)->Void)) -> Self {
         self.onCompleteData = handler
         return self
     }

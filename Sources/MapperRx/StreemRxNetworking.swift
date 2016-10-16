@@ -27,9 +27,9 @@ public extension Request{
         }
     }
     
-    func response<T: Mappable>() -> Observable<[T]>{
+    func response<T: Mappable>(rootKey:String? = nil) -> Observable<[T]>{
         return Observable.create{ observer in
-            self.responseArray({ (response:Response<[T]>) in
+            self.responseArray(rootKey:rootKey, { (response:Response<[T]>) in
                 switch response.result{
                 case .success(let values):
                     observer.onNext(values)
