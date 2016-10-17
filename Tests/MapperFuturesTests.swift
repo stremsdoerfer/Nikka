@@ -29,7 +29,7 @@ class MapperFuturesTests: XCTestCase {
         let expectation = self.expectation(description: "GET request should succeed")
         
         let provider = TestProvider()
-        let futureIP:Future<TestIP> = provider.request(.ip).response()
+        let futureIP:Future<TestIP> = provider.request(.ip).responseObject()
         
         futureIP.onComplete { (result:Result<TestIP>) in
             expectation.fulfill()
@@ -53,7 +53,7 @@ class MapperFuturesTests: XCTestCase {
         
         let provider = TestProvider()
         let json = ["test":[["value":1],["value":2],["value":3]]]
-        let futureValues:Future<[TestValue]> = provider.request(.postJSON(json)).response(rootKey:"json.test")
+        let futureValues:Future<[TestValue]> = provider.request(.postJSON(json)).responseArray(rootKey:"json.test")
         
         futureValues.onComplete { (result:Result<[TestValue]>) in
             expectation.fulfill()
@@ -77,7 +77,7 @@ class MapperFuturesTests: XCTestCase {
         let expectation = self.expectation(description: "GET request should succeed")
         
         let provider = TestProvider()
-        let futureIP:Future<TestIP> = provider.request(.ip).response()
+        let futureIP:Future<TestIP> = provider.request(.ip).responseObject()
         
         futureIP.onComplete { (result:Result<TestIP>) in
             expectation.fulfill()
@@ -101,7 +101,7 @@ class MapperFuturesTests: XCTestCase {
         
         let provider = TestProvider()
         let json = ["test":[["value":1],["value":2],["value":3]]]
-        let futureValues:Future<[TestValue]> = provider.request(.postJSON(json)).response(rootKey:"blah")
+        let futureValues:Future<[TestValue]> = provider.request(.postJSON(json)).responseArray(rootKey:"blah")
         
         futureValues.onComplete { (result:Result<[TestValue]>) in
             expectation.fulfill()
@@ -130,8 +130,8 @@ class MapperFuturesTests: XCTestCase {
         let expectation = self.expectation(description: "Chaining request should succeed")
 
         let provider = TestProvider()
-        let futureIP:Future<TestIP> = provider.request(.ip).response()
-        let postIP:Future<TestResponse> = futureIP.flatMap({provider.request(.postJSON(["origin":$0.ip])).response()})
+        let futureIP:Future<TestIP> = provider.request(.ip).responseObject()
+        let postIP:Future<TestResponse> = futureIP.flatMap({provider.request(.postJSON(["origin":$0.ip])).responseObject()})
         postIP.onComplete { (result:Result<TestResponse>) in
             expectation.fulfill()
             XCTAssertNil(result.error)
@@ -159,8 +159,8 @@ class MapperFuturesTests: XCTestCase {
         let expectation = self.expectation(description: "Chaining request should fail")
         
         let provider = TestProvider()
-        let futureIP:Future<TestIP> = provider.request(.ip).response()
-        let postIP:Future<TestResponse> = futureIP.flatMap({provider.request(.postJSON(["origin":$0.ip])).response()})
+        let futureIP:Future<TestIP> = provider.request(.ip).responseObject()
+        let postIP:Future<TestResponse> = futureIP.flatMap({provider.request(.postJSON(["origin":$0.ip])).responseObject()})
         postIP.onComplete { (result:Result<TestResponse>) in
             expectation.fulfill()
             XCTAssertNil(result.value)
@@ -188,8 +188,8 @@ class MapperFuturesTests: XCTestCase {
         let expectation = self.expectation(description: "Chaining request should fail")
         
         let provider = TestProvider()
-        let futureIP:Future<TestIP> = provider.request(.ip).response()
-        let postIP:Future<TestResponse> = futureIP.flatMap({provider.request(.postJSON(["origin":$0.ip])).response()})
+        let futureIP:Future<TestIP> = provider.request(.ip).responseObject()
+        let postIP:Future<TestResponse> = futureIP.flatMap({provider.request(.postJSON(["origin":$0.ip])).responseObject()})
         postIP.onComplete { (result:Result<TestResponse>) in
             expectation.fulfill()
             XCTAssertNil(result.value)

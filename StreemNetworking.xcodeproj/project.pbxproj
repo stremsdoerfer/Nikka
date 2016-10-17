@@ -19,7 +19,9 @@
 		EB11F5DD1DB2F1F800D034C2 /* MapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB11F5DC1DB2F1F800D034C2 /* MapperTests.swift */; };
 		EB11F5DF1DB2FFB700D034C2 /* MapperRxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB11F5DE1DB2FFB700D034C2 /* MapperRxTests.swift */; };
 		EB11F5E11DB2FFED00D034C2 /* MapperFuturesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB11F5E01DB2FFED00D034C2 /* MapperFuturesTests.swift */; };
-		EB11F5E41DB30F3B00D034C2 /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB11F5E31DB30F3B00D034C2 /* Future.swift */; };
+		EB16197C1DB488E900AF11BA /* StreemRxNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB16197B1DB488E900AF11BA /* StreemRxNetworking.swift */; };
+		EB1619811DB496EC00AF11BA /* StreemFutureNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1619801DB496EC00AF11BA /* StreemFutureNetworking.swift */; };
+		EB1619831DB496F900AF11BA /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1619821DB496F900AF11BA /* Future.swift */; };
 		EBFCB4841DA9DE18009036BD /* StreemNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBFCB47A1DA9DE18009036BD /* StreemNetworking.framework */; };
 		EBFCB48B1DA9DE18009036BD /* StreemNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = EBFCB47D1DA9DE18009036BD /* StreemNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EBFCB4961DA9DE89009036BD /* RequestBuildingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4941DA9DE87009036BD /* RequestBuildingTests.swift */; };
@@ -60,7 +62,9 @@
 		EB11F5DC1DB2F1F800D034C2 /* MapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapperTests.swift; sourceTree = "<group>"; };
 		EB11F5DE1DB2FFB700D034C2 /* MapperRxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapperRxTests.swift; sourceTree = "<group>"; };
 		EB11F5E01DB2FFED00D034C2 /* MapperFuturesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapperFuturesTests.swift; sourceTree = "<group>"; };
-		EB11F5E31DB30F3B00D034C2 /* Future.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Future.swift; path = Futures/Future.swift; sourceTree = "<group>"; };
+		EB16197B1DB488E900AF11BA /* StreemRxNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreemRxNetworking.swift; sourceTree = "<group>"; };
+		EB1619801DB496EC00AF11BA /* StreemFutureNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StreemFutureNetworking.swift; path = Futures/StreemFutureNetworking.swift; sourceTree = "<group>"; };
+		EB1619821DB496F900AF11BA /* Future.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Future.swift; sourceTree = "<group>"; };
 		EBFCB47A1DA9DE18009036BD /* StreemNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StreemNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBFCB47D1DA9DE18009036BD /* StreemNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StreemNetworking.h; sourceTree = "<group>"; };
 		EBFCB47E1DA9DE18009036BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -173,8 +177,17 @@
 		EB16197A1DB487DD00AF11BA /* Rx */ = {
 			isa = PBXGroup;
 			children = (
+				EB16197B1DB488E900AF11BA /* StreemRxNetworking.swift */,
 			);
 			name = Rx;
+			sourceTree = "<group>";
+		};
+		EB16197D1DB48DCF00AF11BA /* Futures */ = {
+			isa = PBXGroup;
+			children = (
+				EB1619801DB496EC00AF11BA /* StreemFutureNetworking.swift */,
+			);
+			name = Futures;
 			sourceTree = "<group>";
 		};
 		EBFCB4701DA9DE18009036BD = {
@@ -200,19 +213,20 @@
 		EBFCB47C1DA9DE18009036BD /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				EB16197A1DB487DD00AF11BA /* Rx */,
+				EB16197D1DB48DCF00AF11BA /* Futures */,
 				EB11F5C21DB2CD5E00D034C2 /* MapperFutures */,
 				EB11F5C51DB2CD5E00D034C2 /* MapperRx */,
 				EBFCB4AC1DA9EE19009036BD /* Mapper */,
-				EBFCB4981DA9DF6D009036BD /* StreemNetworkingError.swift */,
-				EBFCB4991DA9DF6D009036BD /* StreemNetworking.swift */,
+				EB16197A1DB487DD00AF11BA /* Rx */,
+				EB1619821DB496F900AF11BA /* Future.swift */,
+				EB11F5CA1DB2CD7700D034C2 /* HTTPProvider.swift */,
 				EBFCB49A1DA9DF6D009036BD /* ParameterEncoding.swift */,
 				EBFCB49B1DA9DF6D009036BD /* Request.swift */,
 				EBFCB49C1DA9DF6D009036BD /* Response.swift */,
 				EBFCB49D1DA9DF6D009036BD /* Result.swift */,
 				EBFCB49E1DA9DF6D009036BD /* Route.swift */,
-				EB11F5CA1DB2CD7700D034C2 /* HTTPProvider.swift */,
-				EB11F5E31DB30F3B00D034C2 /* Future.swift */,
+				EBFCB4991DA9DF6D009036BD /* StreemNetworking.swift */,
+				EBFCB4981DA9DF6D009036BD /* StreemNetworkingError.swift */,
 				EBFCB47D1DA9DE18009036BD /* StreemNetworking.h */,
 				EBFCB47E1DA9DE18009036BD /* Info.plist */,
 			);
@@ -436,7 +450,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB11F5CB1DB2CD7700D034C2 /* HTTPProvider.swift in Sources */,
-				EB11F5E41DB30F3B00D034C2 /* Future.swift in Sources */,
 				EBFCB4A41DA9DF6D009036BD /* Result.swift in Sources */,
 				EBFCB4A11DA9DF6D009036BD /* ParameterEncoding.swift in Sources */,
 				EB11F5C81DB2CD5E00D034C2 /* StreemMapperFutureNetworking.swift in Sources */,
@@ -444,8 +457,11 @@
 				EBFCB4A21DA9DF6D009036BD /* Request.swift in Sources */,
 				EBFCB4B11DA9EE19009036BD /* StreemMapperNetworking.swift in Sources */,
 				EBFCB49F1DA9DF6D009036BD /* StreemNetworkingError.swift in Sources */,
+				EB1619831DB496F900AF11BA /* Future.swift in Sources */,
 				EBFCB4A01DA9DF6D009036BD /* StreemNetworking.swift in Sources */,
 				EBFCB4A51DA9DF6D009036BD /* Route.swift in Sources */,
+				EB16197C1DB488E900AF11BA /* StreemRxNetworking.swift in Sources */,
+				EB1619811DB496EC00AF11BA /* StreemFutureNetworking.swift in Sources */,
 				EBFCB4A31DA9DF6D009036BD /* Response.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

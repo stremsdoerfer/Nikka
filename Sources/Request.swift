@@ -44,12 +44,12 @@ open class Request{
     /**
      Instance variable that allows us to keep the state of the response if it arrives before the handler is added
     */
-    private var responseData:(URLResponse?, Data, StreemError?)?
+    private var responseDataTmp:(HTTPURLResponse?, Data, StreemError?)?
     
     /**
      Instance variable that allows us to keep the state of the response if it arrives before the handler is added
      */
-    private var responseJSON:(Response<Any>)?
+    private var responseJSONTmp:(Response<Any>)?
     
     /**
      An instance closure that can be define with the matching function:
@@ -112,7 +112,7 @@ open class Request{
             }
             return
         }
-        responseData = (httpResponse, buffer, validatedError)
+        responseDataTmp = (httpResponse, buffer, validatedError)
         onCompleteData?(httpResponse, buffer, validatedError)
         
         var responseToReturn:Response<Any>!
@@ -123,7 +123,7 @@ open class Request{
         }else{
             responseToReturn = Response(response: httpResponse, data: buffer, result: .failure(StreemNetworkingError.jsonDeserialization))
         }
-        responseJSON = responseToReturn
+        responseJSONTmp = responseToReturn
         onCompleteJSON?(responseToReturn)
     }
     
@@ -144,9 +144,9 @@ open class Request{
      - returns: itself
      */
     @discardableResult
-    open func response(_ handler:@escaping ((URLResponse?, Data, StreemError?)->Void)) -> Self {
+    open func response(_ handler:@escaping ((HTTPURLResponse?, Data, StreemError?)->Void)) -> Self {
         self.onCompleteData = handler
-        if let response = responseData{
+        if let response = responseDataTmp{
             handler(response.0, response.1, response.2)
         }
         return self
@@ -160,7 +160,7 @@ open class Request{
     @discardableResult
     open func responseJSON(_ handler:@escaping ((Response<Any>)->Void)) -> Self {
         self.onCompleteJSON = handler
-        if let response = responseJSON{
+        if let response = responseJSONTmp{
             handler(response)
         }
         return self

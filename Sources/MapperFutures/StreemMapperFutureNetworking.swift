@@ -26,7 +26,7 @@ public extension Request{
      Method that creates an Future from the response
      - returns: Future<T> The created future
      */
-    public func response<T: Mappable>() -> Future<T> {
+    public func responseObject<T: Mappable>() -> Future<T> {
         let future = Future<T>()
         self.progress({ (receivedSize, expectedSize) in
             future.fill(progress: (receivedSize, expectedSize))
@@ -41,7 +41,7 @@ public extension Request{
      - parameters rootKey: Optional, keypath of the array in the JSON
      - returns: Future<[T]> The created future
      */
-    public func response<T: Mappable>(rootKey:String? = nil) -> Future<[T]> {
+    public func responseArray<T: Mappable>(rootKey:String? = nil) -> Future<[T]> {
         let future = Future<[T]>()
         self.progress({ (receivedSize, expectedSize) in
             future.fill(progress: (receivedSize, expectedSize))

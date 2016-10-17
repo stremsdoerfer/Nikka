@@ -27,7 +27,7 @@ public extension Request{
      Method that creates an Observable from the response
      - returns: Observable<T> The created observable
      */
-    func response<T: Mappable>() -> Observable<T>{
+    func responseObject<T: Mappable>() -> Observable<T>{
         return Observable.create{ observer in
             self.responseObject({ (response:Response<T>) in
                 switch response.result{
@@ -47,7 +47,7 @@ public extension Request{
      - parameters rootKey: Optional, keypath of the array in the JSON
      - returns: Observable<[T]> The created observable
      */
-    func response<T: Mappable>(rootKey:String? = nil) -> Observable<[T]>{
+    func responseArray<T: Mappable>(rootKey:String? = nil) -> Observable<[T]>{
         return Observable.create{ observer in
             self.responseArray(rootKey:rootKey, { (response:Response<[T]>) in
                 switch response.result{

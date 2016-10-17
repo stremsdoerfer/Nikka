@@ -32,7 +32,7 @@ class MapperRxTests: XCTestCase {
         let expectation = self.expectation(description: "GET request should succeed")
         
         let provider = TestProvider()
-        let futureIP:Observable<TestIP> = provider.request(.ip).response()
+        let futureIP:Observable<TestIP> = provider.request(.ip).responseObject()
         
         futureIP.subscribe(onNext: { testIP in
             expectation.fulfill()
@@ -55,7 +55,7 @@ class MapperRxTests: XCTestCase {
         
         let provider = TestProvider()
         let json = ["test":[["value":1],["value":2],["value":3]]]
-        let valuesObs:Observable<[TestValue]> = provider.request(.postJSON(json)).response(rootKey:"json.test")
+        let valuesObs:Observable<[TestValue]> = provider.request(.postJSON(json)).responseArray(rootKey:"json.test")
         
         valuesObs.subscribe(onNext: { (values:[TestValue]) in
             expectation.fulfill()
@@ -77,7 +77,7 @@ class MapperRxTests: XCTestCase {
         let expectation = self.expectation(description: "GET request should succeed")
         
         let provider = TestProvider()
-        let ipObs:Observable<TestIP> = provider.request(.ip).response()
+        let ipObs:Observable<TestIP> = provider.request(.ip).responseObject()
         
         ipObs.subscribe(onError: { (error) in
             expectation.fulfill()
@@ -101,7 +101,7 @@ class MapperRxTests: XCTestCase {
         
         let provider = TestProvider()
         let json = ["test":[["value":1],["value":2],["value":3]]]
-        let valuesObs:Observable<[TestValue]> = provider.request(.postJSON(json)).response(rootKey:"blah")
+        let valuesObs:Observable<[TestValue]> = provider.request(.postJSON(json)).responseArray(rootKey:"blah")
         
         
         valuesObs.subscribe(onError: { (error) in
@@ -131,8 +131,8 @@ class MapperRxTests: XCTestCase {
         let expectation = self.expectation(description: "Chaining request should succeed")
         
         let provider = TestProvider()
-        let ipObs:Observable<TestIP> = provider.request(.ip).response()
-        let postIPObs:Observable<TestResponse> = ipObs.flatMap({provider.request(.postJSON(["origin":$0.ip])).response()})
+        let ipObs:Observable<TestIP> = provider.request(.ip).responseObject()
+        let postIPObs:Observable<TestResponse> = ipObs.flatMap({provider.request(.postJSON(["origin":$0.ip])).responseObject()})
         postIPObs.subscribe(onNext: { (response:TestResponse) in
             expectation.fulfill()
             XCTAssertNotEqual(response.ip, "")
@@ -159,8 +159,8 @@ class MapperRxTests: XCTestCase {
         let expectation = self.expectation(description: "Chaining request should fail")
         
         let provider = TestProvider()
-        let ipObs:Observable<TestIP> = provider.request(.ip).response()
-        let postIPObs:Observable<TestResponse> = ipObs.flatMap({provider.request(.postJSON(["origin":$0.ip])).response()})
+        let ipObs:Observable<TestIP> = provider.request(.ip).responseObject()
+        let postIPObs:Observable<TestResponse> = ipObs.flatMap({provider.request(.postJSON(["origin":$0.ip])).responseObject()})
         postIPObs.subscribe(onError: { (error) in
             expectation.fulfill()
             let errorPrefix = (error as! StreemError).description.hasPrefix("Could not deserialize object: ")
@@ -188,8 +188,8 @@ class MapperRxTests: XCTestCase {
         let expectation = self.expectation(description: "Chaining request should fail")
         
         let provider = TestProvider()
-        let ipObs:Observable<TestIP> = provider.request(.ip).response()
-        let postIPObs:Observable<TestResponse> = ipObs.flatMap({provider.request(.postJSON(["origin":$0.ip])).response()})
+        let ipObs:Observable<TestIP> = provider.request(.ip).responseObject()
+        let postIPObs:Observable<TestResponse> = ipObs.flatMap({provider.request(.postJSON(["origin":$0.ip])).responseObject()})
         postIPObs.subscribe(onError: { (error) in
             expectation.fulfill()
             let errorPrefix = (error as! StreemError).description.hasPrefix("Could not deserialize object: ")
