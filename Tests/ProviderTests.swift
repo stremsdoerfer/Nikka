@@ -22,7 +22,7 @@ class ProviderTests: XCTestCase {
         let expectation = self.expectation(description: "Request should return 404")
         
         let provider = TestProvider()
-        provider.request(.getError(404)).response { (response:URLResponse?, data:Data, error:StreemError?) in
+        provider.request(.getError(404)).response { (response:URLResponse?, data:Data, error:Error?) in
             expectation.fulfill()
             let is404 = (error as! StreemNetworkingError) == StreemNetworkingError.http(404)
             XCTAssertTrue(is404)
@@ -36,7 +36,7 @@ class ProviderTests: XCTestCase {
         let expectation = self.expectation(description: "Request should return 401")
         
         let provider = TestProvider()
-        provider.request(.getError(401)).response { (response:URLResponse?, data:Data, error:StreemError?) in
+        provider.request(.getError(401)).response { (response:URLResponse?, data:Data, error:Error?) in
             expectation.fulfill()
             let is401 = (error as! StreemNetworkingError) == StreemNetworkingError.http(401)
             let is404 = (error as! StreemNetworkingError) == StreemNetworkingError.http(404)
@@ -52,7 +52,7 @@ class ProviderTests: XCTestCase {
         let expectation = self.expectation(description: "Request should return no error")
         
         let provider = TestProviderValidateAllHTTPCode()
-        provider.request(.getError(401)).response { (response:URLResponse?, data:Data, error:StreemError?) in
+        provider.request(.getError(401)).response { (response:URLResponse?, data:Data, error:Error?) in
             expectation.fulfill()
             XCTAssertNil(error)
             XCTAssertNotNil(response)
@@ -65,7 +65,7 @@ class ProviderTests: XCTestCase {
         let expectation = self.expectation(description: "Request should return an error")
         
         let provider = TestProviderDeezer()
-        provider.request(.track(98675843679)).response { (response:URLResponse?, data:Data, error:StreemError?) in
+        provider.request(.track(98675843679)).response { (response:URLResponse?, data:Data, error:Error?) in
             expectation.fulfill()
             let error = error as! DeezerError
             XCTAssertEqual(error.code, 800)
@@ -79,7 +79,7 @@ class ProviderTests: XCTestCase {
         let expectation = self.expectation(description: "Request should return no error")
         
         let provider = TestProviderDeezer()
-        provider.request(.track(3135556)).response { (response:URLResponse?, data:Data, error:StreemError?) in
+        provider.request(.track(3135556)).response { (response:URLResponse?, data:Data, error:Error?) in
             expectation.fulfill()
             XCTAssertNil(error)
             XCTAssertNotNil(response)
@@ -162,4 +162,28 @@ class ProviderTests: XCTestCase {
         waitForExpectations(timeout: timeout, handler: nil)
     }
     
+    func testDefaultProfider(){
+        let expectation = self.expectation(description: "Request should succeed")
+        
+        DefaultProvider.request(Route(path:"https://httpbin.org/ip")).responseJSON { (response:Response<Any>) in
+            expectation.fulfill()
+            XCTAssertNil(response.result.error)
+            XCTAssertNotNil(response.result.value)
+            XCTAssertGreaterThan(response.data.count, 0)
+        }
+        
+        waitForExpectations(timeout: timeout, handler: nil)
+    }
+    
+    func testDefaultProfiderError(){
+        let expectation = self.expectation(description: "Request should return error")
+        
+        DefaultProvider.request(Route(path:"/ip")).responseJSON { (response:Response<Any>) in
+            expectation.fulfill()
+            XCTAssertNil(response.result.value)
+            XCTAssertEqual((response.result.error as! StreemNetworkingError), StreemNetworkingError.invalidURL("/ip"))
+        }
+        
+        waitForExpectations(timeout: timeout, handler: nil)
+    }
 }

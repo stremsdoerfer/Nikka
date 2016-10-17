@@ -18,8 +18,15 @@ import Foundation
 import RxSwift
 import Mapper
 
+/**
+ Request extension that allows you to get Rx observables of Mappable Types
+ */
 public extension Request{
     
+    /**
+     Method that creates an Observable 
+     - returns: Observable<T> The created observable
+     */
     func response<T: Mappable>() -> Observable<T>{
         return Observable.create{ observer in
             self.responseObject({ (response:Response<T>) in
@@ -35,6 +42,11 @@ public extension Request{
         }
     }
     
+    /**
+     Method that creates an Observable, from the response  
+     - parameters rootKey: Optional, keypath of the array in the JSON
+     - returns: Observable<[T]> The created observable
+     */
     func response<T: Mappable>(rootKey:String? = nil) -> Observable<[T]>{
         return Observable.create{ observer in
             self.responseArray(rootKey:rootKey, { (response:Response<[T]>) in

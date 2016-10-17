@@ -56,7 +56,7 @@ class SessionManager:NSObject, URLSessionDataDelegate{
     
     func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data) {
         guard let request = requests[dataTask] else {return}
-        request.append(receivedData:data)
+        request.append(data:data)
     }
     
     func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive response: URLResponse, completionHandler: @escaping (URLSession.ResponseDisposition) -> Void) {
@@ -69,8 +69,4 @@ class SessionManager:NSObject, URLSessionDataDelegate{
         guard let request = requests.removeValue(forKey: task) else {return}
         request.onComplete(response: task.response, error: error)
     }
-}
-
-public enum HTTPMethod: String {
-    case options, get, head, post, put, patch, delete, trace, connect
 }

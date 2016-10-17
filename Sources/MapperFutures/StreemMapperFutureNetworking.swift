@@ -22,9 +22,9 @@ public extension Request{
     public func response<T: Mappable>() -> Future<T> {
         let future = Future<T>()
         self.progress({ (receivedSize, expectedSize) in
-            
+            future.fill(progress: (receivedSize, expectedSize))
         }).responseObject { (response:Response<T>) in
-            future.fill(response.result)
+            future.fill(result:response.result)
         }
         return future
     }
@@ -32,9 +32,9 @@ public extension Request{
     public func response<T: Mappable>(rootKey:String? = nil) -> Future<[T]> {
         let future = Future<[T]>()
         self.progress({ (receivedSize, expectedSize) in
-            
+            future.fill(progress: (receivedSize, expectedSize))
         }).responseArray(rootKey:rootKey) { (response:Response<[T]>) in
-            future.fill(response.result)
+            future.fill(result:response.result)
         }
         return future
     }

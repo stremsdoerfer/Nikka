@@ -17,7 +17,7 @@
 import Foundation
 
 /**
- Result is an enum that will be sent back with the response. It has two states: success and failure. If success, it will contain the desired value, if failure, it will have an StreemError
+ Result is an enum that will be sent back with the response. It has two states: success and failure. If success, it will contain the desired value, if failure, it will have an Error
  */
 public enum Result<Value> {
     case success(Value)

@@ -81,8 +81,7 @@ class MapperRxTests: XCTestCase {
         
         ipObs.subscribe(onError: { (error) in
             expectation.fulfill()
-            let error = error as! StreemError
-            let errorPrefix = error.description.hasPrefix("Could not deserialize object: ")
+            let errorPrefix = (error as! StreemError).description.hasPrefix("Could not deserialize object: ")
             XCTAssertTrue(errorPrefix)
         }).addDisposableTo(bag)
 
@@ -107,8 +106,7 @@ class MapperRxTests: XCTestCase {
         
         valuesObs.subscribe(onError: { (error) in
             expectation.fulfill()
-            let error = error as! StreemError
-            let errorPrefix = error.description.hasPrefix("Could not deserialize object: ")
+            let errorPrefix = (error as! StreemError).description.hasPrefix("Could not deserialize object: ")
             XCTAssertTrue(errorPrefix)
         }).addDisposableTo(bag)
 
@@ -165,8 +163,7 @@ class MapperRxTests: XCTestCase {
         let postIPObs:Observable<TestResponse> = ipObs.flatMap({provider.request(.postJSON(["origin":$0.ip])).response()})
         postIPObs.subscribe(onError: { (error) in
             expectation.fulfill()
-            let error = error as! StreemError
-            let errorPrefix = error.description.hasPrefix("Could not deserialize object: ")
+            let errorPrefix = (error as! StreemError).description.hasPrefix("Could not deserialize object: ")
             XCTAssertTrue(errorPrefix)
         }).addDisposableTo(bag)
         
@@ -195,8 +192,7 @@ class MapperRxTests: XCTestCase {
         let postIPObs:Observable<TestResponse> = ipObs.flatMap({provider.request(.postJSON(["origin":$0.ip])).response()})
         postIPObs.subscribe(onError: { (error) in
             expectation.fulfill()
-            let error = error as! StreemError
-            let errorPrefix = error.description.hasPrefix("Could not deserialize object: ")
+            let errorPrefix = (error as! StreemError).description.hasPrefix("Could not deserialize object: ")
             XCTAssertTrue(errorPrefix)
         }).addDisposableTo(bag)
         

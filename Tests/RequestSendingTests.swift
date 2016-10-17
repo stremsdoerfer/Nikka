@@ -20,7 +20,7 @@ class RequestSendingTests: XCTestCase {
         
         let provider = TestProvider()
         let request = provider.request(.get)
-        request.response { (response:URLResponse?, data:Data, error:StreemError?) in
+        request.response { (response:URLResponse?, data:Data, error:Error?) in
             expectation.fulfill()
             XCTAssertGreaterThan(data.count, 0)
             XCTAssertNil(error)
@@ -35,7 +35,7 @@ class RequestSendingTests: XCTestCase {
         
         let provider = TestProvider()
         let request = provider.request(.postForm([:]))
-        request.response { (response:URLResponse?, data:Data, error:StreemError?) in
+        request.response { (response:URLResponse?, data:Data, error:Error?) in
             expectation.fulfill()
             XCTAssertGreaterThan(data.count, 0)
             XCTAssertNil(error)
@@ -50,7 +50,7 @@ class RequestSendingTests: XCTestCase {
         
         let provider = TestProvider()
         let request = provider.request(.putForm([:]))
-        request.response { (response:URLResponse?, data:Data, error:StreemError?) in
+        request.response { (response:URLResponse?, data:Data, error:Error?) in
             expectation.fulfill()
             XCTAssertGreaterThan(data.count, 0)
             XCTAssertNil(error)
@@ -65,7 +65,7 @@ class RequestSendingTests: XCTestCase {
         
         let provider = TestProvider()
         let request = provider.request(.delete)
-        request.response { (response:URLResponse?, data:Data, error:StreemError?) in
+        request.response { (response:URLResponse?, data:Data, error:Error?) in
             expectation.fulfill()
             XCTAssertGreaterThan(data.count, 0)
             XCTAssertNil(error)

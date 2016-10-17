@@ -60,13 +60,34 @@ extension Request {
     }
 }
 
-enum StreemNetworkingMapperError: StreemError {
-    var domain: String { get { return "com.justalab.JustaNetworkingMapper" } }
-    var description:String {
+/**
+ Implementation of StreemError for StreemNetworkingMapper
+ */
+public enum StreemNetworkingMapperError: StreemError {
+    
+    case deserialization(Any)
+    
+    public var description:String {
         switch self {
             case .deserialization(let value): return "Could not deserialize object: \(value)"
         }
     }
     
-    case deserialization(Any)
+    /**
+     Comparison method that returns a boolean whether or not two errors are matching.
+     */
+    func isEqual(err: StreemNetworkingMapperError)->Bool {
+        switch self {
+        case .deserialization(_):
+            if case .deserialization = err { return true }
+        }
+        return false
+    }
+}
+
+/**
+ Equatable implementation
+ */
+public func ==(lhs: StreemNetworkingMapperError, rhs: StreemNetworkingMapperError)->Bool {
+    return lhs.isEqual(err: rhs)
 }

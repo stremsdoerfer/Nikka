@@ -55,6 +55,6 @@ public struct Route{
         self.path = path
         self.params = params
         self.headers = headers
-        self.encoding = encoding ?? ParameterEncoding.defaultEncodingForMethod(method)
+        self.encoding = encoding ?? ParameterEncoding.defaultEncoding(for:method)
     }
 }

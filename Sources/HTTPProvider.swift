@@ -83,13 +83,13 @@ public extension HTTPProvider{
     var additionalParams:[String:Any]{ get { return [String:Any]() } }
     
     /**
-     Default validation, it will return an StreemError if the HTTP status code is greater than 399 (400+: client errors, 500+: server errors)
+     Default validation, it will return an Error if the HTTP status code is greater than 399 (400+: client errors, 500+: server errors)
      */
     func validate(response:HTTPURLResponse, data:Data, error: Error?) -> StreemError?{
         if let error = error {
-            return StreemNetworkingError.errorWith(error: error)
+            return StreemNetworkingError.error(with: error)
         }else{
-            return response.statusCode > 399 ? StreemNetworkingError.errorWith(httpCode: response.statusCode) : nil
+            return response.statusCode > 399 ? StreemNetworkingError.error(with: response.statusCode) : nil
         }
     }
     
@@ -107,14 +107,16 @@ public extension HTTPProvider{
      */
     public func request(_ route:Route) -> Request {
         
-        let path = baseURL.appendingPathComponent(route.path)
+        let path = route.path != "" ? baseURL.appendingPathComponent(route.path) : baseURL
         
         var request = URLRequest(url: path)
         
-        let error = request.encode(parameters: additionalParams + route.params, encoding: route.encoding)
-        guard error == nil else {
+        let allParams = additionalParams + route.params
+        do {
+            try request.encode(parameters: allParams, encoding: route.encoding)
+        }catch {
             let r = Request(urlRequest: request, provider:self)
-            r.onComplete(response: nil, error: error)
+            r.onComplete(response: nil, error: StreemNetworkingError.parameterEncoding(allParams))
             return r
         }
         
@@ -124,7 +126,7 @@ public extension HTTPProvider{
         headers.forEach({
             request.setValue($1, forHTTPHeaderField: $0)
         })
-        
+
         let r = Request(urlRequest: request, provider:self)
         
         let task = session.dataTask(with: request)
@@ -134,3 +136,32 @@ public extension HTTPProvider{
         return r
     }
 }
+
+/**
+ This default provider should be used when you don't want to define a common behavior to your request, and simply want to send a request with a given URL
+ */
+class DefaultProvider:HTTPProvider{
+    var baseURL: URL
+    
+    init(baseURL:URL){
+        self.baseURL = baseURL
+    }
+    
+    /**
+     Static function that allows you to send a request with an empty provider.
+     - parameter route: Route object that defines method, parameters, etc. The full URL should be specified in the path of the Route
+    */
+    static func request(_ route:Route) -> Request {
+        let newRoute = Route(path: "", method: route.method, params: route.params, headers: route.headers, encoding: route.encoding)
+        if let url = URL(string:route.path) {
+            let emptyProvider = DefaultProvider(baseURL: url)
+            return emptyProvider.request(newRoute)
+        }else {
+            let defaultURL = URL(string:"https://google.com")!
+            let r = Request(urlRequest: URLRequest(url:defaultURL), provider:DefaultProvider(baseURL: defaultURL))
+            r.onComplete(response: nil, error: StreemNetworkingError.invalidURL(route.path))
+            return r
+        }
+    }
+}
+
