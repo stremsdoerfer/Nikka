@@ -24,7 +24,7 @@ import Mapper
 public extension Request{
     
     /**
-     Method that creates an Observable 
+     Method that creates an Observable from the response
      - returns: Observable<T> The created observable
      */
     func response<T: Mappable>() -> Observable<T>{

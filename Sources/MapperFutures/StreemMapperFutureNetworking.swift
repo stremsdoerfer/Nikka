@@ -17,8 +17,15 @@
 import Foundation
 import Mapper
 
+/**
+ Request extension that allows you to get Future of Mappable Types
+ */
 public extension Request{
     
+    /**
+     Method that creates an Future from the response
+     - returns: Future<T> The created future
+     */
     public func response<T: Mappable>() -> Future<T> {
         let future = Future<T>()
         self.progress({ (receivedSize, expectedSize) in
@@ -29,6 +36,11 @@ public extension Request{
         return future
     }
     
+    /**
+     Method that creates an Future from the response
+     - parameters rootKey: Optional, keypath of the array in the JSON
+     - returns: Future<[T]> The created future
+     */
     public func response<T: Mappable>(rootKey:String? = nil) -> Future<[T]> {
         let future = Future<[T]>()
         self.progress({ (receivedSize, expectedSize) in
