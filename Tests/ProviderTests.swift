@@ -181,7 +181,7 @@ class ProviderTests: XCTestCase {
         DefaultProvider.request(Route(path:"/ip")).responseJSON { (response:Response<Any>) in
             expectation.fulfill()
             XCTAssertNil(response.result.value)
-            XCTAssertEqual((response.result.error as! StreemNetworkingError), StreemNetworkingError.invalidURL("/ip"))
+            XCTAssertEqual((response.result.error as! StreemNetworkingError), StreemNetworkingError.unknown("unsupported URL"))
         }
         
         waitForExpectations(timeout: timeout, handler: nil)

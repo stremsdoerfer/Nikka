@@ -97,26 +97,31 @@ open class Request{
      - parameter error: the error received if any
     */
     func onComplete(response:URLResponse?, error:Error?){
-        guard let response = response as? HTTPURLResponse else {return}
-        let validatedError = provider.validate(response: response, data: buffer, error: error)
+        let httpResponse = response as? HTTPURLResponse
+        var error = error
+        if httpResponse == nil && error == nil {
+            error = (response != nil) ? StreemNetworkingError.nonHTTPResponse : StreemNetworkingError.unknown("Response and Error are nil")
+        }
+    
+        let validatedError = provider.validate(response: httpResponse, data: buffer, error: error)
  
         if let err = validatedError {
             if provider.shouldContinue(with: err){
-                onCompleteJSON?(Response(response: response, data: buffer, result: .failure(err)))
-                onCompleteData?(response, buffer, validatedError)
+                onCompleteJSON?(Response(response: httpResponse, data: buffer, result: .failure(err)))
+                onCompleteData?(httpResponse, buffer, validatedError)
             }
             return
         }
-        responseData = (response, buffer, validatedError)
-        onCompleteData?(response, buffer, validatedError)
+        responseData = (httpResponse, buffer, validatedError)
+        onCompleteData?(httpResponse, buffer, validatedError)
         
         var responseToReturn:Response<Any>!
         if let json = try? JSONSerialization.jsonObject(with: buffer as Data, options: JSONSerialization.ReadingOptions.allowFragments){
-            responseToReturn = Response(response: response, data: buffer, result: .success(json))
+            responseToReturn = Response(response: httpResponse, data: buffer, result: .success(json))
         }else if buffer.count == 0{
-            responseToReturn = Response(response: response, data: buffer, result: .failure(StreemNetworkingError.emptyResponse))
+            responseToReturn = Response(response: httpResponse, data: buffer, result: .failure(StreemNetworkingError.emptyResponse))
         }else{
-            responseToReturn = Response(response: response, data: buffer, result: .failure(StreemNetworkingError.jsonDeserialization))
+            responseToReturn = Response(response: httpResponse, data: buffer, result: .failure(StreemNetworkingError.jsonDeserialization))
         }
         responseJSON = responseToReturn
         onCompleteJSON?(responseToReturn)

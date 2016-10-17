@@ -49,7 +49,7 @@ public protocol HTTPProvider {
      - parameter error: any error returned by NSURLSession
      - returns: any Error that you would like to pass to consider the result a failure
      */
-    func validate(response:HTTPURLResponse, data:Data, error: Error?) -> StreemError?
+    func validate(response:HTTPURLResponse?, data:Data, error: Error?) -> StreemError?
     
     /**
      A function called if an error is found before a request returns a failure response. It can be used for instance if the error is a HTTP 401 error and that you don't want to proceed
@@ -85,11 +85,13 @@ public extension HTTPProvider{
     /**
      Default validation, it will return an Error if the HTTP status code is greater than 399 (400+: client errors, 500+: server errors)
      */
-    func validate(response:HTTPURLResponse, data:Data, error: Error?) -> StreemError?{
+    func validate(response:HTTPURLResponse?, data:Data, error: Error?) -> StreemError?{
         if let error = error {
             return StreemNetworkingError.error(with: error)
-        }else{
+        }else if let response = response{
             return response.statusCode > 399 ? StreemNetworkingError.error(with: response.statusCode) : nil
+        }else{
+            return StreemNetworkingError.unknown("Response and error are nil")
         }
     }
     

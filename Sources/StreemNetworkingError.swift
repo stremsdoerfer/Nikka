@@ -49,6 +49,11 @@ public enum StreemNetworkingError: StreemError, Equatable {
     case invalidURL(String)
     
     /**
+     Error thrown when the response is not a HTTPResponse
+    */
+    case nonHTTPResponse
+    
+    /**
      Unkown error has been thrown
     */
     case unknown(String)
@@ -61,6 +66,7 @@ public enum StreemNetworkingError: StreemError, Equatable {
             case .http(let code): return "HTTP Error occured with code:\(code)"
             case .emptyResponse: return "Tried to deserialize response, but no data was found"
             case .invalidURL(let url): return "Provided URL is not valid: \(url)"
+            case .nonHTTPResponse: return "Response was not an HTTP response, aborting."
             case .unknown(let description): return description
         }
     }
@@ -96,6 +102,8 @@ public enum StreemNetworkingError: StreemError, Equatable {
             if case .jsonDeserialization = err { return true }
         case .invalidURL(_):
             if case .invalidURL = err { return true }
+        case .nonHTTPResponse:
+            if case .nonHTTPResponse = err { return true }
         }
         return false
     }
