@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                      = "StreemNetworking"
-  s.version                   = "0.1.0"
+  s.version                   = "1.0.0"
   s.summary                   = "A Networking library for Swift"
   s.homepage                  = "https://github.com/Justalab/StreemNetworking"
   s.license                   = "Apache License, Version 2.0"
