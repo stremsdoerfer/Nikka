@@ -16,7 +16,27 @@
 
 import Foundation
 
-public protocol StreemError: Error, CustomStringConvertible{}
+/**
+ StreemError protocol, all the errors related to StreemNetworking should conform to that protocol
+ */
+public protocol StreemError: Error, CustomStringConvertible{
+    
+    /**
+     Method that will allow us to compare two errors
+    */
+    func isEqual(err:StreemError) -> Bool
+}
+
+/**
+ StreemError extension that compares two StreemError that conforms to Equatable
+ */
+public extension StreemError where Self : Equatable {
+    public func isEqual(err:StreemError) -> Bool{
+        if let err = err as? Self {return self == err}
+        return false
+    }
+}
+
 
 /**
  StreemNetworkingError is the StreemNetworking implementation of Error Type. It provides all the errors that can be thrown by the StreemNetworking Library and a way to compare them
@@ -86,32 +106,25 @@ public enum StreemNetworkingError: StreemError, Equatable {
     }
     
     /**
-     Comparison method that returns a boolean whether or not two errors are matching.
-    */
-    func isEqual(err: StreemNetworkingError)->Bool {
-        switch self {
+     Equatable implementation
+     */
+    public static func ==(lhs: StreemNetworkingError, rhs: StreemNetworkingError)->Bool {
+        switch lhs {
         case .parameterEncoding(_):
-            if case .parameterEncoding = err { return true }
+            if case .parameterEncoding = rhs { return true }
         case .emptyResponse:
-            if case .emptyResponse = err { return true }
+            if case .emptyResponse = rhs { return true }
         case .http(let codeA):
-            if case .http(let codeB) = err { return codeA == codeB}
+            if case .http(let codeB) = rhs { return codeA == codeB}
         case .unknown(_):
-            if case .unknown = err { return true }
+            if case .unknown = rhs { return true }
         case .jsonDeserialization:
-            if case .jsonDeserialization = err { return true }
+            if case .jsonDeserialization = rhs { return true }
         case .invalidURL(_):
-            if case .invalidURL = err { return true }
+            if case .invalidURL = rhs { return true }
         case .nonHTTPResponse:
-            if case .nonHTTPResponse = err { return true }
+            if case .nonHTTPResponse = rhs { return true }
         }
         return false
     }
-}
-
-/**
- Equatable implementation
- */
-public func ==(lhs: StreemNetworkingError, rhs: StreemNetworkingError)->Bool {
-    return lhs.isEqual(err: rhs)
 }

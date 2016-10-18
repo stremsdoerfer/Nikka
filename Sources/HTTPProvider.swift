@@ -28,6 +28,11 @@ public protocol HTTPProvider {
     var baseURL:URL { get }
     
     /**
+     The delegate used by NSURLSession, can be overriden to manage unsupported cases
+     */
+    var delegate:SessionManagerDelegate { get }
+    
+    /**
      The session used by the provider. A default session is provided, but this can be overriden for custom configurations
      */
     var session:URLSession { get }
@@ -35,7 +40,7 @@ public protocol HTTPProvider {
     /**
      Defaults Headers, those headers can be provided when implementing the protocol. They will be added to each request
      */
-    var defaultHeaders:[String:String] { get }
+    var additionalHeaders:[String:String] { get }
     
     /**
      Addional Parameters, those parameters can be provided when implementing the protocol. They will be added to each request
@@ -65,17 +70,23 @@ public protocol HTTPProvider {
  */
 public extension HTTPProvider{
     
+    
+    /**
+     The default delegate uses the default instance of SessionManager
+     */
+    var delegate:SessionManagerDelegate { get { return SessionManager.default } }
+    
     /**
      The default session will occur on the main queue and with its configuration. A default delegate is implemented.
     */
     var session : URLSession {
-        get { return URLSession(configuration: .default, delegate: SessionManager.sharedInstance, delegateQueue: OperationQueue.main)}
+        get { return URLSession(configuration: .default, delegate: delegate, delegateQueue: OperationQueue.main)}
     }
     
     /**
      Default headers should be left empty
      */
-    var defaultHeaders:[String:String]{ get { return [String:String]() } }
+    var additionalHeaders:[String:String]{ get { return [String:String]() } }
     
     /**
      Default params should be left empty
@@ -124,7 +135,7 @@ public extension HTTPProvider{
         
         request.httpMethod = route.method.rawValue
         
-        let headers = defaultHeaders + route.headers
+        let headers = additionalHeaders + route.headers
         headers.forEach({
             request.setValue($1, forHTTPHeaderField: $0)
         })
@@ -132,7 +143,7 @@ public extension HTTPProvider{
         let r = Request(urlRequest: request, provider:self)
         
         let task = session.dataTask(with: request)
-        SessionManager.sharedInstance.requests[task] = r
+        delegate.requests[task] = r
         task.resume()
         
         return r

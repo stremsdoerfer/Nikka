@@ -15,7 +15,7 @@ class TestProvider:HTTPProvider{
 
 class TestHeadersProvider:HTTPProvider{
     var baseURL: URL { get { return URL(string: "https://httpbin.org/")! }}
-    var defaultHeaders: [String : String] = ["TestHeader":"TestHeaderValue"]
+    var additionalHeaders: [String : String] = ["TestHeader":"TestHeaderValue"]
 }
 
 class TestParamsProvider:HTTPProvider{
@@ -44,7 +44,12 @@ class TestProviderDeezer:HTTPProvider{
     }
 }
 
-struct DeezerError : StreemError{
+struct DeezerError : StreemError, Equatable{
+
+    public static func ==(lhs: DeezerError, rhs: DeezerError) -> Bool {
+        return lhs.code == rhs.code
+    }
+
     var domain: String
     var description:String
     var code:Int

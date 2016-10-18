@@ -63,7 +63,7 @@ extension Request {
 /**
  Implementation of StreemError for StreemNetworkingMapper
  */
-public enum StreemNetworkingMapperError: StreemError {
+public enum StreemNetworkingMapperError: StreemError, Equatable {
     
     case deserialization(Any)
     
@@ -72,22 +72,15 @@ public enum StreemNetworkingMapperError: StreemError {
             case .deserialization(let value): return "Could not deserialize object: \(value)"
         }
     }
-    
+
     /**
-     Comparison method that returns a boolean whether or not two errors are matching.
+     Equatable implementation
      */
-    func isEqual(err: StreemNetworkingMapperError)->Bool {
-        switch self {
+    public static func ==(lhs: StreemNetworkingMapperError, rhs: StreemNetworkingMapperError)->Bool {
+        switch lhs {
         case .deserialization(_):
-            if case .deserialization = err { return true }
+            if case .deserialization = rhs { return true }
         }
         return false
     }
-}
-
-/**
- Equatable implementation
- */
-public func ==(lhs: StreemNetworkingMapperError, rhs: StreemNetworkingMapperError)->Bool {
-    return lhs.isEqual(err: rhs)
 }

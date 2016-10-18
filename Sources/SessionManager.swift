@@ -23,24 +23,17 @@ import Foundation
  - oauth?
  */
 
-
-
-
-func +<K, V>(left: [K: V], right: [K: V]?) -> [K: V] {
-    var dict = left
-    if let right = right {
-        for (k, v) in right {
-            dict[k] = v
-        }
-    }
-    return dict
+/**
+ SessionManagerProtocol
+ */
+public protocol SessionManagerDelegate : URLSessionDataDelegate {
+    var requests:[URLSessionTask:Request] { get set}
 }
 
 
-
-class SessionManager:NSObject, URLSessionDataDelegate{
+class SessionManager: NSObject, SessionManagerDelegate{
     
-    static let sharedInstance = SessionManager()
+    static let `default` = SessionManager()
     
     var requests = [URLSessionTask:Request]()
     
@@ -70,3 +63,14 @@ class SessionManager:NSObject, URLSessionDataDelegate{
         request.onComplete(response: task.response, error: error)
     }
 }
+
+func +<K, V>(left: [K: V], right: [K: V]?) -> [K: V] {
+    var dict = left
+    if let right = right {
+        for (k, v) in right {
+            dict[k] = v
+        }
+    }
+    return dict
+}
+

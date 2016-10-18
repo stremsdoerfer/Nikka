@@ -25,8 +25,8 @@
 		EBFCB4841DA9DE18009036BD /* StreemNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBFCB47A1DA9DE18009036BD /* StreemNetworking.framework */; };
 		EBFCB48B1DA9DE18009036BD /* StreemNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = EBFCB47D1DA9DE18009036BD /* StreemNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EBFCB4961DA9DE89009036BD /* RequestBuildingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4941DA9DE87009036BD /* RequestBuildingTests.swift */; };
-		EBFCB49F1DA9DF6D009036BD /* StreemNetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4981DA9DF6D009036BD /* StreemNetworkingError.swift */; };
-		EBFCB4A01DA9DF6D009036BD /* StreemNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4991DA9DF6D009036BD /* StreemNetworking.swift */; };
+		EBFCB49F1DA9DF6D009036BD /* StreemError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4981DA9DF6D009036BD /* StreemError.swift */; };
+		EBFCB4A01DA9DF6D009036BD /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4991DA9DF6D009036BD /* SessionManager.swift */; };
 		EBFCB4A11DA9DF6D009036BD /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB49A1DA9DF6D009036BD /* ParameterEncoding.swift */; };
 		EBFCB4A21DA9DF6D009036BD /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB49B1DA9DF6D009036BD /* Request.swift */; };
 		EBFCB4A31DA9DF6D009036BD /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB49C1DA9DF6D009036BD /* Response.swift */; };
@@ -71,8 +71,8 @@
 		EBFCB4831DA9DE18009036BD /* StreemNetworkingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StreemNetworkingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBFCB48A1DA9DE18009036BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBFCB4941DA9DE87009036BD /* RequestBuildingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestBuildingTests.swift; sourceTree = "<group>"; };
-		EBFCB4981DA9DF6D009036BD /* StreemNetworkingError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreemNetworkingError.swift; sourceTree = "<group>"; };
-		EBFCB4991DA9DF6D009036BD /* StreemNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreemNetworking.swift; sourceTree = "<group>"; };
+		EBFCB4981DA9DF6D009036BD /* StreemError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreemError.swift; sourceTree = "<group>"; };
+		EBFCB4991DA9DF6D009036BD /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		EBFCB49A1DA9DF6D009036BD /* ParameterEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
 		EBFCB49B1DA9DF6D009036BD /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		EBFCB49C1DA9DF6D009036BD /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
@@ -225,8 +225,8 @@
 				EBFCB49C1DA9DF6D009036BD /* Response.swift */,
 				EBFCB49D1DA9DF6D009036BD /* Result.swift */,
 				EBFCB49E1DA9DF6D009036BD /* Route.swift */,
-				EBFCB4991DA9DF6D009036BD /* StreemNetworking.swift */,
-				EBFCB4981DA9DF6D009036BD /* StreemNetworkingError.swift */,
+				EBFCB4991DA9DF6D009036BD /* SessionManager.swift */,
+				EBFCB4981DA9DF6D009036BD /* StreemError.swift */,
 				EBFCB47D1DA9DE18009036BD /* StreemNetworking.h */,
 				EBFCB47E1DA9DE18009036BD /* Info.plist */,
 			);
@@ -457,9 +457,9 @@
 				EBFCB4A21DA9DF6D009036BD /* Request.swift in Sources */,
 				EBFCB4B11DA9EE19009036BD /* StreemMapperNetworking.swift in Sources */,
 				EB1619851DB49D4D00AF11BA /* StreemRxNetworking.swift in Sources */,
-				EBFCB49F1DA9DF6D009036BD /* StreemNetworkingError.swift in Sources */,
+				EBFCB49F1DA9DF6D009036BD /* StreemError.swift in Sources */,
 				EB1619831DB496F900AF11BA /* Future.swift in Sources */,
-				EBFCB4A01DA9DF6D009036BD /* StreemNetworking.swift in Sources */,
+				EBFCB4A01DA9DF6D009036BD /* SessionManager.swift in Sources */,
 				EBFCB4A51DA9DF6D009036BD /* Route.swift in Sources */,
 				EB1619811DB496EC00AF11BA /* StreemFutureNetworking.swift in Sources */,
 				EBFCB4A31DA9DF6D009036BD /* Response.swift in Sources */,

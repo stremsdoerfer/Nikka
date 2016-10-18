@@ -22,10 +22,9 @@ class ProviderTests: XCTestCase {
         let expectation = self.expectation(description: "Request should return 404")
         
         let provider = TestProvider()
-        provider.request(.getError(404)).response { (response:URLResponse?, data:Data, error:Error?) in
+        provider.request(.getError(404)).response { (response:URLResponse?, data:Data, error:StreemError?) in
             expectation.fulfill()
-            let is404 = (error as! StreemNetworkingError) == StreemNetworkingError.http(404)
-            XCTAssertTrue(is404)
+            XCTAssertTrue(error!.isEqual(err: StreemNetworkingError.http(404)))
             XCTAssertNotNil(response)
             XCTAssertEqual(data.count, 0)
         }
