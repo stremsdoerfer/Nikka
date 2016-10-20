@@ -153,8 +153,8 @@ public extension HTTPProvider{
 /**
  This default provider should be used when you don't want to define a common behavior to your request, and simply want to send a request with a given URL
  */
-class DefaultProvider:HTTPProvider{
-    var baseURL: URL
+public class DefaultProvider:HTTPProvider{
+    public var baseURL: URL
     
     init(baseURL:URL){
         self.baseURL = baseURL
@@ -164,7 +164,7 @@ class DefaultProvider:HTTPProvider{
      Static function that allows you to send a request with an empty provider.
      - parameter route: Route object that defines method, parameters, etc. The full URL should be specified in the path of the Route
     */
-    static func request(_ route:Route) -> Request {
+    public static func request(_ route:Route) -> Request {
         let newRoute = Route(path: "", method: route.method, params: route.params, headers: route.headers, encoding: route.encoding)
         if let url = URL(string:route.path) {
             let emptyProvider = DefaultProvider(baseURL: url)

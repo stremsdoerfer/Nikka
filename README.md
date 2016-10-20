@@ -127,7 +127,7 @@ class DeezerProvider:HTTPProvider {
 
 ```
 
-Then in your code you'll get
+Then when sending your request, if deezer returns a HTTP code 200 but with a json error in its body. It will go through the validator and send you back the error.
 
 ```swift
 let myProvider = DeezerProvider()
