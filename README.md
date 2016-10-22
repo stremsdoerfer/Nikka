@@ -57,7 +57,6 @@ extension Route {
 let myProvider = MyProvider()
 
 //This will send a POST request to the endpoint https://my-website.com/api/login with a json body `{"email":"foo@gmail.com","password":"bar"}``
-
 myProvider.request(.login("foo@gmail.com", "bar")).responseJSON { (response:Response<Any>) in
     //Parse here the object as an array or dictionary            
 }
@@ -96,12 +95,10 @@ https://api.deezer.com/track/313555658769 will return:
 You should first define your own error that conforms to the StreemError protocol:
 ```swift
 struct DeezerError : StreemError, Equatable{
-    var domain: String
     var description:String
     var code:Int
 
     init(code:Int, description:String) {
-        self.domain = "com.deezer.Deezer"
         self.code = code
         self.description = description
     }
@@ -112,11 +109,11 @@ struct DeezerError : StreemError, Equatable{
 }
 ```
 
-Then when declaring your provider, you can check the content of the response and send back an error
+Then when declaring your provider, you can implement the `validate` method, that will be called when a response is received
 
 ```swift
 class DeezerProvider:HTTPProvider {
-    var baseURL:URL { return URL(string:"https://api.deezer.com")!}
+    var baseURL = URL(string:"https://api.deezer.com")!
 
     func validate(response: HTTPURLResponse, data: Data, error: Error?) -> StreemError? {
         let jsonError = (try? JSONSerialization.jsonObject(with: data, options: .allowFragments)) as? [String:Any]
@@ -181,7 +178,7 @@ DefaultProvider.request(Route(path:"https://my-website.com/api/user/1")).respons
 ## Route
 
 `Route` is the object that allows you to define an endpoint and how you should talk to it. It requires at least a path that defines where the request is sent.
-GET is the default method used.
+`GET` is the default method used.
 You can pass parameters and headers to be sent with the request. And finally you can define how the parameters should be encoded.
 
 Here are a few examples of valid routes:
@@ -209,16 +206,13 @@ StreemNetworking currently support these JSON libraries:
 - [StreemMapper](https://github.com/JustaLab/mapper) - [documentation](Sources/StreemMapper/README.md)
 - [Unbox](https://github.com/JohnSundell/Unbox) - [documentation](Sources/Unbox/README.md)
 
-Additionally StreemNetworking supports [Futures](https://en.wikipedia.org/wiki/Futures_and_promises) and [RxSwift](https://github.com/ReactiveX/RxSwift) with the following modules:
-- Futures
-- Rx
+Additionally StreemNetworking supports [Futures](https://en.wikipedia.org/wiki/Futures_and_promises) and [RxSwift](https://github.com/ReactiveX/RxSwift) with modules that can be used with CocoaPods by adding this to your PodFile:
 
-
-They can be added to your project independently with CocoaPods as following:
 ```ruby
 pod "StreemNetworking/Futures"
 pod "StreemNetworking/Rx"
 ```
+
 Note that when importing a module, the core and dependencies are automatically imported as well.
 
 
@@ -276,7 +270,7 @@ loginJSONObservable.subscribe(onNext: { json in
 
 ### Contributing
 
-Contributions are more than welcome. Feel free to submit a pull request to add a new feature or support for your favroite JSON library.
+Contributions are more than welcome. Feel free to submit a pull request to add a new feature or to add support for your favorite JSON library.
 
 
 ## License
