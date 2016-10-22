@@ -56,12 +56,12 @@ extension Route {
 //Send a request
 let myProvider = MyProvider()
 
+//This will send a POST request to the endpoint https://my-website.com/api/login with a json body `{"email":"foo@gmail.com","password":"bar"}``
+
 myProvider.request(.login("foo@gmail.com", "bar")).responseJSON { (response:Response<Any>) in
     //Parse here the object as an array or dictionary            
 }
 ```
-
-This will send a POST request to the endpoint https://my-website.com/api/login with a json body `{"email":"foo@gmail.com","password":"bar"}``
 
 ## Provider
 
@@ -210,8 +210,8 @@ StreemNetworking currently support these JSON libraries:
 - [Unbox](https://github.com/JohnSundell/Unbox) - [documentation](Sources/Unbox/README.md)
 
 Additionally StreemNetworking supports [Futures](https://en.wikipedia.org/wiki/Futures_and_promises) and [RxSwift](https://github.com/ReactiveX/RxSwift) with the following modules:
-- [Futures](##futures)
-- [Rx](##RxSwift)
+- Futures
+- Rx
 
 
 They can be added to your project independently with CocoaPods as following:
