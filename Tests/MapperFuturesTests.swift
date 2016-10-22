@@ -8,7 +8,7 @@
 
 import XCTest
 @testable import StreemNetworking
-@testable import Mapper
+@testable import StreemMapper
 
 class MapperFuturesTests: XCTestCase {
     
@@ -82,8 +82,7 @@ class MapperFuturesTests: XCTestCase {
         futureIP.onComplete { (result:Result<TestIP>) in
             expectation.fulfill()
             XCTAssertNil(result.value)
-            let errorPrefix = result.error?.description.hasPrefix("Could not deserialize object: ")
-            XCTAssertTrue(errorPrefix!)
+            XCTAssertTrue((result.error?.isEqual(err:StreemNetworkingError.jsonMapping("")))!)
         }
         waitForExpectations(timeout: timeout, handler: nil)
     }
@@ -106,8 +105,7 @@ class MapperFuturesTests: XCTestCase {
         futureValues.onComplete { (result:Result<[TestValue]>) in
             expectation.fulfill()
             XCTAssertNil(result.value)
-            let errorPrefix = result.error?.description.hasPrefix("Could not deserialize object: ")
-            XCTAssertTrue(errorPrefix!)
+            XCTAssertTrue((result.error?.isEqual(err:StreemNetworkingError.jsonMapping("")))!)
         }
         waitForExpectations(timeout: timeout, handler: nil)
     }
@@ -164,8 +162,7 @@ class MapperFuturesTests: XCTestCase {
         postIP.onComplete { (result:Result<TestResponse>) in
             expectation.fulfill()
             XCTAssertNil(result.value)
-            let errorPrefix = result.error?.description.hasPrefix("Could not deserialize object: ")
-            XCTAssertTrue(errorPrefix!)
+            XCTAssertTrue((result.error?.isEqual(err:StreemNetworkingError.jsonMapping("")))!)
         }
         waitForExpectations(timeout: timeout, handler: nil)
     }
@@ -193,8 +190,7 @@ class MapperFuturesTests: XCTestCase {
         postIP.onComplete { (result:Result<TestResponse>) in
             expectation.fulfill()
             XCTAssertNil(result.value)
-            let errorPrefix = result.error?.description.hasPrefix("Could not deserialize object: ")
-            XCTAssertTrue(errorPrefix!)
+            XCTAssertTrue((result.error?.isEqual(err:StreemNetworkingError.jsonMapping("")))!)
         }
         waitForExpectations(timeout: timeout, handler: nil)
     }

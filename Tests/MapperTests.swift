@@ -8,7 +8,7 @@
 
 import XCTest
 @testable import StreemNetworking
-@testable import Mapper
+@testable import StreemMapper
 
 class MapperTests: XCTestCase {
     
@@ -77,8 +77,7 @@ class MapperTests: XCTestCase {
         provider.request(.ip).responseObject { (response:Response<TestIP>) in
             expectation.fulfill()
             XCTAssertNil(response.result.value)
-            let errorPrefix = response.result.error?.description.hasPrefix("Could not deserialize object: ")
-            XCTAssertTrue(errorPrefix!)
+            XCTAssertTrue((response.result.error?.isEqual(err:StreemNetworkingError.jsonMapping("")))!)
         }
         
         waitForExpectations(timeout: timeout, handler: nil)
@@ -100,8 +99,7 @@ class MapperTests: XCTestCase {
         provider.request(.postJSON(json)).responseArray(rootKey: "json.test") { (response:Response<[TestValue]>) in
             expectation.fulfill()
             XCTAssertNil(response.result.value)
-            let errorPrefix = response.result.error?.description.hasPrefix("Could not deserialize object: ")
-            XCTAssertTrue(errorPrefix!)
+            XCTAssertTrue((response.result.error?.isEqual(err:StreemNetworkingError.jsonMapping("")))!)
         }
         waitForExpectations(timeout: timeout, handler: nil)
     }

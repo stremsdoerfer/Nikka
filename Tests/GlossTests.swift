@@ -39,7 +39,7 @@ class GlossTests: XCTestCase {
             XCTAssertNotEqual(response.result.value?.ip, "")
         }
         
-        waitForExpectations(timeout: timeout, handler: nil)
+        waitForExpectations(timeout: timeout+1, handler: nil)
     }
     
     

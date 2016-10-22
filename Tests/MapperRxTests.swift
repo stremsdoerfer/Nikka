@@ -9,7 +9,7 @@
 import XCTest
 @testable import StreemNetworking
 @testable import RxSwift
-@testable import Mapper
+@testable import StreemMapper
 
 class MapperRxTests: XCTestCase {
     
@@ -81,8 +81,8 @@ class MapperRxTests: XCTestCase {
         
         ipObs.subscribe(onError: { (error) in
             expectation.fulfill()
-            let errorPrefix = (error as! StreemError).description.hasPrefix("Could not deserialize object: ")
-            XCTAssertTrue(errorPrefix)
+            let err = error as! StreemError
+            XCTAssertTrue(err.isEqual(err:StreemNetworkingError.jsonMapping("")))
         }).addDisposableTo(bag)
 
         waitForExpectations(timeout: timeout, handler: nil)
@@ -106,8 +106,8 @@ class MapperRxTests: XCTestCase {
         
         valuesObs.subscribe(onError: { (error) in
             expectation.fulfill()
-            let errorPrefix = (error as! StreemError).description.hasPrefix("Could not deserialize object: ")
-            XCTAssertTrue(errorPrefix)
+            let err = error as! StreemError
+            XCTAssertTrue(err.isEqual(err:StreemNetworkingError.jsonMapping("")))
         }).addDisposableTo(bag)
 
         waitForExpectations(timeout: timeout, handler: nil)
@@ -163,8 +163,8 @@ class MapperRxTests: XCTestCase {
         let postIPObs:Observable<TestResponse> = ipObs.flatMap({provider.request(.postJSON(["origin":$0.ip])).responseObject()})
         postIPObs.subscribe(onError: { (error) in
             expectation.fulfill()
-            let errorPrefix = (error as! StreemError).description.hasPrefix("Could not deserialize object: ")
-            XCTAssertTrue(errorPrefix)
+            let err = error as! StreemError
+            XCTAssertTrue(err.isEqual(err:StreemNetworkingError.jsonMapping("")))
         }).addDisposableTo(bag)
         
         waitForExpectations(timeout: timeout, handler: nil)
@@ -192,8 +192,8 @@ class MapperRxTests: XCTestCase {
         let postIPObs:Observable<TestResponse> = ipObs.flatMap({provider.request(.postJSON(["origin":$0.ip])).responseObject()})
         postIPObs.subscribe(onError: { (error) in
             expectation.fulfill()
-            let errorPrefix = (error as! StreemError).description.hasPrefix("Could not deserialize object: ")
-            XCTAssertTrue(errorPrefix)
+            let err = error as! StreemError
+            XCTAssertTrue(err.isEqual(err:StreemNetworkingError.jsonMapping("")))
         }).addDisposableTo(bag)
         
         waitForExpectations(timeout: timeout, handler: nil)

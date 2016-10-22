@@ -2,7 +2,7 @@ inhibit_all_warnings!
 use_frameworks!
 
 def shared_pods
-    pod 'StreemMapper', :git => 'https://github.com/JustaLab/mapper.git'
+    pod 'StreemMapper'
     pod 'Unbox'
     pod 'Gloss'
     pod 'Unbox'
