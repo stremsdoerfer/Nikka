@@ -6,6 +6,7 @@ def shared_pods
     pod 'Unbox'
     pod 'Gloss'
     pod 'Unbox'
+    pod 'ModelMapper'
     pod 'ObjectMapper'
     pod 'RxSwift', '~> 3.0.0-beta.2'
     pod 'RxCocoa', '~> 3.0.0-beta.2'
