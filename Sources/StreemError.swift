@@ -74,6 +74,11 @@ public enum StreemNetworkingError: StreemError, Equatable {
     case nonHTTPResponse
     
     /**
+     Error thrown when the json mapping could not be done (Usually thrown by JSON Mapping libraries such as Argo or ObjectMapper)
+     */
+    case jsonMapping(Any)
+    
+    /**
      Unkown error has been thrown
     */
     case unknown(String)
@@ -87,6 +92,7 @@ public enum StreemNetworkingError: StreemError, Equatable {
             case .emptyResponse: return "Tried to deserialize response, but no data was found"
             case .invalidURL(let url): return "Provided URL is not valid: \(url)"
             case .nonHTTPResponse: return "Response was not an HTTP response, aborting."
+            case .jsonMapping(let object): return "Could not map json object to object, json:\(object)"
             case .unknown(let description): return description
         }
     }
@@ -124,6 +130,8 @@ public enum StreemNetworkingError: StreemError, Equatable {
             if case .invalidURL = rhs { return true }
         case .nonHTTPResponse:
             if case .nonHTTPResponse = rhs { return true }
+        case .jsonMapping(_):
+            if case .jsonMapping = rhs { return true }
         }
         return false
     }

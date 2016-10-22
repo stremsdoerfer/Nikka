@@ -22,6 +22,12 @@
 		EB1619811DB496EC00AF11BA /* StreemFutureNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1619801DB496EC00AF11BA /* StreemFutureNetworking.swift */; };
 		EB1619831DB496F900AF11BA /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1619821DB496F900AF11BA /* Future.swift */; };
 		EB1619851DB49D4D00AF11BA /* StreemRxNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1619841DB49D4D00AF11BA /* StreemRxNetworking.swift */; };
+		EB20AB711DBB267F00E793A2 /* Request+ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20AB6F1DBB267F00E793A2 /* Request+ObjectMapper.swift */; };
+		EB20AB751DBB2D4C00E793A2 /* ObjectMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20AB741DBB2D4C00E793A2 /* ObjectMapperTests.swift */; };
+		EB20AB7B1DBB39AC00E793A2 /* Request+Gloss.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20AB7A1DBB39AC00E793A2 /* Request+Gloss.swift */; };
+		EB20AB7E1DBB3B8B00E793A2 /* Request+Unbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20AB7D1DBB3B8B00E793A2 /* Request+Unbox.swift */; };
+		EB20AB821DBB3E6D00E793A2 /* UnboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20AB811DBB3E6D00E793A2 /* UnboxTests.swift */; };
+		EB20AB841DBB3E7C00E793A2 /* GlossTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20AB831DBB3E7C00E793A2 /* GlossTests.swift */; };
 		EBFCB4841DA9DE18009036BD /* StreemNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBFCB47A1DA9DE18009036BD /* StreemNetworking.framework */; };
 		EBFCB48B1DA9DE18009036BD /* StreemNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = EBFCB47D1DA9DE18009036BD /* StreemNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EBFCB4961DA9DE89009036BD /* RequestBuildingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4941DA9DE87009036BD /* RequestBuildingTests.swift */; };
@@ -32,7 +38,7 @@
 		EBFCB4A31DA9DF6D009036BD /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB49C1DA9DF6D009036BD /* Response.swift */; };
 		EBFCB4A41DA9DF6D009036BD /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB49D1DA9DF6D009036BD /* Result.swift */; };
 		EBFCB4A51DA9DF6D009036BD /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB49E1DA9DF6D009036BD /* Route.swift */; };
-		EBFCB4B11DA9EE19009036BD /* StreemMapperNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4AD1DA9EE19009036BD /* StreemMapperNetworking.swift */; };
+		EBFCB4B11DA9EE19009036BD /* Request+StreemMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4AD1DA9EE19009036BD /* Request+StreemMapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +71,12 @@
 		EB1619801DB496EC00AF11BA /* StreemFutureNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StreemFutureNetworking.swift; path = Futures/StreemFutureNetworking.swift; sourceTree = "<group>"; };
 		EB1619821DB496F900AF11BA /* Future.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Future.swift; sourceTree = "<group>"; };
 		EB1619841DB49D4D00AF11BA /* StreemRxNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StreemRxNetworking.swift; path = Rx/StreemRxNetworking.swift; sourceTree = "<group>"; };
+		EB20AB6F1DBB267F00E793A2 /* Request+ObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Request+ObjectMapper.swift"; path = "ObjectMapper/Request+ObjectMapper.swift"; sourceTree = "<group>"; };
+		EB20AB741DBB2D4C00E793A2 /* ObjectMapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectMapperTests.swift; sourceTree = "<group>"; };
+		EB20AB7A1DBB39AC00E793A2 /* Request+Gloss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Request+Gloss.swift"; path = "Gloss/Request+Gloss.swift"; sourceTree = "<group>"; };
+		EB20AB7D1DBB3B8B00E793A2 /* Request+Unbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Request+Unbox.swift"; path = "Unbox/Request+Unbox.swift"; sourceTree = "<group>"; };
+		EB20AB811DBB3E6D00E793A2 /* UnboxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnboxTests.swift; sourceTree = "<group>"; };
+		EB20AB831DBB3E7C00E793A2 /* GlossTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlossTests.swift; sourceTree = "<group>"; };
 		EBFCB47A1DA9DE18009036BD /* StreemNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StreemNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBFCB47D1DA9DE18009036BD /* StreemNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StreemNetworking.h; sourceTree = "<group>"; };
 		EBFCB47E1DA9DE18009036BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -78,7 +90,7 @@
 		EBFCB49C1DA9DF6D009036BD /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		EBFCB49D1DA9DF6D009036BD /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		EBFCB49E1DA9DF6D009036BD /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
-		EBFCB4AD1DA9EE19009036BD /* StreemMapperNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreemMapperNetworking.swift; sourceTree = "<group>"; };
+		EBFCB4AD1DA9EE19009036BD /* Request+StreemMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Request+StreemMapper.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +202,40 @@
 			name = Futures;
 			sourceTree = "<group>";
 		};
+		EB20AB721DBB268900E793A2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EB20AB6F1DBB267F00E793A2 /* Request+ObjectMapper.swift */,
+				EB20AB7A1DBB39AC00E793A2 /* Request+Gloss.swift */,
+				EB20AB7D1DBB3B8B00E793A2 /* Request+Unbox.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		EB20AB731DBB2D3800E793A2 /* ObjectMapper */ = {
+			isa = PBXGroup;
+			children = (
+				EB20AB741DBB2D4C00E793A2 /* ObjectMapperTests.swift */,
+			);
+			name = ObjectMapper;
+			sourceTree = "<group>";
+		};
+		EB20AB7F1DBB3E3B00E793A2 /* Gloss */ = {
+			isa = PBXGroup;
+			children = (
+				EB20AB831DBB3E7C00E793A2 /* GlossTests.swift */,
+			);
+			name = Gloss;
+			sourceTree = "<group>";
+		};
+		EB20AB801DBB3E4300E793A2 /* Unbox */ = {
+			isa = PBXGroup;
+			children = (
+				EB20AB811DBB3E6D00E793A2 /* UnboxTests.swift */,
+			);
+			name = Unbox;
+			sourceTree = "<group>";
+		};
 		EBFCB4701DA9DE18009036BD = {
 			isa = PBXGroup;
 			children = (
@@ -213,6 +259,7 @@
 		EBFCB47C1DA9DE18009036BD /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				EB20AB721DBB268900E793A2 /* Extensions */,
 				EB16197D1DB48DCF00AF11BA /* Futures */,
 				EB11F5C21DB2CD5E00D034C2 /* MapperFutures */,
 				EB11F5C51DB2CD5E00D034C2 /* MapperRx */,
@@ -236,6 +283,9 @@
 		EBFCB4871DA9DE18009036BD /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				EB20AB801DBB3E4300E793A2 /* Unbox */,
+				EB20AB7F1DBB3E3B00E793A2 /* Gloss */,
+				EB20AB731DBB2D3800E793A2 /* ObjectMapper */,
 				EB11F5D81DB2F03D00D034C2 /* Core */,
 				EB11F5D91DB2F04700D034C2 /* Mapper */,
 				EB11F5DA1DB2F04D00D034C2 /* MapperRx */,
@@ -248,7 +298,7 @@
 		EBFCB4AC1DA9EE19009036BD /* Mapper */ = {
 			isa = PBXGroup;
 			children = (
-				EBFCB4AD1DA9EE19009036BD /* StreemMapperNetworking.swift */,
+				EBFCB4AD1DA9EE19009036BD /* Request+StreemMapper.swift */,
 			);
 			path = Mapper;
 			sourceTree = "<group>";
@@ -450,18 +500,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB11F5CB1DB2CD7700D034C2 /* HTTPProvider.swift in Sources */,
+				EB20AB7B1DBB39AC00E793A2 /* Request+Gloss.swift in Sources */,
 				EBFCB4A41DA9DF6D009036BD /* Result.swift in Sources */,
 				EBFCB4A11DA9DF6D009036BD /* ParameterEncoding.swift in Sources */,
 				EB11F5C81DB2CD5E00D034C2 /* StreemMapperFutureNetworking.swift in Sources */,
 				EB11F5C91DB2CD5E00D034C2 /* StreemMapperRxNetworking.swift in Sources */,
 				EBFCB4A21DA9DF6D009036BD /* Request.swift in Sources */,
-				EBFCB4B11DA9EE19009036BD /* StreemMapperNetworking.swift in Sources */,
+				EBFCB4B11DA9EE19009036BD /* Request+StreemMapper.swift in Sources */,
 				EB1619851DB49D4D00AF11BA /* StreemRxNetworking.swift in Sources */,
 				EBFCB49F1DA9DF6D009036BD /* StreemError.swift in Sources */,
 				EB1619831DB496F900AF11BA /* Future.swift in Sources */,
 				EBFCB4A01DA9DF6D009036BD /* SessionManager.swift in Sources */,
+				EB20AB711DBB267F00E793A2 /* Request+ObjectMapper.swift in Sources */,
 				EBFCB4A51DA9DF6D009036BD /* Route.swift in Sources */,
 				EB1619811DB496EC00AF11BA /* StreemFutureNetworking.swift in Sources */,
+				EB20AB7E1DBB3B8B00E793A2 /* Request+Unbox.swift in Sources */,
 				EBFCB4A31DA9DF6D009036BD /* Response.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -470,6 +523,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB20AB751DBB2D4C00E793A2 /* ObjectMapperTests.swift in Sources */,
 				EB11F5CE1DB2CE8A00D034C2 /* MockProviders.swift in Sources */,
 				EB11F5E11DB2FFED00D034C2 /* MapperFuturesTests.swift in Sources */,
 				EB11F5D71DB2E56B00D034C2 /* MockRoutes.swift in Sources */,
@@ -477,6 +531,8 @@
 				EB11F5D11DB2DA3900D034C2 /* RequestSendingTests.swift in Sources */,
 				EB11F5D51DB2E18B00D034C2 /* ProviderTests.swift in Sources */,
 				EBFCB4961DA9DE89009036BD /* RequestBuildingTests.swift in Sources */,
+				EB20AB821DBB3E6D00E793A2 /* UnboxTests.swift in Sources */,
+				EB20AB841DBB3E7C00E793A2 /* GlossTests.swift in Sources */,
 				EB11F5DF1DB2FFB700D034C2 /* MapperRxTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -178,3 +178,11 @@ public class DefaultProvider:HTTPProvider{
     }
 }
 
+/**
+ Convenience method that allows us to merge dictionaries
+ */
+func +<K, V>(left: [K: V], right: [K: V]?) -> [K: V] {
+    var dict = left
+    right?.forEach({ dict[$0] = $1 })
+    return dict
+}

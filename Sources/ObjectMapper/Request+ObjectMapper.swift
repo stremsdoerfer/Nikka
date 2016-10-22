@@ -15,7 +15,7 @@
  */
 
 import Foundation
-import Mapper
+import ObjectMapper
 
 extension Request {
     
@@ -29,10 +29,10 @@ extension Request {
     public func responseObject<T: Mappable>(_ completionHandler:@escaping (Response<T>) -> Void) -> Self {
         return responseJSON { (response:Response<Any>) in
             let newResult = response.result.flatMap({ (value) -> Result<T> in
-                if let responseObject:T = T.from(JSON:value) {
+                if let responseObject = Mapper<T>().map(JSONObject: value) {
                     return .success(responseObject)
                 } else {
-                    return .failure(StreemNetworkingMapperError.deserialization(value))
+                    return .failure(StreemNetworkingError.jsonMapping(value))
                 }
             })
             completionHandler(Response(response: response.response, data: response.data, result: newResult))
@@ -46,41 +46,16 @@ extension Request {
      - returns: The request.
      */
     @discardableResult
-    public func responseArray<T: Mappable>(rootKey:String? = nil, _ completionHandler:@escaping (Response<[T]>) -> Void) -> Self {
+    public func responseArray<T: Mappable>(_ completionHandler:@escaping (Response<[T]>) -> Void) -> Self {
         return responseJSON { (response:Response<Any>) in
             let newResult = response.result.flatMap({ (value) -> Result<[T]> in
-                if let responseObject:[T] = [T].from(JSON:value, rootKey: rootKey) {
+                if let responseObject:[T] = Mapper<T>().mapArray(JSONObject: value) {
                     return .success(responseObject)
                 } else {
-                    return .failure(StreemNetworkingMapperError.deserialization(value))
+                    return .failure(StreemNetworkingError.jsonMapping(value))
                 }
             })
             completionHandler(Response(response: response.response, data: response.data, result: newResult))
         }
-    }
-}
-
-/**
- Implementation of StreemError for StreemNetworkingMapper
- */
-public enum StreemNetworkingMapperError: StreemError, Equatable {
-    
-    case deserialization(Any)
-    
-    public var description:String {
-        switch self {
-            case .deserialization(let value): return "Could not deserialize object: \(value)"
-        }
-    }
-
-    /**
-     Equatable implementation
-     */
-    public static func ==(lhs: StreemNetworkingMapperError, rhs: StreemNetworkingMapperError)->Bool {
-        switch lhs {
-        case .deserialization(_):
-            if case .deserialization = rhs { return true }
-        }
-        return false
     }
 }

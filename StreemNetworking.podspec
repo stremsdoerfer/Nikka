@@ -47,4 +47,22 @@ Pod::Spec.new do |s|
     ss.dependency "RxCocoa"
   end
 
+  s.subspec "Gloss" do |ss|
+    ss.source_files = "Sources/Gloss/*.swift"
+    ss.dependency 'StreemNetworking/Core'
+    ss.dependency "Gloss"
+  end
+
+  s.subspec "Unbox" do |ss|
+    ss.source_files = "Sources/Unbox/*.swift"
+    ss.dependency 'StreemNetworking/Core'
+    ss.dependency "Unbox"
+  end
+
+  s.subspec "ObjectMapper" do |ss|
+    ss.source_files = "Sources/ObjectMapper/*.swift"
+    ss.dependency 'StreemNetworking/Core'
+    ss.dependency "ObjectMapper"
+  end
+
 end

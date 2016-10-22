@@ -16,37 +16,26 @@
 
 import Foundation
 
-//TODO features to add
-/*
- - multipart encoding (separate file)
- - basic auth
- - oauth?
- */
-
 /**
- SessionManagerProtocol
+ SessionManagerDelegate, protocol that conforms to URLSessionDataDelegate and that adds a way to store the requests being sent
  */
 public protocol SessionManagerDelegate : URLSessionDataDelegate {
+    
+    /**
+     Dictionary that allows to get a request based on the task generated when the request is sent
+    */
     var requests:[URLSessionTask:Request] { get set}
 }
 
-
+/**
+ Default implementation of SessionManagerDelegate
+ */
 class SessionManager: NSObject, SessionManagerDelegate{
     
     static let `default` = SessionManager()
     
     var requests = [URLSessionTask:Request]()
-    
-//    func URLSession(session: NSURLSession, task: NSURLSessionTask, didSendBodyData bytesSent: Int64, totalBytesSent: Int64, totalBytesExpectedToSend: Int64) {
-//        
-//    }
-//    
-//    func URLSession(session: NSURLSession, task: NSURLSessionTask, didReceiveChallenge challenge: NSURLAuthenticationChallenge, completionHandler: (NSURLSessionAuthChallengeDisposition, NSURLCredential?) -> Void) {
-//        //guard let request = requests[task] else {return}
-//            
-//        
-//    }
-    
+
     func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data) {
         guard let request = requests[dataTask] else {return}
         request.append(data:data)
@@ -62,15 +51,5 @@ class SessionManager: NSObject, SessionManagerDelegate{
         guard let request = requests.removeValue(forKey: task) else {return}
         request.onComplete(response: task.response, error: error)
     }
-}
-
-func +<K, V>(left: [K: V], right: [K: V]?) -> [K: V] {
-    var dict = left
-    if let right = right {
-        for (k, v) in right {
-            dict[k] = v
-        }
-    }
-    return dict
 }
 
