@@ -1,5 +1,5 @@
 # StreemNetworking
-StreemNetworking is a super simpler Swift HTTP networking library that comes with many modules
+StreemNetworking is a super simple Swift HTTP networking library that comes with many modules
 
 - [Installation](#installation)
 - [Usage](#usage)
