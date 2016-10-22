@@ -15,7 +15,7 @@
  */
 
 import Foundation
-import Mapper
+import StreemMapper
 
 extension Request {
     

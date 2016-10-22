@@ -16,7 +16,7 @@
 
 import Foundation
 import RxSwift
-import Mapper
+import StreemMapper
 
 /**
  Request extension that allows you to get Rx observables of Mappable Types

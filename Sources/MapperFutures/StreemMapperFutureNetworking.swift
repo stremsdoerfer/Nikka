@@ -15,7 +15,7 @@
  */
 
 import Foundation
-import Mapper
+import StreemMapper
 
 /**
  Request extension that allows you to get Future of Mappable Types
