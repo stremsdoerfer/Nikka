@@ -197,6 +197,5 @@ class MapperRxTests: XCTestCase {
         }).addDisposableTo(bag)
         
         waitForExpectations(timeout: timeout, handler: nil)
-    }
-    
+    }    
 }

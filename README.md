@@ -210,8 +210,8 @@ StreemNetworking currently support these JSON libraries:
 - [Unbox](https://github.com/JohnSundell/Unbox) - [documentation](Sources/Unbox/README.md)
 
 Additionally StreemNetworking supports [Futures](https://en.wikipedia.org/wiki/Futures_and_promises) and [RxSwift](https://github.com/ReactiveX/RxSwift) with the following modules:
-- [Futures](#futures)
-- [Rx](#RxSwift)
+- [Futures](##futures)
+- [Rx](##RxSwift)
 
 
 They can be added to your project independently with CocoaPods as following:
@@ -224,7 +224,54 @@ Note that when importing a module, the core and dependencies are automatically i
 
 ### Futures
 
+Futures come very handy in modern programming, it allows you to chain your requests neatly. The Futures module allows you to return a future when you send a request.
+
+I would encourage you to use the Future module along with a JSON library mentioned above. It is more powerful. However if for some reason you you like to get a Future with a JSON object or with the data return by the request. You could do the following:
+
+```swift
+//With Data and HTTPURLResponse
+let loginDataFuture:Future<(HTTPURLResponse,Data)> = myProvider.request(.login("foo@gmail.com", "bar")).response()
+loginDataFuture.onComplete { (result:Result<Any>) in
+    switch result{
+    case .success(let json):
+        print("json: \(json)")
+    case .failure(let error):
+        print("error: \(error)")
+    }
+}
+
+//With JSON
+let loginJSONFuture:Future<Any> = myProvider.request(.login("foo@gmail.com", "bar")).responseJSON()
+loginJSONFuture.onComplete { (result:Result<(HTTPURLResponse, Data)>) in
+    expectation.fulfill()
+    switch result{
+    case .success(let response, let data):
+        print("response code was: \(response.statusCode)")
+    case .failure(let error):
+        print("error: \(error)")
+    }
+}
+```
+
 ### RxSwift
+
+Even better, the Rx module. Similarly to the Future module, it will return Rx Observable that can be chained.
+
+I would encourage you to use the Rx module along with a JSON library mentioned above. It is more powerful. However if for some reason you you like to get a Observable with a JSON object or with the data return by the request. You could do the following:
+
+```swift
+//With Data and HTTPURLResponse
+let loginDataObservable:Observable<(HTTPURLResponse,Data)> = myProvider.request(.login("foo@gmail.com", "bar")).response()
+loginDataObservable.subscribe(onNext: { (response:(HTTPURLResponse, Data)) in
+    print("response code was: \(response.0.statusCode)")
+}).addDisposableTo(bag)
+
+//With JSON
+let loginJSONObservable:Observable<Any> = myProvider.request(.login("foo@gmail.com", "bar")).responseJSON()
+loginJSONObservable.subscribe(onNext: { json in
+    print("json is: \(json)")
+}).addDisposableTo(bag)
+```
 
 
 ### Contributing

@@ -38,6 +38,8 @@
 		EB20ABAE1DBBFACB00E793A2 /* Request+UnboxRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20ABAC1DBBFACB00E793A2 /* Request+UnboxRx.swift */; };
 		EB20ABB41DBBFBBB00E793A2 /* Request+GlossFutures.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20ABB11DBBFBBB00E793A2 /* Request+GlossFutures.swift */; };
 		EB20ABB51DBBFBBB00E793A2 /* Request+GlossRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20ABB31DBBFBBB00E793A2 /* Request+GlossRx.swift */; };
+		EB20ABB81DBC014700E793A2 /* RxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20ABB61DBC010B00E793A2 /* RxTests.swift */; };
+		EB20ABBA1DBC044500E793A2 /* FuturesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20ABB91DBC044500E793A2 /* FuturesTests.swift */; };
 		EBFCB4841DA9DE18009036BD /* StreemNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBFCB47A1DA9DE18009036BD /* StreemNetworking.framework */; };
 		EBFCB48B1DA9DE18009036BD /* StreemNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = EBFCB47D1DA9DE18009036BD /* StreemNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EBFCB4961DA9DE89009036BD /* RequestBuildingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4941DA9DE87009036BD /* RequestBuildingTests.swift */; };
@@ -96,6 +98,8 @@
 		EB20ABAC1DBBFACB00E793A2 /* Request+UnboxRx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Request+UnboxRx.swift"; path = "Unbox/Rx/Request+UnboxRx.swift"; sourceTree = "<group>"; };
 		EB20ABB11DBBFBBB00E793A2 /* Request+GlossFutures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Request+GlossFutures.swift"; path = "Futures/Request+GlossFutures.swift"; sourceTree = "<group>"; };
 		EB20ABB31DBBFBBB00E793A2 /* Request+GlossRx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Request+GlossRx.swift"; path = "Rx/Request+GlossRx.swift"; sourceTree = "<group>"; };
+		EB20ABB61DBC010B00E793A2 /* RxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxTests.swift; sourceTree = "<group>"; };
+		EB20ABB91DBC044500E793A2 /* FuturesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FuturesTests.swift; sourceTree = "<group>"; };
 		EBFCB47A1DA9DE18009036BD /* StreemNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StreemNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBFCB47D1DA9DE18009036BD /* StreemNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StreemNetworking.h; sourceTree = "<group>"; };
 		EBFCB47E1DA9DE18009036BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -160,6 +164,8 @@
 				EB11F5D41DB2E18B00D034C2 /* ProviderTests.swift */,
 				EB11F5CC1DB2CE4A00D034C2 /* MockProviders.swift */,
 				EB11F5D61DB2E56B00D034C2 /* MockRoutes.swift */,
+				EB20ABB61DBC010B00E793A2 /* RxTests.swift */,
+				EB20ABB91DBC044500E793A2 /* FuturesTests.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -168,24 +174,10 @@
 			isa = PBXGroup;
 			children = (
 				EB11F5DC1DB2F1F800D034C2 /* MapperTests.swift */,
-			);
-			name = Mapper;
-			sourceTree = "<group>";
-		};
-		EB11F5DA1DB2F04D00D034C2 /* MapperRx */ = {
-			isa = PBXGroup;
-			children = (
 				EB11F5DE1DB2FFB700D034C2 /* MapperRxTests.swift */,
-			);
-			name = MapperRx;
-			sourceTree = "<group>";
-		};
-		EB11F5DB1DB2F05400D034C2 /* MapperFutures */ = {
-			isa = PBXGroup;
-			children = (
 				EB11F5E01DB2FFED00D034C2 /* MapperFuturesTests.swift */,
 			);
-			name = MapperFutures;
+			name = Mapper;
 			sourceTree = "<group>";
 		};
 		EB20AB721DBB268900E793A2 /* Extensions */ = {
@@ -341,8 +333,6 @@
 				EB20AB731DBB2D3800E793A2 /* ObjectMapper */,
 				EB11F5D81DB2F03D00D034C2 /* Core */,
 				EB11F5D91DB2F04700D034C2 /* Mapper */,
-				EB11F5DA1DB2F04D00D034C2 /* MapperRx */,
-				EB11F5DB1DB2F05400D034C2 /* MapperFutures */,
 				EBFCB48A1DA9DE18009036BD /* Info.plist */,
 			);
 			path = Tests;
@@ -578,12 +568,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB20AB751DBB2D4C00E793A2 /* ObjectMapperTests.swift in Sources */,
+				EB20ABB81DBC014700E793A2 /* RxTests.swift in Sources */,
 				EB11F5CE1DB2CE8A00D034C2 /* MockProviders.swift in Sources */,
 				EB11F5E11DB2FFED00D034C2 /* MapperFuturesTests.swift in Sources */,
 				EB11F5D71DB2E56B00D034C2 /* MockRoutes.swift in Sources */,
 				EB11F5DD1DB2F1F800D034C2 /* MapperTests.swift in Sources */,
 				EB11F5D11DB2DA3900D034C2 /* RequestSendingTests.swift in Sources */,
 				EB11F5D51DB2E18B00D034C2 /* ProviderTests.swift in Sources */,
+				EB20ABBA1DBC044500E793A2 /* FuturesTests.swift in Sources */,
 				EBFCB4961DA9DE89009036BD /* RequestBuildingTests.swift in Sources */,
 				EB20AB821DBB3E6D00E793A2 /* UnboxTests.swift in Sources */,
 				EB20AB841DBB3E7C00E793A2 /* GlossTests.swift in Sources */,
