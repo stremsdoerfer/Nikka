@@ -20,20 +20,20 @@ Pod::Spec.new do |s|
     ss.dependency 'StreemNetworking/Core'
   end
 
-  s.subspec "Mapper" do |ss|
-    ss.source_files = "Sources/Mapper/*.swift"
+  s.subspec "StreemMapper" do |ss|
+    ss.source_files = "Sources/StreemMapper/*.swift"
     ss.dependency 'StreemNetworking/Core'
     ss.dependency "StreemMapper"
   end
 
-  s.subspec "MapperFutures" do |ss|
-    ss.source_files = "Sources/MapperFutures/*.swift"
+  s.subspec "StreemMapperFutures" do |ss|
+    ss.source_files = "Sources/StreemMapper/Futures/*.swift"
     ss.dependency 'StreemNetworking/Core'
     ss.dependency "StreemMapper"
   end
 
-  s.subspec "MapperRx" do |ss|
-    ss.source_files = "Sources/MapperRx/*.swift"
+  s.subspec "StreemMapperRx" do |ss|
+    ss.source_files = "Sources/StreemMapper/Rx/*.swift"
     ss.dependency 'StreemNetworking/Core'
     ss.dependency "RxSwift"
     ss.dependency "RxCocoa"
