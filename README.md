@@ -268,7 +268,7 @@ loginJSONObservable.subscribe(onNext: { json in
 ```
 
 
-### Contributing
+## Contributing
 
 Contributions are more than welcome. Feel free to submit a pull request to add a new feature or to add support for your favorite JSON library.
 
