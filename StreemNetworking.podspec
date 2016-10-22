@@ -37,12 +37,14 @@ Pod::Spec.new do |s|
   s.subspec "StreemMapperFutures" do |ss|
     ss.source_files = "Sources/StreemMapper/Futures/*.swift"
     ss.dependency 'StreemNetworking/Core'
+    ss.dependency 'StreemNetworking/StreemMapper'
     ss.dependency "StreemMapper"
   end
 
   s.subspec "StreemMapperRx" do |ss|
     ss.source_files = "Sources/StreemMapper/Rx/*.swift"
     ss.dependency 'StreemNetworking/Core'
+    ss.dependency 'StreemNetworking/StreemMapper'
     ss.dependency "RxSwift"
     ss.dependency "RxCocoa"
     ss.dependency "StreemMapper"
@@ -58,12 +60,14 @@ Pod::Spec.new do |s|
   s.subspec "GlossFutures" do |ss|
     ss.source_files = "Sources/Gloss/Futures/*.swift"
     ss.dependency 'StreemNetworking/Core'
+    ss.dependency 'StreemNetworking/Gloss'
     ss.dependency "Gloss"
   end
 
   s.subspec "GlossRx" do |ss|
     ss.source_files = "Sources/Gloss/Rx/*.swift"
     ss.dependency 'StreemNetworking/Core'
+    ss.dependency 'StreemNetworking/Gloss'
     ss.dependency "RxSwift"
     ss.dependency "RxCocoa"
     ss.dependency "Gloss"
@@ -80,12 +84,14 @@ Pod::Spec.new do |s|
   s.subspec "UnboxFutures" do |ss|
     ss.source_files = "Sources/Unbox/Futures/*.swift"
     ss.dependency 'StreemNetworking/Core'
+    ss.dependency 'StreemNetworking/Unbox'
     ss.dependency "Unbox"
   end
 
   s.subspec "UnboxRx" do |ss|
     ss.source_files = "Sources/Unbox/Rx/*.swift"
     ss.dependency 'StreemNetworking/Core'
+    ss.dependency 'StreemNetworking/Unbox'
     ss.dependency "RxSwift"
     ss.dependency "RxCocoa"
     ss.dependency "Unbox"
@@ -102,12 +108,14 @@ Pod::Spec.new do |s|
   s.subspec "ObjectMapperFutures" do |ss|
     ss.source_files = "Sources/ObjectMapper/Futures/*.swift"
     ss.dependency 'StreemNetworking/Core'
+    ss.dependency 'StreemNetworking/ObjectMapper'
     ss.dependency "ObjectMapper"
   end
 
   s.subspec "ObjectMapperRx" do |ss|
     ss.source_files = "Sources/ObjectMapper/Rx/*.swift"
     ss.dependency 'StreemNetworking/Core'
+    ss.dependency 'StreemNetworking/ObjectMapper'
     ss.dependency "RxSwift"
     ss.dependency "RxCocoa"
     ss.dependency "ObjectMapper"
