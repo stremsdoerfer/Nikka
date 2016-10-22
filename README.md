@@ -21,12 +21,6 @@ use_frameworks!
 pod "StreemNetworking"
 ```
 
-#### With [Carthage](https://github.com/Carthage/Carthage)
-
-```
-github "JustaLab/StreemNetworking"
-```
-
 ## Usage
 
 ### Simple example:
