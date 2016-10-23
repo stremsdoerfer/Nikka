@@ -16,6 +16,7 @@ public struct MultipartForm{
     
     private var dataParameters = [(String, Data, String, String)]()
     
+    public init(){}
     
     public mutating func append(value:String, forKey key:String){
         parameters[key] = value
