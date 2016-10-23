@@ -39,7 +39,7 @@ public struct MultipartForm{
             try data.append("--\(boundary)\r\n".safeData(using: .utf8))
             try data.append("Content-Disposition: form-data; name=\"\(param.0)\"; filename=\"\(param.2)\"\r\n".safeData(using: .utf8))
             try data.append("Content-Type: \(param.3)\r\n\r\n".safeData(using: .utf8))
-            data.append(data)
+            data.append(param.1)
             try data.append("\r\n".safeData(using: .utf8))
         }
         return data
