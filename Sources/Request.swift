@@ -53,9 +53,15 @@ open class Request{
     
     /**
      An instance closure that can be define with the matching function:
-     func progress(_ handler:@escaping (( _ receivedSize:Int, _ expectedSize:Int)->Void))
+     func downloadProgress(_ handler:@escaping (( _ receivedSize:Int, _ expectedSize:Int)->Void))
      */
-    private var onPogress:((_ receivedSize:Int64, _ expectedSize:Int64) -> Void)?
+    private var onDownloadPogress:((_ receivedSize:Int, _ expectedSize:Int) -> Void)?
+    
+    /**
+     An instance closure that can be define with the matching function:
+     func uploadProgress(_ handler:@escaping (( _ bytesSent:Int64, _ totalBytes:Int64)->Void))
+     */
+    private var onUploadProgress:((_ sentBytes:Int64, _ totalBytes:Int64) -> Void)?
     
     /**
      An instance closure that can be define with the matching function:
@@ -87,12 +93,17 @@ open class Request{
         self.buffer.append(data)
         
         if self.expectedContentSize != nil && self.expectedContentSize! > 0 {
-            self.onPogress?(Int64(buffer.count), Int64(expectedContentSize!))
+            self.onDownloadPogress?(buffer.count, expectedContentSize!)
         }
     }
     
+    /**
+     Method that will update the progress of an upload
+     - parameter bytesSent: the total number of bytes already sent
+     - parameter bytesToSend: the total number of bytes to send
+    */
     func setUploadProgress(bytesSent:Int64, bytesToSend:Int64){
-        self.onPogress?(bytesSent, bytesToSend)
+        self.onUploadProgress?(bytesSent, bytesToSend)
     }
     
     /**
@@ -137,8 +148,19 @@ open class Request{
      - returns: itself
     */
     @discardableResult
-    open func progress(_ handler:@escaping (( _ receivedSize:Int64, _ expectedSize:Int64)->Void)) -> Self {
-        self.onPogress = handler
+    open func uploadProgress(_ handler:@escaping (( _ bytesSent:Int64, _ totalBytes:Int64)->Void)) -> Self {
+        self.onUploadProgress = handler
+        return self
+    }
+    
+    /**
+     Method that allows you to track the progress of a request.
+     - parameter handler: A closure that takes the received size and the expected size as parameters
+     - returns: itself
+     */
+    @discardableResult
+    open func downloadProgress(_ handler:@escaping (( _ receivedSize:Int, _ expectedSize:Int)->Void)) -> Self {
+        self.onDownloadPogress = handler
         return self
     }
     

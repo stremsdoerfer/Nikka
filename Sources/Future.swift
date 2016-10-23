@@ -28,9 +28,14 @@ open class Future<T>{
     private var result:Result<T>?
     
     /**
-     Variable to keep the state of the progress in case closure is added after any progress arrived
+     Variable to keep the state of the download progress in case closure is added after any progress arrived
     */
-    private var progress:(Int64,Int64)?
+    private var downloadProgress:(Int,Int)?
+    
+    /**
+     Variable to keep the state of the upload progress in case closure is added after any progress arrived
+     */
+    private var uploadProgress:(Int64,Int64)?
     
     /**
      An instance closure that can be define with the matching function:
@@ -40,9 +45,15 @@ open class Future<T>{
     
     /**
      An instance closure that can be define with the matching function:
-     func onProgress(_ handler:@escaping((_ receivedSize:Int, _ expectedSize:Int) -> Void))
+     func onDownloadProgress(_ handler:@escaping((_ receivedSize:Int, _ expectedSize:Int) -> Void))
      */
-    private var progressHandler:((_ receivedSize:Int64, _ expectedSize:Int64) -> Void)?
+    private var downloadProgressHandler:((_ receivedSize:Int, _ expectedSize:Int) -> Void)?
+    
+    /**
+     An instance closure that can be define with the matching function:
+     func onUploadProgress(_ handler:@escaping((_ bytesSent:Int64, _ totalBytes:Int64) -> Void))
+     */
+    private var uploadProgressHandler:((_ bytesSent:Int64, _ totalBytes:Int64) -> Void)?
  
     
     /**
@@ -55,12 +66,21 @@ open class Future<T>{
     }
     
     /**
-     When called, this method will simply call the progressHandler
+     When called, this method will simply call the downloadProgressHandler
      - parameter (receivedSize, expectedSize): Integers that allow us to define the progress
     */
-    func fill(progress:(receivedSize:Int64,expectedSize:Int64)){
-        self.progress = (progress.receivedSize, progress.expectedSize)
-        progressHandler?(progress.receivedSize, progress.expectedSize)
+    func fill(downloadProgress:(receivedSize:Int,expectedSize:Int)){
+        self.downloadProgress = (downloadProgress.receivedSize, downloadProgress.expectedSize)
+        downloadProgressHandler?(downloadProgress.receivedSize, downloadProgress.expectedSize)
+    }
+    
+    /**
+     When called, this method will simply call the uploadProgressHandler
+     - parameter (receivedSize, expectedSize): Integers that allow us to define the progress
+     */
+    func fill(uploadProgress:(bytesSent:Int64, totalBytes:Int64)){
+        self.uploadProgress = (uploadProgress.bytesSent, uploadProgress.totalBytes)
+        uploadProgressHandler?(uploadProgress.bytesSent, uploadProgress.totalBytes)
     }
     
     /**
@@ -75,12 +95,23 @@ open class Future<T>{
     }
     
     /**
-     Method that defines the progressHandler. If a progress has already been received, the handler will be called right away with the latest progress info.
+     Method that defines the downloadProgressHandler. If a progress has already been received, the handler will be called right away with the latest progress info.
      - parameter handler: The closure that takes (receivedSize, expectedSize) in parameter
     */
-    public func onProgress(_ handler:@escaping((_ receivedSize:Int64, _ expectedSize:Int64) -> Void)) {
-        progressHandler = handler
-        if let p = progress{
+    public func onDownloadProgress(_ handler:@escaping((_ receivedSize:Int, _ expectedSize:Int) -> Void)) {
+        downloadProgressHandler = handler
+        if let p = downloadProgress{
+            handler(p.0, p.1)
+        }
+    }
+    
+    /**
+     Method that defines the uploadProgressHandler. If a progress has already been received, the handler will be called right away with the latest progress info.
+     - parameter handler: The closure that takes (bytesSent, totalBytes) in parameter
+     */
+    public func onUploadProgress(_ handler:@escaping((_ receivedSize:Int64, _ expectedSize:Int64) -> Void)) {
+        uploadProgressHandler = handler
+        if let p = uploadProgress{
             handler(p.0, p.1)
         }
     }
@@ -98,14 +129,18 @@ open class Future<T>{
             case .failure(let err): newFuture.fill(result:.failure(err))
             }
         }
-        self.progressHandler = {(receivedSize, expectedSize) in
-            newFuture.fill(progress: (receivedSize, expectedSize))
+        self.downloadProgressHandler = {(receivedSize, expectedSize) in
+            newFuture.fill(downloadProgress: (receivedSize, expectedSize))
+        }
+        self.uploadProgressHandler = {(bytesSent, totalBytes) in
+            newFuture.fill(uploadProgress: (bytesSent, totalBytes))
         }
         return newFuture
     }
     
     /**
-     Flatmap allows you to chain Futures. Completion handler will be called when both futures are completed. Progress handler will simply be called twice
+     Flatmap allows you to chain Futures. Completion handler will be called when both futures are completed. 
+     Progress handlers will simply be called twice.
      - parameter f: A function that returns a Future
      - returns: A new future
      */
@@ -116,13 +151,17 @@ open class Future<T>{
             case .success(let value):
                 let tmp = f(value)
                 tmp.onComplete(newFuture.fill)
-                tmp.onProgress(newFuture.fill)
+                tmp.onDownloadProgress(newFuture.fill)
+                tmp.onUploadProgress(newFuture.fill)
             case .failure(let error):
                 newFuture.fill(result:.failure(error))
             }
         }
-        self.onProgress { (receivedSize, expectedSize) in
-            newFuture.fill(progress: (receivedSize, expectedSize))
+        self.onDownloadProgress { (receivedSize, expectedSize) in
+            newFuture.fill(downloadProgress: (receivedSize, expectedSize))
+        }
+        self.onUploadProgress { (receivedSize, expectedSize) in
+            newFuture.fill(uploadProgress: (receivedSize, expectedSize))
         }
         return newFuture
     }

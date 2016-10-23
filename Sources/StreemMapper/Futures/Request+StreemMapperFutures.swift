@@ -28,8 +28,10 @@ public extension Request{
      */
     public func responseObject<T: Mappable>() -> Future<T> {
         let future = Future<T>()
-        self.progress({ (receivedSize, expectedSize) in
-            future.fill(progress: (receivedSize, expectedSize))
+        self.downloadProgress({ (receivedSize, expectedSize) in
+            future.fill(downloadProgress: (receivedSize, expectedSize))
+        }).uploadProgress({ (bytesSent, totalBytes) in
+            future.fill(uploadProgress: (bytesSent, totalBytes))
         }).responseObject { (response:Response<T>) in
             future.fill(result:response.result)
         }
@@ -43,8 +45,10 @@ public extension Request{
      */
     public func responseArray<T: Mappable>(rootKey:String? = nil) -> Future<[T]> {
         let future = Future<[T]>()
-        self.progress({ (receivedSize, expectedSize) in
-            future.fill(progress: (receivedSize, expectedSize))
+        self.downloadProgress({ (receivedSize, expectedSize) in
+            future.fill(downloadProgress: (receivedSize, expectedSize))
+        }).uploadProgress({ (bytesSent, totalBytes) in
+            future.fill(uploadProgress: (bytesSent, totalBytes))
         }).responseArray(rootKey:rootKey) { (response:Response<[T]>) in
             future.fill(result:response.result)
         }

@@ -28,8 +28,10 @@ public extension Request {
     public func response() -> Future<(HTTPURLResponse,Data)>{
         let future = Future<(HTTPURLResponse, Data)>()
 
-        self.progress({ (receivedSize, expectedSize) in
-            future.fill(progress: (receivedSize, expectedSize))
+        self.downloadProgress({ (receivedSize, expectedSize) in
+            future.fill(downloadProgress: (receivedSize, expectedSize))
+        }).uploadProgress({ (bytesSent, totalBytes) in
+            future.fill(uploadProgress: (bytesSent, totalBytes))
         }).response { (response:HTTPURLResponse?, data:Data, error:StreemError?) in
             if let response = response {
                 future.fill(result: .success(response,data))
@@ -49,9 +51,11 @@ public extension Request {
      */
     public func responseJSON() -> Future<Any> {
         let future = Future<Any>()
-        self.progress { (receivedSize, expectedSize) in
-            future.fill(progress: (receivedSize, expectedSize))
-        }.responseJSON { (response:Response<Any>) in
+        self.downloadProgress({ (receivedSize, expectedSize) in
+            future.fill(downloadProgress: (receivedSize, expectedSize))
+        }).uploadProgress({ (bytesSent, totalBytes) in
+            future.fill(uploadProgress: (bytesSent, totalBytes))
+        }).responseJSON { (response:Response<Any>) in
             future.fill(result: response.result)
         }
         return future
