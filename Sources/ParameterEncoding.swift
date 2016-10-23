@@ -85,13 +85,22 @@ extension URLRequest{
                 self.url = urlComponents!.url
             }
         case .json:
-            let data = try JSONSerialization.data(withJSONObject: parameters, options: [])
-            self.httpBody = data
-            self.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            do {
+                let data = try JSONSerialization.data(withJSONObject: parameters, options: [])
+                self.httpBody = data
+                self.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            }catch {
+                throw StreemNetworkingError.parameterEncoding(parameters)
+            }
         case .form:
             let paramString = (parameters.map { "\($0)=\($1)" } as [String]).joined(separator: "&")
             self.httpBody = paramString.data(using: String.Encoding.utf8, allowLossyConversion: false)
             self.setValue("application/x-www-form-urlencoded; charset=utf-8", forHTTPHeaderField: "Content-Type")
         }
+    }
+    
+    mutating func encode(form:MultipartForm) throws {
+        self.httpBody = try form.encode()
+        self.setValue("multipart/form-data; boundary=\(form.boundary)", forHTTPHeaderField: "Content-Type")
     }
 }

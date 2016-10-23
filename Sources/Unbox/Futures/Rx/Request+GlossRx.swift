@@ -27,7 +27,7 @@ public extension Request{
      Method that creates an Observable from the response
      - returns: Observable<T> The created observable
      */
-    func responseObject<T: Decodable>() -> Observable<T>{
+    public func responseObject<T: Decodable>() -> Observable<T>{
         return Observable.create{ observer in
             self.responseObject({ (response:Response<T>) in
                 switch response.result{
@@ -47,7 +47,7 @@ public extension Request{
      - parameters rootKey: Optional, keypath of the array in the JSON
      - returns: Observable<[T]> The created observable
      */
-    func responseArray<T: Decodable>() -> Observable<[T]>{
+    public func responseArray<T: Decodable>() -> Observable<[T]>{
         return Observable.create{ observer in
             self.responseArray { (response:Response<[T]>) in
                 switch response.result{

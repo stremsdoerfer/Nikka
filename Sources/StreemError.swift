@@ -49,6 +49,11 @@ public enum StreemNetworkingError: StreemError, Equatable {
     case parameterEncoding(Any)
     
     /**
+     Error thrown when parameter could not be converted into data
+    */
+    case multipartEncoding(Any)
+    
+    /**
      Error thrown when the json deserialization fails. (when JSONSerialization.jsonObject throws)
     */
     case jsonDeserialization
@@ -87,6 +92,7 @@ public enum StreemNetworkingError: StreemError, Equatable {
     public var description:String {
         switch self {
             case .parameterEncoding(let value): return "An error occurred while encoding parameter: \(value)"
+            case .multipartEncoding(let value): return "An error occurred while creating multipart data: \(value)"
             case .jsonDeserialization: return "Could not parse data to JSON."
             case .http(let code): return "HTTP Error occured with code:\(code)"
             case .emptyResponse: return "Tried to deserialize response, but no data was found"
@@ -118,6 +124,8 @@ public enum StreemNetworkingError: StreemError, Equatable {
         switch lhs {
         case .parameterEncoding(_):
             if case .parameterEncoding = rhs { return true }
+        case .multipartEncoding(_):
+            if case .multipartEncoding = rhs { return true }
         case .emptyResponse:
             if case .emptyResponse = rhs { return true }
         case .http(let codeA):

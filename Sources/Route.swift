@@ -47,14 +47,19 @@ public struct Route{
     let encoding:ParameterEncoding
     
     /**
+     */
+    let multipartForm:MultipartForm?
+    
+    /**
      Initializer of the Route, path is the only non optional parameter.
      For instance: Route(path:"/user") will result is a get request without any parameters or headers
     */
-    public init(path:String, method:HTTPMethod = .get, params:[String:Any]? = nil, headers:[String:String]? = nil, encoding:ParameterEncoding? = nil){
+    public init(path:String, method:HTTPMethod = .get, params:[String:Any]? = nil, headers:[String:String]? = nil, encoding:ParameterEncoding? = nil, multipartForm:MultipartForm? = nil){
         self.method = method
         self.path = path
         self.params = params
         self.headers = headers
         self.encoding = encoding ?? ParameterEncoding.defaultEncoding(for:method)
+        self.multipartForm = multipartForm
     }
 }

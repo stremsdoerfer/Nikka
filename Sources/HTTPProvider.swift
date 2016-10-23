@@ -126,10 +126,15 @@ public extension HTTPProvider{
         
         let allParams = additionalParams + route.params
         do {
-            try request.encode(parameters: allParams, encoding: route.encoding)
-        }catch {
+            if let form = route.multipartForm {
+                try request.encode(form: form)
+            }else{
+               try request.encode(parameters: allParams, encoding: route.encoding)
+            }
+        }catch (let error){
+            let streemError = error as? StreemError
             let r = Request(urlRequest: request, provider:self)
-            r.onComplete(response: nil, error: StreemNetworkingError.parameterEncoding(allParams))
+            r.onComplete(response: nil, error: streemError ?? StreemNetworkingError.parameterEncoding(allParams))
             return r
         }
         
