@@ -42,6 +42,8 @@ public struct MultipartForm{
             data.append(param.1)
             try data.append("\r\n".safeData(using: .utf8))
         }
+        try data.append("--\(boundary)--\r\n".safeData(using: .utf8))
+
         return data
     }
 }
