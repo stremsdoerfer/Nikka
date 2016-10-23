@@ -30,7 +30,7 @@ open class Future<T>{
     /**
      Variable to keep the state of the progress in case closure is added after any progress arrived
     */
-    private var progress:(Int,Int)?
+    private var progress:(Int64,Int64)?
     
     /**
      An instance closure that can be define with the matching function:
@@ -42,7 +42,7 @@ open class Future<T>{
      An instance closure that can be define with the matching function:
      func onProgress(_ handler:@escaping((_ receivedSize:Int, _ expectedSize:Int) -> Void))
      */
-    private var progressHandler:((_ receivedSize:Int, _ expectedSize:Int) -> Void)?
+    private var progressHandler:((_ receivedSize:Int64, _ expectedSize:Int64) -> Void)?
  
     
     /**
@@ -58,7 +58,7 @@ open class Future<T>{
      When called, this method will simply call the progressHandler
      - parameter (receivedSize, expectedSize): Integers that allow us to define the progress
     */
-    func fill(progress:(receivedSize:Int,expectedSize:Int)){
+    func fill(progress:(receivedSize:Int64,expectedSize:Int64)){
         self.progress = (progress.receivedSize, progress.expectedSize)
         progressHandler?(progress.receivedSize, progress.expectedSize)
     }
@@ -78,7 +78,7 @@ open class Future<T>{
      Method that defines the progressHandler. If a progress has already been received, the handler will be called right away with the latest progress info.
      - parameter handler: The closure that takes (receivedSize, expectedSize) in parameter
     */
-    public func onProgress(_ handler:@escaping((_ receivedSize:Int, _ expectedSize:Int) -> Void)) {
+    public func onProgress(_ handler:@escaping((_ receivedSize:Int64, _ expectedSize:Int64) -> Void)) {
         progressHandler = handler
         if let p = progress{
             handler(p.0, p.1)

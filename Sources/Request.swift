@@ -55,7 +55,7 @@ open class Request{
      An instance closure that can be define with the matching function:
      func progress(_ handler:@escaping (( _ receivedSize:Int, _ expectedSize:Int)->Void))
      */
-    private var onPogress:((_ receivedSize:Int, _ expectedSize:Int) -> Void)?
+    private var onPogress:((_ receivedSize:Int64, _ expectedSize:Int64) -> Void)?
     
     /**
      An instance closure that can be define with the matching function:
@@ -87,8 +87,12 @@ open class Request{
         self.buffer.append(data)
         
         if self.expectedContentSize != nil && self.expectedContentSize! > 0 {
-            self.onPogress?(buffer.count, expectedContentSize!)
+            self.onPogress?(Int64(buffer.count), Int64(expectedContentSize!))
         }
+    }
+    
+    func setUploadProgress(bytesSent:Int64, bytesToSend:Int64){
+        self.onPogress?(bytesSent, bytesToSend)
     }
     
     /**
@@ -133,7 +137,7 @@ open class Request{
      - returns: itself
     */
     @discardableResult
-    open func progress(_ handler:@escaping (( _ receivedSize:Int, _ expectedSize:Int)->Void)) -> Self {
+    open func progress(_ handler:@escaping (( _ receivedSize:Int64, _ expectedSize:Int64)->Void)) -> Self {
         self.onPogress = handler
         return self
     }

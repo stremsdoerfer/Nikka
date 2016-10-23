@@ -36,6 +36,11 @@ class SessionManager: NSObject, SessionManagerDelegate{
     
     var requests = [URLSessionTask:Request]()
 
+    func urlSession(_ session: URLSession, task: URLSessionTask, didSendBodyData bytesSent: Int64, totalBytesSent: Int64, totalBytesExpectedToSend: Int64) {
+        guard let request = requests[task] else {return}
+        request.setUploadProgress(bytesSent: totalBytesSent, bytesToSend: totalBytesExpectedToSend)
+    }
+    
     func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data) {
         guard let request = requests[dataTask] else {return}
         request.append(data:data)
