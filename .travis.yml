@@ -6,8 +6,5 @@ language: objective-c
 osx_image: xcode8
 xcode_scheme: StreemNetworking
 
-before_install:
-   - pod repo update
-
 script:
 - xcodebuild clean build test -project StreemNetworking.xcodeproj -scheme StreemNetworkingTests
