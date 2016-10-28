@@ -1,4 +1,5 @@
 inhibit_all_warnings!
+source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
 def shared_pods
