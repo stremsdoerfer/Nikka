@@ -1,12 +1,12 @@
 /* This software is licensed under the Apache 2 license, quoted below.
- 
+
  Copyright 2016 Emilien Stremsdoerfer <emstre@gmail.com>
  Licensed under the Apache License, Version 2.0 (the "License"); you may not
  use this file except in compliance with the License. You may obtain a copy of
  the License at
- 
+
  http://www.apache.org/licenses/LICENSE-2.0
- 
+
  Unless required by applicable law or agreed to in writing, software
  distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
@@ -28,27 +28,27 @@ public enum HTTPMethod: String {
  ParameterEncoding is an Enum that defines how the parameters will be encoded in the request
  */
 public enum ParameterEncoding {
-    
+
     /**
-     url encoding will append the parameter in the url as query parameters. 
+     url encoding will append the parameter in the url as query parameters.
      For instance if parameters are ["foo":"bar","test":123] url will look something like https://my-website.com/api/path?foo=bar&test=123
     */
     case url
-    
+
     /**
      json encoding will serialize the parameters in JSON and put them in the body of the request
     */
     case json
-    
+
     /**
      form encoding will url encode the parameters and put them in the body of the request
     */
     case form
-    
+
     /**
      Function that provides the default encoding for every HTTP method
     */
-    static func defaultEncoding(for method:HTTPMethod) -> ParameterEncoding{
+    static func defaultEncoding(for method: HTTPMethod) -> ParameterEncoding {
         switch method {
         case .get, .connect, .head, .options, .patch, .delete, .trace :
             return .url
@@ -58,23 +58,22 @@ public enum ParameterEncoding {
     }
 }
 
-
 /**
  URLRequest extension that allows us to encode the parameters directly in the request
  */
-extension URLRequest{
-    
+extension URLRequest {
+
     /**
      Mutating function that, with a given set of parameters, will take care of building the request
-     It is a mutating function and has side effects, it will modify the headers, the body and the url of the request. 
+     It is a mutating function and has side effects, it will modify the headers, the body and the url of the request.
      Make sure that this function not called after setting one of the above, or they might be overriden.
      - parameter parameters: A dictionary that needs to be encoded
      - parameter encoding: The encoding in which the parameters should be encoded
     */
-    mutating func encode(parameters:[String:Any]?, encoding:ParameterEncoding) throws {
+    mutating func encode(parameters: [String:Any]?, encoding: ParameterEncoding) throws {
         guard let parameters = parameters else {return}
-        
-        switch encoding{
+
+        switch encoding {
         case .url:
             guard let url = self.url else {return}
             var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false)
@@ -89,7 +88,7 @@ extension URLRequest{
                 let data = try JSONSerialization.data(withJSONObject: parameters, options: [])
                 self.httpBody = data
                 self.setValue("application/json", forHTTPHeaderField: "Content-Type")
-            }catch {
+            } catch {
                 throw StreemNetworkingError.parameterEncoding(parameters)
             }
         case .form:
@@ -98,8 +97,8 @@ extension URLRequest{
             self.setValue("application/x-www-form-urlencoded; charset=utf-8", forHTTPHeaderField: "Content-Type")
         }
     }
-    
-    mutating func encode(form:MultipartForm) throws {
+
+    mutating func encode(form: MultipartForm) throws {
         self.httpBody = try form.encode()
         self.setValue("multipart/form-data; boundary=\(form.boundary)", forHTTPHeaderField: "Content-Type")
     }

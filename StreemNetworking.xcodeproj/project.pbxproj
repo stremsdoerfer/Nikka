@@ -365,6 +365,7 @@
 				EBFCB4771DA9DE18009036BD /* Headers */,
 				EBFCB4781DA9DE18009036BD /* Resources */,
 				C7F4A6D84F393560C90F2B4B /* [CP] Copy Pods Resources */,
+				EBE34F1A1DC2FAF10057FDD9 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -529,6 +530,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StreemNetworkingTests/Pods-StreemNetworkingTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		EBE34F1A1DC2FAF10057FDD9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 

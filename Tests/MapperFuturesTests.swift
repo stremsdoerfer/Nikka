@@ -11,27 +11,27 @@ import XCTest
 @testable import StreemMapper
 
 class MapperFuturesTests: XCTestCase {
-    
+
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
-    
-    func testFutureObject(){
-        struct TestIP:Mappable{
-            let ip:String
-            
+
+    func testFutureObject() {
+        struct TestIP: Mappable {
+            let ip: String
+
             init(map: Mapper) throws {
                 try ip = map |> "origin"
             }
         }
-        
+
         let expectation = self.expectation(description: "GET request should succeed")
-        
+
         let provider = TestProvider()
-        let futureIP:Future<TestIP> = provider.request(.ip).responseObject()
-        
-        futureIP.onComplete { (result:Result<TestIP>) in
+        let futureIP: Future<TestIP> = provider.request(.ip).responseObject()
+
+        futureIP.onComplete { (result: Result<TestIP>) in
             expectation.fulfill()
             XCTAssertNil(result.error)
             XCTAssertNotNil(result.value)
@@ -39,23 +39,23 @@ class MapperFuturesTests: XCTestCase {
         }
         waitForExpectations(timeout: timeout, handler: nil)
     }
-    
-    func testDeserializeArray(){
-        struct TestValue:Mappable{
-            let value:Int
-            
+
+    func testDeserializeArray() {
+        struct TestValue: Mappable {
+            let value: Int
+
             init(map: Mapper) throws {
                 try value = map |> "value"
             }
         }
-        
+
         let expectation = self.expectation(description: "GET request should succeed")
-        
+
         let provider = TestProvider()
-        let json = ["test":[["value":1],["value":2],["value":3]]]
-        let futureValues:Future<[TestValue]> = provider.request(.postJSON(json)).responseArray(rootKey:"json.test")
-        
-        futureValues.onComplete { (result:Result<[TestValue]>) in
+        let json = ["test":[["value":1], ["value":2], ["value":3]]]
+        let futureValues: Future<[TestValue]> = provider.request(.postJSON(json)).responseArray(rootKey:"json.test")
+
+        futureValues.onComplete { (result: Result<[TestValue]>) in
             expectation.fulfill()
             XCTAssertNil(result.error)
             XCTAssertNotNil(result.value)
@@ -64,73 +64,73 @@ class MapperFuturesTests: XCTestCase {
         }
         waitForExpectations(timeout: timeout, handler: nil)
     }
-    
-    func testFutureObjectError(){
-        struct TestIP:Mappable{
-            let ip:String
-            
+
+    func testFutureObjectError() {
+        struct TestIP: Mappable {
+            let ip: String
+
             init(map: Mapper) throws {
                 try ip = map |> "blah"
             }
         }
-        
+
         let expectation = self.expectation(description: "GET request should succeed")
-        
+
         let provider = TestProvider()
-        let futureIP:Future<TestIP> = provider.request(.ip).responseObject()
-        
-        futureIP.onComplete { (result:Result<TestIP>) in
+        let futureIP: Future<TestIP> = provider.request(.ip).responseObject()
+
+        futureIP.onComplete { (result: Result<TestIP>) in
             expectation.fulfill()
             XCTAssertNil(result.value)
             XCTAssertTrue((result.error?.isEqual(err:StreemNetworkingError.jsonMapping("")))!)
         }
         waitForExpectations(timeout: timeout, handler: nil)
     }
-    
-    func testDeserializeArrayError(){
-        struct TestValue:Mappable{
-            let value:Int
-            
+
+    func testDeserializeArrayError() {
+        struct TestValue: Mappable {
+            let value: Int
+
             init(map: Mapper) throws {
                 try value = map |> "value"
             }
         }
-        
+
         let expectation = self.expectation(description: "GET request should succeed")
-        
+
         let provider = TestProvider()
-        let json = ["test":[["value":1],["value":2],["value":3]]]
-        let futureValues:Future<[TestValue]> = provider.request(.postJSON(json)).responseArray(rootKey:"blah")
-        
-        futureValues.onComplete { (result:Result<[TestValue]>) in
+        let json = ["test":[["value":1], ["value":2], ["value":3]]]
+        let futureValues: Future<[TestValue]> = provider.request(.postJSON(json)).responseArray(rootKey:"blah")
+
+        futureValues.onComplete { (result: Result<[TestValue]>) in
             expectation.fulfill()
             XCTAssertNil(result.value)
             XCTAssertTrue((result.error?.isEqual(err:StreemNetworkingError.jsonMapping("")))!)
         }
         waitForExpectations(timeout: timeout, handler: nil)
     }
-    
-    func testChainingFutures(){
-        struct TestIP:Mappable{
-            let ip:String
+
+    func testChainingFutures() {
+        struct TestIP: Mappable {
+            let ip: String
             init(map: Mapper) throws {
                 try ip = map |> "origin"
             }
         }
-        
-        struct TestResponse:Mappable{
-            let ip:String
+
+        struct TestResponse: Mappable {
+            let ip: String
             init(map: Mapper) throws {
                 try ip = map |> "json.origin"
             }
         }
-        
+
         let expectation = self.expectation(description: "Chaining request should succeed")
 
         let provider = TestProvider()
-        let futureIP:Future<TestIP> = provider.request(.ip).responseObject()
-        let postIP:Future<TestResponse> = futureIP.flatMap({provider.request(.postJSON(["origin":$0.ip])).responseObject()})
-        postIP.onComplete { (result:Result<TestResponse>) in
+        let futureIP: Future<TestIP> = provider.request(.ip).responseObject()
+        let postIP: Future<TestResponse> = futureIP.flatMap({provider.request(.postJSON(["origin":$0.ip])).responseObject()})
+        postIP.onComplete { (result: Result<TestResponse>) in
             expectation.fulfill()
             XCTAssertNil(result.error)
             XCTAssertNotNil(result.value)
@@ -138,56 +138,56 @@ class MapperFuturesTests: XCTestCase {
         }
         waitForExpectations(timeout: timeout, handler: nil)
     }
-    
-    func testChainingFuturesError1(){
-        struct TestIP:Mappable{
-            let ip:String
+
+    func testChainingFuturesError1() {
+        struct TestIP: Mappable {
+            let ip: String
             init(map: Mapper) throws {
                 try ip = map |> "blah"
             }
         }
-        
-        struct TestResponse:Mappable{
-            let ip:String
+
+        struct TestResponse: Mappable {
+            let ip: String
             init(map: Mapper) throws {
                 try ip = map |> "json.origin"
             }
         }
-        
+
         let expectation = self.expectation(description: "Chaining request should fail")
-        
+
         let provider = TestProvider()
-        let futureIP:Future<TestIP> = provider.request(.ip).responseObject()
-        let postIP:Future<TestResponse> = futureIP.flatMap({provider.request(.postJSON(["origin":$0.ip])).responseObject()})
-        postIP.onComplete { (result:Result<TestResponse>) in
+        let futureIP: Future<TestIP> = provider.request(.ip).responseObject()
+        let postIP: Future<TestResponse> = futureIP.flatMap({provider.request(.postJSON(["origin":$0.ip])).responseObject()})
+        postIP.onComplete { (result: Result<TestResponse>) in
             expectation.fulfill()
             XCTAssertNil(result.value)
             XCTAssertTrue((result.error?.isEqual(err:StreemNetworkingError.jsonMapping("")))!)
         }
         waitForExpectations(timeout: timeout, handler: nil)
     }
-    
-    func testChainingFuturesError2(){
-        struct TestIP:Mappable{
-            let ip:String
+
+    func testChainingFuturesError2() {
+        struct TestIP: Mappable {
+            let ip: String
             init(map: Mapper) throws {
                 try ip = map |> "origin"
             }
         }
-        
-        struct TestResponse:Mappable{
-            let ip:String
+
+        struct TestResponse: Mappable {
+            let ip: String
             init(map: Mapper) throws {
                 try ip = map |> "json.origin.test"
             }
         }
-        
+
         let expectation = self.expectation(description: "Chaining request should fail")
-        
+
         let provider = TestProvider()
-        let futureIP:Future<TestIP> = provider.request(.ip).responseObject()
-        let postIP:Future<TestResponse> = futureIP.flatMap({provider.request(.postJSON(["origin":$0.ip])).responseObject()})
-        postIP.onComplete { (result:Result<TestResponse>) in
+        let futureIP: Future<TestIP> = provider.request(.ip).responseObject()
+        let postIP: Future<TestResponse> = futureIP.flatMap({provider.request(.postJSON(["origin":$0.ip])).responseObject()})
+        postIP.onComplete { (result: Result<TestResponse>) in
             expectation.fulfill()
             XCTAssertNil(result.value)
             XCTAssertTrue((result.error?.isEqual(err:StreemNetworkingError.jsonMapping("")))!)

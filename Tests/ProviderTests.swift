@@ -10,19 +10,19 @@ import XCTest
 @testable import StreemNetworking
 
 class ProviderTests: XCTestCase {
-        
+
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
-    
-    //MARK:- Basic response
-    
-    func testDefault404Error(){
+
+    // MARK: - Basic response
+
+    func testDefault404Error() {
         let expectation = self.expectation(description: "Request should return 404")
-        
+
         let provider = TestProvider()
-        provider.request(.getError(404)).response { (response:URLResponse?, data:Data, error:StreemError?) in
+        provider.request(.getError(404)).response { (response: URLResponse?, data: Data, error: StreemError?) in
             expectation.fulfill()
             XCTAssertTrue(error!.isEqual(err: StreemNetworkingError.http(404)))
             XCTAssertNotNil(response)
@@ -30,15 +30,15 @@ class ProviderTests: XCTestCase {
         }
         waitForExpectations(timeout: timeout, handler: nil)
     }
-    
-    func testDefault401Error(){
+
+    func testDefault401Error() {
         let expectation = self.expectation(description: "Request should return 401")
-        
+
         let provider = TestProvider()
-        provider.request(.getError(401)).response { (response:URLResponse?, data:Data, error:Error?) in
+        provider.request(.getError(401)).response { (response: URLResponse?, data: Data, error: Error?) in
             expectation.fulfill()
-            let is401 = (error as! StreemNetworkingError) == StreemNetworkingError.http(401)
-            let is404 = (error as! StreemNetworkingError) == StreemNetworkingError.http(404)
+            let is401 = (error as? StreemNetworkingError) == StreemNetworkingError.http(401)
+            let is404 = (error as? StreemNetworkingError) == StreemNetworkingError.http(404)
             XCTAssertTrue(is401)
             XCTAssertFalse(is404)
             XCTAssertNotNil(response)
@@ -46,12 +46,12 @@ class ProviderTests: XCTestCase {
         }
         waitForExpectations(timeout: timeout, handler: nil)
     }
-    
-    func testNoHTTPError(){
+
+    func testNoHTTPError() {
         let expectation = self.expectation(description: "Request should return no error")
-        
+
         let provider = TestProviderValidateAllHTTPCode()
-        provider.request(.getError(401)).response { (response:URLResponse?, data:Data, error:Error?) in
+        provider.request(.getError(401)).response { (response: URLResponse?, data: Data, error: Error?) in
             expectation.fulfill()
             XCTAssertNil(error)
             XCTAssertNotNil(response)
@@ -59,26 +59,26 @@ class ProviderTests: XCTestCase {
         }
         waitForExpectations(timeout: timeout, handler: nil)
     }
-    
-    func testDeezerError(){
+
+    func testDeezerError() {
         let expectation = self.expectation(description: "Request should return an error")
-        
+
         let provider = TestProviderDeezer()
-        provider.request(.track(98675843679)).response { (response:URLResponse?, data:Data, error:Error?) in
+        provider.request(.track(98675843679)).response { (response: URLResponse?, data: Data, error: Error?) in
             expectation.fulfill()
-            let error = error as! DeezerError
-            XCTAssertEqual(error.code, 800)
+            let error = error as? DeezerError
+            XCTAssertEqual(error!.code, 800)
             XCTAssertNotNil(response)
             XCTAssertGreaterThan(data.count, 0)
         }
         waitForExpectations(timeout: timeout, handler: nil)
     }
-    
-    func testDeezerNoError(){
+
+    func testDeezerNoError() {
         let expectation = self.expectation(description: "Request should return no error")
-        
+
         let provider = TestProviderDeezer()
-        provider.request(.track(3135556)).response { (response:URLResponse?, data:Data, error:Error?) in
+        provider.request(.track(3135556)).response { (response: URLResponse?, data: Data, error: Error?) in
             expectation.fulfill()
             XCTAssertNil(error)
             XCTAssertNotNil(response)
@@ -86,32 +86,31 @@ class ProviderTests: XCTestCase {
         }
         waitForExpectations(timeout: timeout, handler: nil)
     }
-    
-    
-    //MARK:- JSON Response
-    
-    func testJSON404Error(){
+
+    // MARK: - JSON Response
+
+    func testJSON404Error() {
         let expectation = self.expectation(description: "Request should return 404")
-        
+
         let provider = TestProvider()
-        provider.request(.getError(404)).responseJSON { (response:Response<Any>) in
+        provider.request(.getError(404)).responseJSON { (response: Response<Any>) in
             expectation.fulfill()
-            let is404 = (response.result.error as! StreemNetworkingError) == StreemNetworkingError.http(404)
+            let is404 = (response.result.error as? StreemNetworkingError) == StreemNetworkingError.http(404)
             XCTAssertTrue(is404)
             XCTAssertNil(response.result.value)
             XCTAssertEqual(response.data.count, 0)
         }
         waitForExpectations(timeout: timeout, handler: nil)
     }
-    
-    func testJSON401Error(){
+
+    func testJSON401Error() {
         let expectation = self.expectation(description: "Request should return 401")
-        
+
         let provider = TestProvider()
-        provider.request(.getError(401)).responseJSON { (response:Response<Any>) in
+        provider.request(.getError(401)).responseJSON { (response: Response<Any>) in
             expectation.fulfill()
-            let is401 = (response.result.error as! StreemNetworkingError) == StreemNetworkingError.http(401)
-            let is404 = (response.result.error as! StreemNetworkingError) == StreemNetworkingError.http(404)
+            let is401 = (response.result.error as? StreemNetworkingError) == StreemNetworkingError.http(401)
+            let is404 = (response.result.error as? StreemNetworkingError) == StreemNetworkingError.http(404)
             XCTAssertTrue(is401)
             XCTAssertFalse(is404)
             XCTAssertNil(response.result.value)
@@ -119,40 +118,40 @@ class ProviderTests: XCTestCase {
         }
         waitForExpectations(timeout: timeout, handler: nil)
     }
-    
-    func testJSONNoHTTPError(){
+
+    func testJSONNoHTTPError() {
         let expectation = self.expectation(description: "Request should return an error emptyResponse")
-        
+
         let provider = TestProviderValidateAllHTTPCode()
-        provider.request(.getError(401)).responseJSON { (response:Response<Any>) in
+        provider.request(.getError(401)).responseJSON { (response: Response<Any>) in
             expectation.fulfill()
-            let isEmpty = (response.result.error as! StreemNetworkingError) == StreemNetworkingError.emptyResponse
+            let isEmpty = (response.result.error as? StreemNetworkingError) == StreemNetworkingError.emptyResponse
             XCTAssertTrue(isEmpty)
             XCTAssertNil(response.result.value)
             XCTAssertEqual(response.data.count, 0)
         }
         waitForExpectations(timeout: timeout, handler: nil)
     }
-    
-    func testJSONDeezerError(){
+
+    func testJSONDeezerError() {
         let expectation = self.expectation(description: "Request should return an error")
-        
+
         let provider = TestProviderDeezer()
-        provider.request(.track(98675843679)).responseJSON { (response:Response<Any>) in
+        provider.request(.track(98675843679)).responseJSON { (response: Response<Any>) in
             expectation.fulfill()
-            let error = response.result.error as! DeezerError
-            XCTAssertEqual(error.code, 800)
+            let error = response.result.error as? DeezerError
+            XCTAssertEqual(error!.code, 800)
             XCTAssertNil(response.result.value)
             XCTAssertGreaterThan(response.data.count, 0)
         }
         waitForExpectations(timeout: timeout, handler: nil)
     }
-    
-    func testJSONDeezerNoError(){
+
+    func testJSONDeezerNoError() {
         let expectation = self.expectation(description: "Request should return no error")
-        
+
         let provider = TestProviderDeezer()
-        provider.request(.track(3135556)).responseJSON { (response:Response<Any>) in
+        provider.request(.track(3135556)).responseJSON { (response: Response<Any>) in
             expectation.fulfill()
             XCTAssertNil(response.result.error)
             XCTAssertNotNil(response.result.value)
@@ -160,29 +159,29 @@ class ProviderTests: XCTestCase {
         }
         waitForExpectations(timeout: timeout, handler: nil)
     }
-    
-    func testDefaultProfider(){
+
+    func testDefaultProfider() {
         let expectation = self.expectation(description: "Request should succeed")
-        
-        DefaultProvider.request(Route(path:"https://httpbin.org/ip")).responseJSON { (response:Response<Any>) in
+
+        DefaultProvider.request(Route(path:"https://httpbin.org/ip")).responseJSON { (response: Response<Any>) in
             expectation.fulfill()
             XCTAssertNil(response.result.error)
             XCTAssertNotNil(response.result.value)
             XCTAssertGreaterThan(response.data.count, 0)
         }
-        
+
         waitForExpectations(timeout: timeout, handler: nil)
     }
-    
-    func testDefaultProfiderError(){
+
+    func testDefaultProfiderError() {
         let expectation = self.expectation(description: "Request should return error")
-        
-        DefaultProvider.request(Route(path:"/ip")).responseJSON { (response:Response<Any>) in
+
+        DefaultProvider.request(Route(path:"/ip")).responseJSON { (response: Response<Any>) in
             expectation.fulfill()
             XCTAssertNil(response.result.value)
-            XCTAssertEqual((response.result.error as! StreemNetworkingError), StreemNetworkingError.unknown("unsupported URL"))
+            XCTAssertEqual((response.result.error as? StreemNetworkingError), StreemNetworkingError.unknown("unsupported URL"))
         }
-        
+
         waitForExpectations(timeout: timeout, handler: nil)
     }
 }

@@ -1,0 +1,10 @@
+branches:
+ only:
+ - master
+
+language: objective-c
+osx_image: xcode8
+xcode_scheme: StreemNetworking
+
+script:
+- xcodebuild clean build test -project StreemNetworking.xcodeproj -scheme StreemNetworkingTests

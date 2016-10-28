@@ -11,25 +11,25 @@ import XCTest
 @testable import StreemMapper
 
 class MapperTests: XCTestCase {
-    
+
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
-    
-    func testDeserializeObject(){
-        struct TestIP:Mappable{
-            let ip:String
-            
+
+    func testDeserializeObject() {
+        struct TestIP: Mappable {
+            let ip: String
+
             init(map: Mapper) throws {
                 try ip = map |> "origin"
             }
         }
-        
+
         let expectation = self.expectation(description: "GET request should succeed")
 
         let provider = TestProvider()
-        provider.request(.ip).responseObject { (response:Response<TestIP>) in
+        provider.request(.ip).responseObject { (response: Response<TestIP>) in
             expectation.fulfill()
             XCTAssertNil(response.result.error)
             XCTAssertNotNil(response.result.value)
@@ -38,21 +38,21 @@ class MapperTests: XCTestCase {
 
         waitForExpectations(timeout: timeout, handler: nil)
     }
-    
-    func testDeserializeArray(){
-        struct TestValue:Mappable{
-            let value:Int
-            
+
+    func testDeserializeArray() {
+        struct TestValue: Mappable {
+            let value: Int
+
             init(map: Mapper) throws {
                 try value = map |> "value"
             }
         }
-        
+
         let expectation = self.expectation(description: "GET request should succeed")
-        
+
         let provider = TestProvider()
-        let json = ["test":[["value":1],["value":2],["value":3]]]
-        provider.request(.postJSON(json)).responseArray(rootKey: "json.test") { (response:Response<[TestValue]>) in
+        let json = ["test":[["value":1], ["value":2], ["value":3]]]
+        provider.request(.postJSON(json)).responseArray(rootKey: "json.test") { (response: Response<[TestValue]>) in
             expectation.fulfill()
             XCTAssertNil(response.result.error)
             XCTAssertNotNil(response.result.value)
@@ -61,42 +61,42 @@ class MapperTests: XCTestCase {
         }
         waitForExpectations(timeout: timeout, handler: nil)
     }
-    
-    func testDeserializeObjectError(){
-        struct TestIP:Mappable{
-            let ip:String
-            
+
+    func testDeserializeObjectError() {
+        struct TestIP: Mappable {
+            let ip: String
+
             init(map: Mapper) throws {
                 try ip = map |> "blah"
             }
         }
-        
+
         let expectation = self.expectation(description: "GET request should succeed")
-        
+
         let provider = TestProvider()
-        provider.request(.ip).responseObject { (response:Response<TestIP>) in
+        provider.request(.ip).responseObject { (response: Response<TestIP>) in
             expectation.fulfill()
             XCTAssertNil(response.result.value)
             XCTAssertTrue((response.result.error?.isEqual(err:StreemNetworkingError.jsonMapping("")))!)
         }
-        
+
         waitForExpectations(timeout: timeout, handler: nil)
     }
-    
-    func testDeserializeArrayError(){
-        struct TestValue:Mappable{
-            let value:Int
-            
+
+    func testDeserializeArrayError() {
+        struct TestValue: Mappable {
+            let value: Int
+
             init(map: Mapper) throws {
                 try value = map |> "value"
             }
         }
-        
+
         let expectation = self.expectation(description: "GET request should succeed")
-        
+
         let provider = TestProvider()
-        let json = ["blah":[["value":1],["value":2],["value":3]]]
-        provider.request(.postJSON(json)).responseArray(rootKey: "json.test") { (response:Response<[TestValue]>) in
+        let json = ["blah":[["value":1], ["value":2], ["value":3]]]
+        provider.request(.postJSON(json)).responseArray(rootKey: "json.test") { (response: Response<[TestValue]>) in
             expectation.fulfill()
             XCTAssertNil(response.result.value)
             XCTAssertTrue((response.result.error?.isEqual(err:StreemNetworkingError.jsonMapping("")))!)
