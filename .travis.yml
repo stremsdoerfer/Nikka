@@ -7,7 +7,7 @@ osx_image: xcode8
 xcode_scheme: StreemNetworking
 
 before_install:
-- gem install cocoapods --pre --no-rdoc --no-ri --no-document --quiet
+- gem install cocoapods -v 1.1.1 --pre --no-rdoc --no-ri --no-document --quiet
 
 script:
 - xcodebuild clean build test -project StreemNetworking.xcodeproj -scheme StreemNetworking
