@@ -6,5 +6,8 @@ language: objective-c
 osx_image: xcode8
 xcode_scheme: StreemNetworking
 
+before_install:
+   - gem install cocoapods -v '1.1.0.rc.3' --pre --no-rdoc --no-ri --no-document --quiet
+
 script:
 - xcodebuild clean build test -project StreemNetworking.xcodeproj -scheme StreemNetworkingTests
