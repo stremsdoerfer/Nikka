@@ -2,7 +2,7 @@ inhibit_all_warnings!
 use_frameworks!
 
 def shared_pods
-    pod 'StreemMapper'
+    pod 'StreemMapper', '~> 6.1.0'
     pod 'Unbox'
     pod 'Gloss'
     pod 'Unbox'

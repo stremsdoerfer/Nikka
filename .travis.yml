@@ -10,4 +10,4 @@ before_install:
 - gem install cocoapods --pre --no-rdoc --no-ri --no-document --quiet
 
 script:
-- xcodebuild clean build test -project StreemNetworking.xcodeproj -scheme StreemNetworkingTests
+- xcodebuild clean build test -project StreemNetworking.xcodeproj -scheme StreemNetworking
