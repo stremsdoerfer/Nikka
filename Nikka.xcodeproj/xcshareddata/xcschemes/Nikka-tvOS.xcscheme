@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EB120B111DC4754200D3D3E3"
-               BuildableName = "NikkaTvOS.framework"
+               BuildableName = "Nikka.framework"
                BlueprintName = "NikkaTvOS"
                ReferencedContainer = "container:Nikka.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EB120B111DC4754200D3D3E3"
-            BuildableName = "NikkaTvOS.framework"
+            BuildableName = "Nikka.framework"
             BlueprintName = "NikkaTvOS"
             ReferencedContainer = "container:Nikka.xcodeproj">
          </BuildableReference>
@@ -65,7 +65,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EB120B111DC4754200D3D3E3"
-            BuildableName = "NikkaTvOS.framework"
+            BuildableName = "Nikka.framework"
             BlueprintName = "NikkaTvOS"
             ReferencedContainer = "container:Nikka.xcodeproj">
          </BuildableReference>
@@ -83,7 +83,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EB120B111DC4754200D3D3E3"
-            BuildableName = "NikkaTvOS.framework"
+            BuildableName = "Nikka.framework"
             BlueprintName = "NikkaTvOS"
             ReferencedContainer = "container:Nikka.xcodeproj">
          </BuildableReference>

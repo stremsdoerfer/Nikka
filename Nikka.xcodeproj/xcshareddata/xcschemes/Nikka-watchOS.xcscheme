@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EB120B2D1DC475CD00D3D3E3"
-               BuildableName = "NikkaWatchOS.framework"
+               BuildableName = "Nikka.framework"
                BlueprintName = "NikkaWatchOS"
                ReferencedContainer = "container:Nikka.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EB120B2D1DC475CD00D3D3E3"
-            BuildableName = "NikkaWatchOS.framework"
+            BuildableName = "Nikka.framework"
             BlueprintName = "NikkaWatchOS"
             ReferencedContainer = "container:Nikka.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EB120B2D1DC475CD00D3D3E3"
-            BuildableName = "NikkaWatchOS.framework"
+            BuildableName = "Nikka.framework"
             BlueprintName = "NikkaWatchOS"
             ReferencedContainer = "container:Nikka.xcodeproj">
          </BuildableReference>

@@ -1,1 +1,6 @@
 github "JustaLab/mapper" ~> 6.1.0
+github "JohnSundell/Unbox"
+github "hkellaway/Gloss"
+github "Hearst-DD/ObjectMapper"
+github "lyft/mapper"
+github "ReactiveX/RxSwift"

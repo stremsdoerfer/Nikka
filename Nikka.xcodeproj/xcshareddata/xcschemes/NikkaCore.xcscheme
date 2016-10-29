@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EB1920841DC52FDC003A974C"
-               BuildableName = "NikkaCore.framework"
+               BuildableName = "Nikka.framework"
                BlueprintName = "NikkaCore"
                ReferencedContainer = "container:Nikka.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EB1920841DC52FDC003A974C"
-            BuildableName = "NikkaCore.framework"
+            BuildableName = "Nikka.framework"
             BlueprintName = "NikkaCore"
             ReferencedContainer = "container:Nikka.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EB1920841DC52FDC003A974C"
-            BuildableName = "NikkaCore.framework"
+            BuildableName = "Nikka.framework"
             BlueprintName = "NikkaCore"
             ReferencedContainer = "container:Nikka.xcodeproj">
          </BuildableReference>

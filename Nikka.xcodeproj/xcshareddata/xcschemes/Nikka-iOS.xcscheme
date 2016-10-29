@@ -141,7 +141,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EBFCB4791DA9DE18009036BD"
-               BuildableName = "NikkaIOS.framework"
+               BuildableName = "Nikka.framework"
                BlueprintName = "NikkaIOS"
                ReferencedContainer = "container:Nikka.xcodeproj">
             </BuildableReference>
@@ -169,7 +169,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EBFCB4791DA9DE18009036BD"
-            BuildableName = "NikkaIOS.framework"
+            BuildableName = "Nikka.framework"
             BlueprintName = "NikkaIOS"
             ReferencedContainer = "container:Nikka.xcodeproj">
          </BuildableReference>
@@ -191,7 +191,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EBFCB4791DA9DE18009036BD"
-            BuildableName = "NikkaIOS.framework"
+            BuildableName = "Nikka.framework"
             BlueprintName = "NikkaIOS"
             ReferencedContainer = "container:Nikka.xcodeproj">
          </BuildableReference>
@@ -209,7 +209,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EBFCB4791DA9DE18009036BD"
-            BuildableName = "NikkaIOS.framework"
+            BuildableName = "Nikka.framework"
             BlueprintName = "NikkaIOS"
             ReferencedContainer = "container:Nikka.xcodeproj">
          </BuildableReference>
