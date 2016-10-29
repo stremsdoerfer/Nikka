@@ -9,7 +9,7 @@
 import XCTest
 @testable import StreemNetworking
 
-let timeout: TimeInterval = 2
+let timeout: TimeInterval = 5
 
 class RequestSendingTests: XCTestCase {
 
@@ -125,15 +125,6 @@ class RequestSendingTests: XCTestCase {
     }
 
     func testJSONSendDELETE() {
-        DefaultProvider.request(Route(path:"https://website.com/api/user/1")).responseJSON { (response: Response<Any>) in
-            switch response.result {
-            case .success(let json):
-                print("json: \(json)")
-            case .failure(let error):
-                print("error: \(error)")
-            }
-        }
-
         let expectation = self.expectation(description: "DELETE request should succeed")
 
         let provider = TestProvider()
