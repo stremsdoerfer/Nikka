@@ -1,0 +1,8 @@
+line_length:
+  - 110
+disabled_rules:
+  - file_length
+  - nesting
+  - opening_brace
+  - type_body_length
+  - valid_docs
