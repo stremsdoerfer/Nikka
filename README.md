@@ -1,4 +1,4 @@
-![alt tag](https://raw.githubusercontent.com/JustaLab/Nikka/master/cover.png)
+<p align="center"><img src="https://raw.githubusercontent.com/JustaLab/Nikka/master/cover.png"/></p>
 
 [![Build Status](https://api.travis-ci.org/JustaLab/Nikka.svg?branch=master)](https://travis-ci.org/JustaLab/Nikka)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
