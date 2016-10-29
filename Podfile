@@ -13,7 +13,17 @@ def shared_pods
 end
 
 
-target 'Nikka' do
+target 'NikkaIOS' do
+    shared_pods
+end
+
+target 'NikkaTvOS' do
+    platform :tvos, '9.0'
+    shared_pods
+end
+
+target 'NikkaWatchOS' do
+    platform :watchos, '2.0'
     shared_pods
 end
 

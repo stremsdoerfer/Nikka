@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BCF4CC2802493C06D8399228"
+               BlueprintIdentifier = "59182CEE8FE42A340EBE9850"
                BuildableName = "Gloss.framework"
                BlueprintName = "Gloss"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A3650A2CC5A2D5CC9BBA9A70"
+               BlueprintIdentifier = "E6B01681FEE63FEC95A36214"
                BuildableName = "Mapper.framework"
                BlueprintName = "ModelMapper"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -42,7 +42,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "265428F1680CDF2E000713DD"
+               BlueprintIdentifier = "A78E603FD7F9490DAE222F97"
                BuildableName = "ObjectMapper.framework"
                BlueprintName = "ObjectMapper"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -84,7 +84,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A13F74BBFC75BE29026DE293"
+               BlueprintIdentifier = "5C1D5562B4176815CD4B214E"
                BuildableName = "RxCocoa.framework"
                BlueprintName = "RxCocoa"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -98,7 +98,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "309F5531BA9C3D49C02E7B31"
+               BlueprintIdentifier = "1B80AB3084244EFE11A45130"
                BuildableName = "RxSwift.framework"
                BlueprintName = "RxSwift"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -112,7 +112,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "33EB964836BFED70C68F93F9"
+               BlueprintIdentifier = "56188174C3EE499C615AB1D4"
                BuildableName = "StreemMapper.framework"
                BlueprintName = "StreemMapper"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -126,7 +126,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "316BEAFEC43D6688E5F9EB74"
+               BlueprintIdentifier = "71F7CFF9838A3139EF845E9E"
                BuildableName = "Unbox.framework"
                BlueprintName = "Unbox"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -141,8 +141,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EBFCB4791DA9DE18009036BD"
-               BuildableName = "Nikka.framework"
-               BlueprintName = "Nikka"
+               BuildableName = "NikkaIOS.framework"
+               BlueprintName = "NikkaIOS"
                ReferencedContainer = "container:Nikka.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -169,8 +169,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EBFCB4791DA9DE18009036BD"
-            BuildableName = "Nikka.framework"
-            BlueprintName = "Nikka"
+            BuildableName = "NikkaIOS.framework"
+            BlueprintName = "NikkaIOS"
             ReferencedContainer = "container:Nikka.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -191,8 +191,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EBFCB4791DA9DE18009036BD"
-            BuildableName = "Nikka.framework"
-            BlueprintName = "Nikka"
+            BuildableName = "NikkaIOS.framework"
+            BlueprintName = "NikkaIOS"
             ReferencedContainer = "container:Nikka.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -209,8 +209,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EBFCB4791DA9DE18009036BD"
-            BuildableName = "Nikka.framework"
-            BlueprintName = "Nikka"
+            BuildableName = "NikkaIOS.framework"
+            BlueprintName = "NikkaIOS"
             ReferencedContainer = "container:Nikka.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

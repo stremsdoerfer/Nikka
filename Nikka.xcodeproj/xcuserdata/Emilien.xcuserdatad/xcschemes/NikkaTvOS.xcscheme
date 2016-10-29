@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EBA947531DC4688B00EDEC2F"
-               BuildableName = "NikkaOSX.framework"
-               BlueprintName = "NikkaOSX"
+               BlueprintIdentifier = "EB120B111DC4754200D3D3E3"
+               BuildableName = "NikkaTvOS.framework"
+               BlueprintName = "NikkaTvOS"
                ReferencedContainer = "container:Nikka.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EBA9475B1DC4688B00EDEC2F"
-               BuildableName = "NikkaOSXTests.xctest"
-               BlueprintName = "NikkaOSXTests"
+               BlueprintIdentifier = "EB120B191DC4754300D3D3E3"
+               BuildableName = "NikkaTvOSTests.xctest"
+               BlueprintName = "NikkaTvOSTests"
                ReferencedContainer = "container:Nikka.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -42,9 +42,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "EBA947531DC4688B00EDEC2F"
-            BuildableName = "NikkaOSX.framework"
-            BlueprintName = "NikkaOSX"
+            BlueprintIdentifier = "EB120B111DC4754200D3D3E3"
+            BuildableName = "NikkaTvOS.framework"
+            BlueprintName = "NikkaTvOS"
             ReferencedContainer = "container:Nikka.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -64,9 +64,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "EBA947531DC4688B00EDEC2F"
-            BuildableName = "NikkaOSX.framework"
-            BlueprintName = "NikkaOSX"
+            BlueprintIdentifier = "EB120B111DC4754200D3D3E3"
+            BuildableName = "NikkaTvOS.framework"
+            BlueprintName = "NikkaTvOS"
             ReferencedContainer = "container:Nikka.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -82,9 +82,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "EBA947531DC4688B00EDEC2F"
-            BuildableName = "NikkaOSX.framework"
-            BlueprintName = "NikkaOSX"
+            BlueprintIdentifier = "EB120B111DC4754200D3D3E3"
+            BuildableName = "NikkaTvOS.framework"
+            BlueprintName = "NikkaTvOS"
             ReferencedContainer = "container:Nikka.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

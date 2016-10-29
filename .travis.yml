@@ -4,11 +4,11 @@ branches:
 
 language: objective-c
 osx_image: xcode8
-xcode_scheme: StreemNetworking
+xcode_scheme: Nikka
 
 before_install:
 - pod repo remove master
 - pod setup
 
 script:
-- xcodebuild clean build test -workspace StreemNetworking.xcworkspace -scheme StreemNetworking -destination "name=iPhone 6s"
+- xcodebuild clean build test -workspace Nikka.xcworkspace -scheme Nikka -destination "name=iPhone 6s"
