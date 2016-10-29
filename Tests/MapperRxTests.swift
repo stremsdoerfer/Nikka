@@ -1,13 +1,13 @@
 //
 //  MapperRxTests.swift
-//  StreemNetworking
+//  Nikka
 //
 //  Created by Emilien on 10/15/16.
 //  Copyright © 2016 Emilien Stremsdoerfer. All rights reserved.
 //
 
 import XCTest
-@testable import StreemNetworking
+@testable import Nikka
 @testable import RxSwift
 @testable import StreemMapper
 
@@ -81,8 +81,8 @@ class MapperRxTests: XCTestCase {
 
         ipObs.subscribe(onError: { (error) in
             expectation.fulfill()
-            let err = error as? StreemError
-            XCTAssertTrue(err!.isEqual(err:StreemNetworkingError.jsonMapping("")))
+            let err = error as? NikkaError
+            XCTAssertTrue(err!.isEqual(err:NikkaNetworkingError.jsonMapping("")))
         }).addDisposableTo(bag)
 
         waitForExpectations(timeout: timeout, handler: nil)
@@ -105,8 +105,8 @@ class MapperRxTests: XCTestCase {
 
         valuesObs.subscribe(onError: { (error) in
             expectation.fulfill()
-            let err = error as? StreemError
-            XCTAssertTrue(err!.isEqual(err:StreemNetworkingError.jsonMapping("")))
+            let err = error as? NikkaError
+            XCTAssertTrue(err!.isEqual(err:NikkaNetworkingError.jsonMapping("")))
         }).addDisposableTo(bag)
 
         waitForExpectations(timeout: timeout, handler: nil)
@@ -162,8 +162,8 @@ class MapperRxTests: XCTestCase {
         let postIPObs: Observable<TestResponse> = ipObs.flatMap({provider.request(.postJSON(["origin":$0.ip])).responseObject()})
         postIPObs.subscribe(onError: { (error) in
             expectation.fulfill()
-            let err = error as? StreemError
-            XCTAssertTrue(err!.isEqual(err:StreemNetworkingError.jsonMapping("")))
+            let err = error as? NikkaError
+            XCTAssertTrue(err!.isEqual(err:NikkaNetworkingError.jsonMapping("")))
         }).addDisposableTo(bag)
 
         waitForExpectations(timeout: timeout, handler: nil)
@@ -191,8 +191,8 @@ class MapperRxTests: XCTestCase {
         let postIPObs: Observable<TestResponse> = ipObs.flatMap({provider.request(.postJSON(["origin":$0.ip])).responseObject()})
         postIPObs.subscribe(onError: { (error) in
             expectation.fulfill()
-            let err = error as? StreemError
-            XCTAssertTrue(err!.isEqual(err:StreemNetworkingError.jsonMapping("")))
+            let err = error as? NikkaError
+            XCTAssertTrue(err!.isEqual(err:NikkaNetworkingError.jsonMapping("")))
         }).addDisposableTo(bag)
 
         waitForExpectations(timeout: timeout, handler: nil)

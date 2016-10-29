@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A33702664C6114F6EA09231A"
+               BlueprintIdentifier = "BCF4CC2802493C06D8399228"
                BuildableName = "Gloss.framework"
                BlueprintName = "Gloss"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "30550118B2472D8DAE40AC5F"
+               BlueprintIdentifier = "A3650A2CC5A2D5CC9BBA9A70"
                BuildableName = "Mapper.framework"
                BlueprintName = "ModelMapper"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -42,7 +42,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AA8AB5FE455E5D5B9FDA528F"
+               BlueprintIdentifier = "265428F1680CDF2E000713DD"
                BuildableName = "ObjectMapper.framework"
                BlueprintName = "ObjectMapper"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -56,7 +56,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "64F60254DB6A7581A5BFF218"
+               BlueprintIdentifier = "7172BE5C11768B8EDDE33C20"
                BuildableName = "Pods_StreemNetworking.framework"
                BlueprintName = "Pods-StreemNetworking"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -70,7 +70,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C8B0BC41D5090827BDA01131"
+               BlueprintIdentifier = "890BB7D50A2C6BC1D898861C"
                BuildableName = "Pods_StreemNetworkingTests.framework"
                BlueprintName = "Pods-StreemNetworkingTests"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -84,7 +84,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "78596E90D9340F23BCCC0220"
+               BlueprintIdentifier = "A13F74BBFC75BE29026DE293"
                BuildableName = "RxCocoa.framework"
                BlueprintName = "RxCocoa"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -98,7 +98,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D9F312DEA8715C18C558E10C"
+               BlueprintIdentifier = "309F5531BA9C3D49C02E7B31"
                BuildableName = "RxSwift.framework"
                BlueprintName = "RxSwift"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -112,7 +112,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "145D385AA1C14E0978FD7F9E"
+               BlueprintIdentifier = "33EB964836BFED70C68F93F9"
                BuildableName = "StreemMapper.framework"
                BlueprintName = "StreemMapper"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -126,7 +126,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3BE55251F9A347B5BAB2A87D"
+               BlueprintIdentifier = "316BEAFEC43D6688E5F9EB74"
                BuildableName = "Unbox.framework"
                BlueprintName = "Unbox"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -141,9 +141,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EBFCB4791DA9DE18009036BD"
-               BuildableName = "StreemNetworking.framework"
-               BlueprintName = "StreemNetworking"
-               ReferencedContainer = "container:StreemNetworking.xcodeproj">
+               BuildableName = "Nikka.framework"
+               BlueprintName = "Nikka"
+               ReferencedContainer = "container:Nikka.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -159,9 +159,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EBFCB4821DA9DE18009036BD"
-               BuildableName = "StreemNetworkingTests.xctest"
-               BlueprintName = "StreemNetworkingTests"
-               ReferencedContainer = "container:StreemNetworking.xcodeproj">
+               BuildableName = "NikkaTests.xctest"
+               BlueprintName = "NikkaTests"
+               ReferencedContainer = "container:Nikka.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -169,9 +169,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EBFCB4791DA9DE18009036BD"
-            BuildableName = "StreemNetworking.framework"
-            BlueprintName = "StreemNetworking"
-            ReferencedContainer = "container:StreemNetworking.xcodeproj">
+            BuildableName = "Nikka.framework"
+            BlueprintName = "Nikka"
+            ReferencedContainer = "container:Nikka.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -191,9 +191,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EBFCB4791DA9DE18009036BD"
-            BuildableName = "StreemNetworking.framework"
-            BlueprintName = "StreemNetworking"
-            ReferencedContainer = "container:StreemNetworking.xcodeproj">
+            BuildableName = "Nikka.framework"
+            BlueprintName = "Nikka"
+            ReferencedContainer = "container:Nikka.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -209,9 +209,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EBFCB4791DA9DE18009036BD"
-            BuildableName = "StreemNetworking.framework"
-            BlueprintName = "StreemNetworking"
-            ReferencedContainer = "container:StreemNetworking.xcodeproj">
+            BuildableName = "Nikka.framework"
+            BlueprintName = "Nikka"
+            ReferencedContainer = "container:Nikka.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

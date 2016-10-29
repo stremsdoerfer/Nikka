@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3D7C3FEB5C7491CBB8B76CA6 /* Pods_StreemNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF32517FCB847BC376070184 /* Pods_StreemNetworking.framework */; };
-		C4B26E13582F01B3767135A3 /* Pods_StreemNetworkingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA56C691899914F8B4F5679 /* Pods_StreemNetworkingTests.framework */; };
+		5AEA68DF866132897F8A0FCD /* Pods_Nikka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE023634DFA16C231CC4A3D6 /* Pods_Nikka.framework */; };
+		DEC3FAE0B1363D2C1A4D992F /* Pods_NikkaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF8F3A9CFBD6F2A3F7B3188 /* Pods_NikkaTests.framework */; };
 		EB11F5CB1DB2CD7700D034C2 /* HTTPProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB11F5CA1DB2CD7700D034C2 /* HTTPProvider.swift */; };
 		EB11F5CE1DB2CE8A00D034C2 /* MockProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB11F5CC1DB2CE4A00D034C2 /* MockProviders.swift */; };
 		EB11F5D11DB2DA3900D034C2 /* RequestSendingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB11F5CF1DB2DA1F00D034C2 /* RequestSendingTests.swift */; };
@@ -41,10 +41,10 @@
 		EB20ABB81DBC014700E793A2 /* RxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20ABB61DBC010B00E793A2 /* RxTests.swift */; };
 		EB20ABBA1DBC044500E793A2 /* FuturesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20ABB91DBC044500E793A2 /* FuturesTests.swift */; };
 		EB4D86AE1DBC2BAE00A4D621 /* MultipartForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4D86AD1DBC2BAE00A4D621 /* MultipartForm.swift */; };
-		EBFCB4841DA9DE18009036BD /* StreemNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBFCB47A1DA9DE18009036BD /* StreemNetworking.framework */; };
+		EBFCB4841DA9DE18009036BD /* Nikka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBFCB47A1DA9DE18009036BD /* Nikka.framework */; };
 		EBFCB48B1DA9DE18009036BD /* StreemNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = EBFCB47D1DA9DE18009036BD /* StreemNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EBFCB4961DA9DE89009036BD /* RequestBuildingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4941DA9DE87009036BD /* RequestBuildingTests.swift */; };
-		EBFCB49F1DA9DF6D009036BD /* StreemError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4981DA9DF6D009036BD /* StreemError.swift */; };
+		EBFCB49F1DA9DF6D009036BD /* NikkaError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4981DA9DF6D009036BD /* NikkaError.swift */; };
 		EBFCB4A01DA9DF6D009036BD /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4991DA9DF6D009036BD /* SessionManager.swift */; };
 		EBFCB4A11DA9DF6D009036BD /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB49A1DA9DF6D009036BD /* ParameterEncoding.swift */; };
 		EBFCB4A21DA9DF6D009036BD /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB49B1DA9DF6D009036BD /* Request.swift */; };
@@ -64,33 +64,36 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0B50E894C5D99E781543444E /* Pods-StreemNetworkingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreemNetworkingTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StreemNetworkingTests/Pods-StreemNetworkingTests.debug.xcconfig"; sourceTree = "<group>"; };
-		321C213DA10E1B5FD349FE8F /* Pods-StreemNetworking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreemNetworking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StreemNetworking/Pods-StreemNetworking.debug.xcconfig"; sourceTree = "<group>"; };
+		2458FB41549001CFA31103E3 /* Pods-NikkaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NikkaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NikkaTests/Pods-NikkaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		30DE6E54A636B8CC4B2AF76B /* Pods_Nikka_OSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nikka_OSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AF8F3A9CFBD6F2A3F7B3188 /* Pods_NikkaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NikkaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AA56C691899914F8B4F5679 /* Pods_StreemNetworkingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StreemNetworkingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8BECF5B30F6BC8A8E7700A1D /* Pods-StreemNetworking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreemNetworking.release.xcconfig"; path = "Pods/Target Support Files/Pods-StreemNetworking/Pods-StreemNetworking.release.xcconfig"; sourceTree = "<group>"; };
-		B75727FA4DDF397FB0824CAC /* Pods-StreemNetworkingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreemNetworkingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StreemNetworkingTests/Pods-StreemNetworkingTests.release.xcconfig"; sourceTree = "<group>"; };
+		5C83561EE9DD2EFFD1F2B628 /* Pods_NikkaOSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NikkaOSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6795AE5C36D21AF259AC990E /* Pods_Nikka_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nikka_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		683987AB1751C1AB7294D308 /* Pods-Nikka.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nikka.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nikka/Pods-Nikka.release.xcconfig"; sourceTree = "<group>"; };
+		687776599F4D84595A39C4EA /* Pods-Nikka.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nikka.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nikka/Pods-Nikka.debug.xcconfig"; sourceTree = "<group>"; };
 		DF32517FCB847BC376070184 /* Pods_StreemNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StreemNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EB11F5CA1DB2CD7700D034C2 /* HTTPProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPProvider.swift; sourceTree = "<group>"; };
-		EB11F5CC1DB2CE4A00D034C2 /* MockProviders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockProviders.swift; sourceTree = "<group>"; };
-		EB11F5CF1DB2DA1F00D034C2 /* RequestSendingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestSendingTests.swift; sourceTree = "<group>"; };
-		EB11F5D41DB2E18B00D034C2 /* ProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderTests.swift; sourceTree = "<group>"; };
-		EB11F5D61DB2E56B00D034C2 /* MockRoutes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockRoutes.swift; sourceTree = "<group>"; };
-		EB11F5DC1DB2F1F800D034C2 /* MapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapperTests.swift; sourceTree = "<group>"; };
-		EB11F5DE1DB2FFB700D034C2 /* MapperRxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapperRxTests.swift; sourceTree = "<group>"; };
-		EB11F5E01DB2FFED00D034C2 /* MapperFuturesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapperFuturesTests.swift; sourceTree = "<group>"; };
+		EB11F5CA1DB2CD7700D034C2 /* HTTPProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = HTTPProvider.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		EB11F5CC1DB2CE4A00D034C2 /* MockProviders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MockProviders.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		EB11F5CF1DB2DA1F00D034C2 /* RequestSendingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = RequestSendingTests.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		EB11F5D41DB2E18B00D034C2 /* ProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ProviderTests.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		EB11F5D61DB2E56B00D034C2 /* MockRoutes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MockRoutes.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		EB11F5DC1DB2F1F800D034C2 /* MapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MapperTests.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		EB11F5DE1DB2FFB700D034C2 /* MapperRxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MapperRxTests.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		EB11F5E01DB2FFED00D034C2 /* MapperFuturesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MapperFuturesTests.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		EB1619821DB496F900AF11BA /* Future.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Future.swift; sourceTree = "<group>"; };
-		EB20AB6F1DBB267F00E793A2 /* Request+ObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Request+ObjectMapper.swift"; path = "../Request+ObjectMapper.swift"; sourceTree = "<group>"; };
-		EB20AB741DBB2D4C00E793A2 /* ObjectMapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectMapperTests.swift; sourceTree = "<group>"; };
-		EB20AB7A1DBB39AC00E793A2 /* Request+Gloss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Request+Gloss.swift"; path = "../../Gloss/Request+Gloss.swift"; sourceTree = "<group>"; };
-		EB20AB7D1DBB3B8B00E793A2 /* Request+Unbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Request+Unbox.swift"; path = "Unbox/Request+Unbox.swift"; sourceTree = "<group>"; };
-		EB20AB811DBB3E6D00E793A2 /* UnboxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnboxTests.swift; sourceTree = "<group>"; };
-		EB20AB831DBB3E7C00E793A2 /* GlossTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlossTests.swift; sourceTree = "<group>"; };
-		EB20AB861DBBE6E200E793A2 /* Request+Futures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Request+Futures.swift"; sourceTree = "<group>"; };
-		EB20AB881DBBE6E200E793A2 /* Request+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Request+Rx.swift"; sourceTree = "<group>"; };
-		EB20AB8A1DBBE6E200E793A2 /* Request+StreemMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Request+StreemMapper.swift"; sourceTree = "<group>"; };
+		EB20AB6F1DBB267F00E793A2 /* Request+ObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = "Request+ObjectMapper.swift"; path = "../Request+ObjectMapper.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		EB20AB741DBB2D4C00E793A2 /* ObjectMapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ObjectMapperTests.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		EB20AB7A1DBB39AC00E793A2 /* Request+Gloss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = "Request+Gloss.swift"; path = "../../Gloss/Request+Gloss.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		EB20AB7D1DBB3B8B00E793A2 /* Request+Unbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = "Request+Unbox.swift"; path = "Unbox/Request+Unbox.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		EB20AB811DBB3E6D00E793A2 /* UnboxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = UnboxTests.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		EB20AB831DBB3E7C00E793A2 /* GlossTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = GlossTests.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		EB20AB861DBBE6E200E793A2 /* Request+Futures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "Request+Futures.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		EB20AB881DBBE6E200E793A2 /* Request+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "Request+Rx.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		EB20AB8A1DBBE6E200E793A2 /* Request+StreemMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "Request+StreemMapper.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		EB20AB951DBBEA2900E793A2 /* Request+StreemMapperRx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Request+StreemMapperRx.swift"; path = "Rx/Request+StreemMapperRx.swift"; sourceTree = "<group>"; };
 		EB20AB981DBBF43100E793A2 /* Request+StreemMapperFutures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Request+StreemMapperFutures.swift"; path = "Futures/Request+StreemMapperFutures.swift"; sourceTree = "<group>"; };
-		EB20AB9A1DBBF91C00E793A2 /* Request+ModelMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Request+ModelMapper.swift"; path = "ModelMapper/Request+ModelMapper.swift"; sourceTree = "<group>"; };
+		EB20AB9A1DBBF91C00E793A2 /* Request+ModelMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = "Request+ModelMapper.swift"; path = "ModelMapper/Request+ModelMapper.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		EB20AB9E1DBBF9E000E793A2 /* Request+ModelMapperFutures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Request+ModelMapperFutures.swift"; path = "ModelMapper/Futures/Request+ModelMapperFutures.swift"; sourceTree = "<group>"; };
 		EB20ABA01DBBF9E000E793A2 /* Request+ModelMapperRx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Request+ModelMapperRx.swift"; path = "ModelMapper/Rx/Request+ModelMapperRx.swift"; sourceTree = "<group>"; };
 		EB20ABA41DBBFA7100E793A2 /* Request+ObjectMapperFutures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Request+ObjectMapperFutures.swift"; sourceTree = "<group>"; };
@@ -99,22 +102,25 @@
 		EB20ABAC1DBBFACB00E793A2 /* Request+UnboxRx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Request+UnboxRx.swift"; path = "Unbox/Rx/Request+UnboxRx.swift"; sourceTree = "<group>"; };
 		EB20ABB11DBBFBBB00E793A2 /* Request+GlossFutures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Request+GlossFutures.swift"; path = "Futures/Request+GlossFutures.swift"; sourceTree = "<group>"; };
 		EB20ABB31DBBFBBB00E793A2 /* Request+GlossRx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Request+GlossRx.swift"; path = "Rx/Request+GlossRx.swift"; sourceTree = "<group>"; };
-		EB20ABB61DBC010B00E793A2 /* RxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxTests.swift; sourceTree = "<group>"; };
-		EB20ABB91DBC044500E793A2 /* FuturesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FuturesTests.swift; sourceTree = "<group>"; };
-		EB4D86AD1DBC2BAE00A4D621 /* MultipartForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipartForm.swift; sourceTree = "<group>"; };
-		EBFCB47A1DA9DE18009036BD /* StreemNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StreemNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EBFCB47D1DA9DE18009036BD /* StreemNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StreemNetworking.h; sourceTree = "<group>"; };
+		EB20ABB61DBC010B00E793A2 /* RxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = RxTests.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		EB20ABB91DBC044500E793A2 /* FuturesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = FuturesTests.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		EB4D86AD1DBC2BAE00A4D621 /* MultipartForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MultipartForm.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		EBFCB47A1DA9DE18009036BD /* Nikka.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Nikka.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBFCB47D1DA9DE18009036BD /* StreemNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = StreemNetworking.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		EBFCB47E1DA9DE18009036BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EBFCB4831DA9DE18009036BD /* StreemNetworkingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StreemNetworkingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBFCB4831DA9DE18009036BD /* NikkaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NikkaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBFCB48A1DA9DE18009036BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EBFCB4941DA9DE87009036BD /* RequestBuildingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestBuildingTests.swift; sourceTree = "<group>"; };
-		EBFCB4981DA9DF6D009036BD /* StreemError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreemError.swift; sourceTree = "<group>"; };
+		EBFCB4941DA9DE87009036BD /* RequestBuildingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = RequestBuildingTests.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		EBFCB4981DA9DF6D009036BD /* NikkaError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = NikkaError.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		EBFCB4991DA9DF6D009036BD /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
-		EBFCB49A1DA9DF6D009036BD /* ParameterEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
-		EBFCB49B1DA9DF6D009036BD /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		EBFCB49A1DA9DF6D009036BD /* ParameterEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ParameterEncoding.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		EBFCB49B1DA9DF6D009036BD /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Request.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		EBFCB49C1DA9DF6D009036BD /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		EBFCB49D1DA9DF6D009036BD /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		EBFCB49E1DA9DF6D009036BD /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		EE023634DFA16C231CC4A3D6 /* Pods_Nikka.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nikka.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F63AD575946009E4F883DD5B /* Pods_Nikka_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nikka_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC1029109157171CABA3FE0D /* Pods-NikkaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NikkaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NikkaTests/Pods-NikkaTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D7C3FEB5C7491CBB8B76CA6 /* Pods_StreemNetworking.framework in Frameworks */,
+				5AEA68DF866132897F8A0FCD /* Pods_Nikka.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,8 +136,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBFCB4841DA9DE18009036BD /* StreemNetworking.framework in Frameworks */,
-				C4B26E13582F01B3767135A3 /* Pods_StreemNetworkingTests.framework in Frameworks */,
+				EBFCB4841DA9DE18009036BD /* Nikka.framework in Frameworks */,
+				DEC3FAE0B1363D2C1A4D992F /* Pods_NikkaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +149,12 @@
 			children = (
 				DF32517FCB847BC376070184 /* Pods_StreemNetworking.framework */,
 				4AA56C691899914F8B4F5679 /* Pods_StreemNetworkingTests.framework */,
+				EE023634DFA16C231CC4A3D6 /* Pods_Nikka.framework */,
+				3AF8F3A9CFBD6F2A3F7B3188 /* Pods_NikkaTests.framework */,
+				5C83561EE9DD2EFFD1F2B628 /* Pods_NikkaOSX.framework */,
+				6795AE5C36D21AF259AC990E /* Pods_Nikka_iOS.framework */,
+				F63AD575946009E4F883DD5B /* Pods_Nikka_macOS.framework */,
+				30DE6E54A636B8CC4B2AF76B /* Pods_Nikka_OSX.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -150,10 +162,10 @@
 		D7C6FDEC16E01EE80AF6D18E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				321C213DA10E1B5FD349FE8F /* Pods-StreemNetworking.debug.xcconfig */,
-				8BECF5B30F6BC8A8E7700A1D /* Pods-StreemNetworking.release.xcconfig */,
-				0B50E894C5D99E781543444E /* Pods-StreemNetworkingTests.debug.xcconfig */,
-				B75727FA4DDF397FB0824CAC /* Pods-StreemNetworkingTests.release.xcconfig */,
+				687776599F4D84595A39C4EA /* Pods-Nikka.debug.xcconfig */,
+				683987AB1751C1AB7294D308 /* Pods-Nikka.release.xcconfig */,
+				2458FB41549001CFA31103E3 /* Pods-NikkaTests.debug.xcconfig */,
+				FC1029109157171CABA3FE0D /* Pods-NikkaTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -302,8 +314,8 @@
 		EBFCB47B1DA9DE18009036BD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EBFCB47A1DA9DE18009036BD /* StreemNetworking.framework */,
-				EBFCB4831DA9DE18009036BD /* StreemNetworkingTests.xctest */,
+				EBFCB47A1DA9DE18009036BD /* Nikka.framework */,
+				EBFCB4831DA9DE18009036BD /* NikkaTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -321,7 +333,7 @@
 				EBFCB49D1DA9DF6D009036BD /* Result.swift */,
 				EBFCB49E1DA9DF6D009036BD /* Route.swift */,
 				EBFCB4991DA9DF6D009036BD /* SessionManager.swift */,
-				EBFCB4981DA9DF6D009036BD /* StreemError.swift */,
+				EBFCB4981DA9DF6D009036BD /* NikkaError.swift */,
 				EBFCB47D1DA9DE18009036BD /* StreemNetworking.h */,
 				EBFCB47E1DA9DE18009036BD /* Info.plist */,
 			);
@@ -355,9 +367,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		EBFCB4791DA9DE18009036BD /* StreemNetworking */ = {
+		EBFCB4791DA9DE18009036BD /* Nikka */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EBFCB48E1DA9DE18009036BD /* Build configuration list for PBXNativeTarget "StreemNetworking" */;
+			buildConfigurationList = EBFCB48E1DA9DE18009036BD /* Build configuration list for PBXNativeTarget "Nikka" */;
 			buildPhases = (
 				D4CB39767BFA3B3DB1BB0DA1 /* [CP] Check Pods Manifest.lock */,
 				EBFCB4751DA9DE18009036BD /* Sources */,
@@ -371,14 +383,14 @@
 			);
 			dependencies = (
 			);
-			name = StreemNetworking;
+			name = Nikka;
 			productName = StreemNetworking;
-			productReference = EBFCB47A1DA9DE18009036BD /* StreemNetworking.framework */;
+			productReference = EBFCB47A1DA9DE18009036BD /* Nikka.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		EBFCB4821DA9DE18009036BD /* StreemNetworkingTests */ = {
+		EBFCB4821DA9DE18009036BD /* NikkaTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EBFCB4911DA9DE18009036BD /* Build configuration list for PBXNativeTarget "StreemNetworkingTests" */;
+			buildConfigurationList = EBFCB4911DA9DE18009036BD /* Build configuration list for PBXNativeTarget "NikkaTests" */;
 			buildPhases = (
 				5399229C090C20021626CD70 /* [CP] Check Pods Manifest.lock */,
 				EBFCB47F1DA9DE18009036BD /* Sources */,
@@ -392,9 +404,9 @@
 			dependencies = (
 				EBFCB4861DA9DE18009036BD /* PBXTargetDependency */,
 			);
-			name = StreemNetworkingTests;
+			name = NikkaTests;
 			productName = StreemNetworkingTests;
-			productReference = EBFCB4831DA9DE18009036BD /* StreemNetworkingTests.xctest */;
+			productReference = EBFCB4831DA9DE18009036BD /* NikkaTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -420,7 +432,7 @@
 					};
 				};
 			};
-			buildConfigurationList = EBFCB4741DA9DE18009036BD /* Build configuration list for PBXProject "StreemNetworking" */;
+			buildConfigurationList = EBFCB4741DA9DE18009036BD /* Build configuration list for PBXProject "Nikka" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -432,8 +444,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EBFCB4791DA9DE18009036BD /* StreemNetworking */,
-				EBFCB4821DA9DE18009036BD /* StreemNetworkingTests */,
+				EBFCB4791DA9DE18009036BD /* Nikka */,
+				EBFCB4821DA9DE18009036BD /* NikkaTests */,
 			);
 		};
 /* End PBXProject section */
@@ -468,7 +480,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StreemNetworkingTests/Pods-StreemNetworkingTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NikkaTests/Pods-NikkaTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5399229C090C20021626CD70 /* [CP] Check Pods Manifest.lock */ = {
@@ -498,7 +510,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StreemNetworking/Pods-StreemNetworking-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Nikka/Pods-Nikka-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D4CB39767BFA3B3DB1BB0DA1 /* [CP] Check Pods Manifest.lock */ = {
@@ -528,7 +540,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StreemNetworkingTests/Pods-StreemNetworkingTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NikkaTests/Pods-NikkaTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EBE34F1A1DC2FAF10057FDD9 /* ShellScript */ = {
@@ -566,7 +578,7 @@
 				EBFCB4A21DA9DF6D009036BD /* Request.swift in Sources */,
 				EB20ABA21DBBF9E000E793A2 /* Request+ModelMapperRx.swift in Sources */,
 				EB20ABA81DBBFA7100E793A2 /* Request+ObjectMapperRx.swift in Sources */,
-				EBFCB49F1DA9DF6D009036BD /* StreemError.swift in Sources */,
+				EBFCB49F1DA9DF6D009036BD /* NikkaError.swift in Sources */,
 				EB20AB8E1DBBE6E200E793A2 /* Request+Rx.swift in Sources */,
 				EB20ABA71DBBFA7100E793A2 /* Request+ObjectMapperFutures.swift in Sources */,
 				EB1619831DB496F900AF11BA /* Future.swift in Sources */,
@@ -606,7 +618,7 @@
 /* Begin PBXTargetDependency section */
 		EBFCB4861DA9DE18009036BD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = EBFCB4791DA9DE18009036BD /* StreemNetworking */;
+			target = EBFCB4791DA9DE18009036BD /* Nikka */;
 			targetProxy = EBFCB4851DA9DE18009036BD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -659,6 +671,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -707,6 +720,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -717,7 +731,7 @@
 		};
 		EBFCB48F1DA9DE18009036BD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 321C213DA10E1B5FD349FE8F /* Pods-StreemNetworking.debug.xcconfig */;
+			baseConfigurationReference = 687776599F4D84595A39C4EA /* Pods-Nikka.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CLANG_ENABLE_MODULES = YES;
@@ -731,9 +745,11 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.justalab.StreemNetworking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -741,7 +757,7 @@
 		};
 		EBFCB4901DA9DE18009036BD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8BECF5B30F6BC8A8E7700A1D /* Pods-StreemNetworking.release.xcconfig */;
+			baseConfigurationReference = 683987AB1751C1AB7294D308 /* Pods-Nikka.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CLANG_ENABLE_MODULES = YES;
@@ -758,13 +774,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.justalab.StreemNetworking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		EBFCB4921DA9DE18009036BD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0B50E894C5D99E781543444E /* Pods-StreemNetworkingTests.debug.xcconfig */;
+			baseConfigurationReference = 2458FB41549001CFA31103E3 /* Pods-NikkaTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				DEVELOPMENT_TEAM = R69K2ALL6R;
@@ -779,7 +796,7 @@
 		};
 		EBFCB4931DA9DE18009036BD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B75727FA4DDF397FB0824CAC /* Pods-StreemNetworkingTests.release.xcconfig */;
+			baseConfigurationReference = FC1029109157171CABA3FE0D /* Pods-NikkaTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				DEVELOPMENT_TEAM = R69K2ALL6R;
@@ -795,7 +812,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EBFCB4741DA9DE18009036BD /* Build configuration list for PBXProject "StreemNetworking" */ = {
+		EBFCB4741DA9DE18009036BD /* Build configuration list for PBXProject "Nikka" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EBFCB48C1DA9DE18009036BD /* Debug */,
@@ -804,7 +821,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EBFCB48E1DA9DE18009036BD /* Build configuration list for PBXNativeTarget "StreemNetworking" */ = {
+		EBFCB48E1DA9DE18009036BD /* Build configuration list for PBXNativeTarget "Nikka" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EBFCB48F1DA9DE18009036BD /* Debug */,
@@ -813,7 +830,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EBFCB4911DA9DE18009036BD /* Build configuration list for PBXNativeTarget "StreemNetworkingTests" */ = {
+		EBFCB4911DA9DE18009036BD /* Build configuration list for PBXNativeTarget "NikkaTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EBFCB4921DA9DE18009036BD /* Debug */,

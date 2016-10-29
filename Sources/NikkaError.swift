@@ -17,31 +17,31 @@
 import Foundation
 
 /**
- StreemError protocol, all the errors related to StreemNetworking should conform to that protocol
+ NikkaError protocol, all the errors related to Nikka should conform to that protocol
  */
-public protocol StreemError: Error, CustomStringConvertible {
+public protocol NikkaError: Error, CustomStringConvertible {
 
     /**
      Method that will allow us to compare two errors
     */
-    func isEqual(err: StreemError) -> Bool
+    func isEqual(err: NikkaError) -> Bool
 }
 
 /**
- StreemError extension that compares two StreemError that conforms to Equatable
+ NikkaError extension that compares two NikkaError that conforms to Equatable
  */
-public extension StreemError where Self : Equatable {
-    public func isEqual(err: StreemError) -> Bool {
+public extension NikkaError where Self : Equatable {
+    public func isEqual(err: NikkaError) -> Bool {
         if let err = err as? Self {return self == err}
         return false
     }
 }
 
 /**
- StreemNetworkingError is the StreemNetworking implementation of Error Type.
- It provides all the errors that can be thrown by the StreemNetworking Library and a way to compare them
+ NikkaNetworkingError is the Nikka implementation of Error Type.
+ It provides all the errors that can be thrown by the Nikka Library and a way to compare them
  */
-public enum StreemNetworkingError: StreemError, Equatable {
+public enum NikkaNetworkingError: NikkaError, Equatable {
 
     /**
      Error thrown when the encoding of the parameters fails when creating a request.
@@ -103,23 +103,23 @@ public enum StreemNetworkingError: StreemError, Equatable {
     }
 
     /**
-     Convenience method that will transform an Error thown in the process to A StreemNetworkingError
+     Convenience method that will transform an Error thown in the process to A NikkaNetworkingError
     */
-    static func error(with error: Error) -> StreemNetworkingError {
-        return StreemNetworkingError.unknown(error.localizedDescription)
+    static func error(with error: Error) -> NikkaNetworkingError {
+        return NikkaNetworkingError.unknown(error.localizedDescription)
     }
 
     /**
      Convenience method that creates a http error with a given code
     */
-    static func error(with httpCode: Int) -> StreemNetworkingError {
+    static func error(with httpCode: Int) -> NikkaNetworkingError {
         return .http(httpCode)
     }
 
     /**
      Equatable implementation
      */
-    public static func == (lhs: StreemNetworkingError, rhs: StreemNetworkingError) -> Bool {
+    public static func == (lhs: NikkaNetworkingError, rhs: NikkaNetworkingError) -> Bool {
         switch lhs {
         case .parameterEncoding(_):
             if case .parameterEncoding = rhs { return true }

@@ -1,5 +1,10 @@
-# StreemNetworking
-StreemNetworking is a super simple Swift HTTP networking library that comes with many modules
+
+[![Build Status](https://api.travis-ci.org/JustaLab/Nikka.svg?branch=master](https://travis-ci.org/JustaLab/Nikka)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Nikka.svg)
+
+# Nikka
+Nikka is a super simple Swift HTTP networking library that comes with many modules
 
 - [Installation](#installation)
 - [Usage](#usage)
@@ -18,7 +23,7 @@ StreemNetworking is a super simple Swift HTTP networking library that comes with
 ```ruby
 use_frameworks!
 
-pod "StreemNetworking"
+pod "Nikka"
 ```
 
 ## Usage
@@ -26,11 +31,11 @@ pod "StreemNetworking"
 ### Simple example:
 
 In 99% of the cases your app will need to talk to an API, that API has a behavior and you would like to map that behavior to your app. To handle errors correctly for instance.
-StreemNetworking has been designed with this in mind. It allows you to define a common behavior for an API, by defining a `Provider`.
+Nikka has been designed with this in mind. It allows you to define a common behavior for an API, by defining a `Provider`.
 Here's a simple example of what it looks like:
 
 ```swift
-import StreemNetworking
+import Nikka
 
 //Define your provider
 class MyProvider:HTTPProvider {
@@ -44,7 +49,7 @@ MyProvider().request(Route(path:"/me/friends")).responseJSON { (response:Respons
 }
 ```
 
-What is great with StreemNetworking, is that it's highly scalable, and modular. So you are able to define your endpoints wherever you want.
+What is great with Nikka, is that it's highly scalable, and modular. So you are able to define your endpoints wherever you want.
 Here is a nice way of presenting your endpoints and using them:
 
 ```swift
@@ -81,7 +86,7 @@ Route(path:"/login", method:.post, params:["email":"example@gmail.com", "passwor
 Route(path:"/user/about", method:.put, params:["text":"Hey!!"], headers:["Authorization":"12345"], encoding:.form) //PUT request that sends its parameters using the form encoding
 ```
 
-StreemNetworking currently supports 3 types of encoding, which are `json`, `form`, and `url`.
+Nikka currently supports 3 types of encoding, which are `json`, `form`, and `url`.
 
 - `json` will encode your parameters in JSON and put them in the request body
 - `form` will encode your parameters as query parameters and put them in the request body
@@ -203,7 +208,7 @@ class MyProvider:HTTPProvider {
     var baseURL:URL { return URL(string:"https://my-website.com/api")!}
 
     func shouldContinue(with error: StreemError) -> Bool {
-        if let err = error as? StreemNetworkingError , err == StreemNetworkingError.http(401){
+        if let err = error as? NikkaError , err == NikkaError.http(401){
             print("should log out")
             return false
         }
@@ -229,7 +234,7 @@ DefaultProvider.request(Route(path:"https://my-website.com/api/user/1")).respons
 
 
 ## Modules
-StreemNetworking works very well with JSON, it currently supports the libraries below to parse your data.
+Nikka works very well with JSON, it currently supports the libraries below to parse your data.
 
 - [Gloss](https://github.com/hkellaway/Gloss) - [documentation](Sources/Gloss/README.md)
 - [ModelMapper](https://github.com/lyft/mapper) - [documentation](Sources/ModelMapper/README.md)
@@ -253,11 +258,11 @@ MyProvider().request(Route(path:"/user/1234")).responseObject { (response:Respon
 }
 ```
 
-Additionally StreemNetworking supports [Futures](https://en.wikipedia.org/wiki/Futures_and_promises) and [RxSwift](https://github.com/ReactiveX/RxSwift) with modules that can be used with CocoaPods by adding this to your PodFile:
+Additionally Nikka supports [Futures](https://en.wikipedia.org/wiki/Futures_and_promises) and [RxSwift](https://github.com/ReactiveX/RxSwift) with modules that can be used with CocoaPods by adding this to your PodFile:
 
 ```ruby
-pod "StreemNetworking/Futures"
-pod "StreemNetworking/Rx"
+pod "Nikka/Futures"
+pod "Nikka/Rx"
 ```
 
 Note that when importing a module, the core and dependencies are automatically imported as well.
@@ -322,4 +327,4 @@ Contributions are more than welcome. Feel free to submit a pull request to add a
 
 ## License
 
-StreemNetworking is maintained by Emilien Stremsdoerfer and released under the Apache 2.0 license. See LICENSE for details
+Nikka is maintained by Emilien Stremsdoerfer and released under the Apache 2.0 license. See LICENSE for details

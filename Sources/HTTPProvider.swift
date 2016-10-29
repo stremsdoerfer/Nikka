@@ -55,7 +55,7 @@ public protocol HTTPProvider {
      - parameter error: any error returned by NSURLSession
      - returns: any Error that you would like to pass to consider the result a failure
      */
-    func validate(response: HTTPURLResponse?, data: Data, error: Error?) -> StreemError?
+    func validate(response: HTTPURLResponse?, data: Data, error: Error?) -> NikkaError?
 
     /**
      A function called if an error is found before a request returns a failure response.
@@ -63,7 +63,7 @@ public protocol HTTPProvider {
      - parameter error: the error that the request currently holds
      - returns: a boolean that tells us whether or not we should send a result back
      */
-    func shouldContinue(with error: StreemError) -> Bool
+    func shouldContinue(with error: NikkaError) -> Bool
 }
 
 /**
@@ -97,13 +97,13 @@ public extension HTTPProvider {
      Default validation.
      Will return an Error if the HTTP status code is greater than 399 (400+: client errors, 500+: server errors)
      */
-    func validate(response: HTTPURLResponse?, data: Data, error: Error?) -> StreemError? {
+    func validate(response: HTTPURLResponse?, data: Data, error: Error?) -> NikkaError? {
         if let error = error {
-            return StreemNetworkingError.error(with: error)
+            return NikkaNetworkingError.error(with: error)
         } else if let response = response {
-            return response.statusCode > 399 ? StreemNetworkingError.error(with: response.statusCode) : nil
+            return response.statusCode > 399 ? NikkaNetworkingError.error(with: response.statusCode) : nil
         } else {
-            return StreemNetworkingError.unknown("Response and error are nil")
+            return NikkaNetworkingError.unknown("Response and error are nil")
         }
     }
 
@@ -111,7 +111,7 @@ public extension HTTPProvider {
      Default implementation of shouldContinue
      Will always return true. It is up to you whether or not you want to stop the request
      */
-    func shouldContinue(with error: StreemError) -> Bool {
+    func shouldContinue(with error: NikkaError) -> Bool {
         return true
     }
 
@@ -134,9 +134,9 @@ public extension HTTPProvider {
                try request.encode(parameters: allParams, encoding: route.encoding)
             }
         } catch (let error) {
-            let streemError = error as? StreemError
+            let NikkaError = error as? NikkaError
             let r = Request(urlRequest: request, provider:self)
-            r.onComplete(response: nil, error: streemError ?? StreemNetworkingError.parameterEncoding(allParams))
+            r.onComplete(response: nil, error: NikkaError ?? NikkaNetworkingError.parameterEncoding(allParams))
             return r
         }
 
@@ -181,7 +181,7 @@ public class DefaultProvider: HTTPProvider {
         } else {
             let defaultURL = URL(string:"https://google.com")!
             let r = Request(urlRequest: URLRequest(url:defaultURL), provider:DefaultProvider(baseURL: defaultURL))
-            r.onComplete(response: nil, error: StreemNetworkingError.invalidURL(route.path))
+            r.onComplete(response: nil, error: NikkaNetworkingError.invalidURL(route.path))
             return r
         }
     }

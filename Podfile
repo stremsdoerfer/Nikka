@@ -1,5 +1,4 @@
 inhibit_all_warnings!
-source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
 def shared_pods
@@ -9,16 +8,16 @@ def shared_pods
     pod 'Unbox'
     pod 'ModelMapper'
     pod 'ObjectMapper'
-    pod 'RxSwift', '~> 3.0.0-beta.2'
-    pod 'RxCocoa', '~> 3.0.0-beta.2'
+    pod 'RxSwift', '~> 3.0.0'
+    pod 'RxCocoa', '~> 3.0.0'
 end
 
 
-target 'StreemNetworking' do
+target 'Nikka' do
     shared_pods
 end
 
-target 'StreemNetworkingTests' do
+target 'NikkaTests' do
     shared_pods
 end
 

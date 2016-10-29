@@ -1,6 +1,6 @@
 //
 //  MultipartForm.swift
-//  StreemNetworking
+//  Nikka
 //
 //  Created by Emilien on 10/22/16.
 //  Copyright © 2016 Emilien Stremsdoerfer. All rights reserved.
@@ -52,7 +52,7 @@ extension String {
 
     func safeData(using encoding: String.Encoding) throws -> Data {
         guard let data = self.data(using: encoding) else {
-            throw StreemNetworkingError.parameterEncoding(self)
+            throw NikkaNetworkingError.parameterEncoding(self)
         }
         return data
     }

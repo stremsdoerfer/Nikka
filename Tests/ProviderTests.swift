@@ -1,13 +1,13 @@
 //
 //  ProviderTests.swift
-//  StreemNetworking
+//  Nikka
 //
 //  Created by Emilien on 10/15/16.
 //  Copyright © 2016 Emilien Stremsdoerfer. All rights reserved.
 //
 
 import XCTest
-@testable import StreemNetworking
+@testable import Nikka
 
 class ProviderTests: XCTestCase {
 
@@ -22,9 +22,9 @@ class ProviderTests: XCTestCase {
         let expectation = self.expectation(description: "Request should return 404")
 
         let provider = TestProvider()
-        provider.request(.getError(404)).response { (response: URLResponse?, data: Data, error: StreemError?) in
+        provider.request(.getError(404)).response { (response: URLResponse?, data: Data, error: NikkaError?) in
             expectation.fulfill()
-            XCTAssertTrue(error!.isEqual(err: StreemNetworkingError.http(404)))
+            XCTAssertTrue(error!.isEqual(err: NikkaNetworkingError.http(404)))
             XCTAssertNotNil(response)
             XCTAssertEqual(data.count, 0)
         }
@@ -37,8 +37,8 @@ class ProviderTests: XCTestCase {
         let provider = TestProvider()
         provider.request(.getError(401)).response { (response: URLResponse?, data: Data, error: Error?) in
             expectation.fulfill()
-            let is401 = (error as? StreemNetworkingError) == StreemNetworkingError.http(401)
-            let is404 = (error as? StreemNetworkingError) == StreemNetworkingError.http(404)
+            let is401 = (error as? NikkaNetworkingError) == NikkaNetworkingError.http(401)
+            let is404 = (error as? NikkaNetworkingError) == NikkaNetworkingError.http(404)
             XCTAssertTrue(is401)
             XCTAssertFalse(is404)
             XCTAssertNotNil(response)
@@ -95,7 +95,7 @@ class ProviderTests: XCTestCase {
         let provider = TestProvider()
         provider.request(.getError(404)).responseJSON { (response: Response<Any>) in
             expectation.fulfill()
-            let is404 = (response.result.error as? StreemNetworkingError) == StreemNetworkingError.http(404)
+            let is404 = (response.result.error as? NikkaNetworkingError) == NikkaNetworkingError.http(404)
             XCTAssertTrue(is404)
             XCTAssertNil(response.result.value)
             XCTAssertEqual(response.data.count, 0)
@@ -109,8 +109,8 @@ class ProviderTests: XCTestCase {
         let provider = TestProvider()
         provider.request(.getError(401)).responseJSON { (response: Response<Any>) in
             expectation.fulfill()
-            let is401 = (response.result.error as? StreemNetworkingError) == StreemNetworkingError.http(401)
-            let is404 = (response.result.error as? StreemNetworkingError) == StreemNetworkingError.http(404)
+            let is401 = (response.result.error as? NikkaNetworkingError) == NikkaNetworkingError.http(401)
+            let is404 = (response.result.error as? NikkaNetworkingError) == NikkaNetworkingError.http(404)
             XCTAssertTrue(is401)
             XCTAssertFalse(is404)
             XCTAssertNil(response.result.value)
@@ -125,7 +125,7 @@ class ProviderTests: XCTestCase {
         let provider = TestProviderValidateAllHTTPCode()
         provider.request(.getError(401)).responseJSON { (response: Response<Any>) in
             expectation.fulfill()
-            let isEmpty = (response.result.error as? StreemNetworkingError) == StreemNetworkingError.emptyResponse
+            let isEmpty = (response.result.error as? NikkaNetworkingError) == NikkaNetworkingError.emptyResponse
             XCTAssertTrue(isEmpty)
             XCTAssertNil(response.result.value)
             XCTAssertEqual(response.data.count, 0)
@@ -179,7 +179,7 @@ class ProviderTests: XCTestCase {
         DefaultProvider.request(Route(path:"/ip")).responseJSON { (response: Response<Any>) in
             expectation.fulfill()
             XCTAssertNil(response.result.value)
-            XCTAssertEqual((response.result.error as? StreemNetworkingError), StreemNetworkingError.unknown("unsupported URL"))
+            XCTAssertEqual((response.result.error as? NikkaNetworkingError), NikkaNetworkingError.unknown("unsupported URL"))
         }
 
         waitForExpectations(timeout: timeout, handler: nil)

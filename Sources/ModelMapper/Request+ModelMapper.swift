@@ -32,7 +32,7 @@ extension Request {
                 if let jsonDict = value as? NSDictionary, let responseObject: T = T.from(jsonDict) {
                     return .success(responseObject)
                 } else {
-                    return .failure(StreemNetworkingError.jsonMapping(value))
+                    return .failure(NikkaNetworkingError.jsonMapping(value))
                 }
             })
             completionHandler(Response(response: response.response, data: response.data, result: newResult))
@@ -52,7 +52,7 @@ extension Request {
                 if let jsonArray = value as? NSArray, let responseObject: [T] = T.from(jsonArray) {
                     return .success(responseObject)
                 } else {
-                    return .failure(StreemNetworkingError.jsonMapping(value))
+                    return .failure(NikkaNetworkingError.jsonMapping(value))
                 }
             })
             completionHandler(Response(response: response.response, data: response.data, result: newResult))

@@ -28,14 +28,14 @@ public extension Request {
      */
     public func response() -> Observable<(HTTPURLResponse, Data)> {
         return Observable.create { observer in
-            self.response({ (response: HTTPURLResponse?, data: Data, error: StreemError?) in
+            self.response({ (response: HTTPURLResponse?, data: Data, error: NikkaError?) in
                 if let response = response {
                     observer.onNext((response, data))
                     observer.on(.completed)
                 } else if let error = error {
                     observer.onError(error)
                 } else {
-                    observer.onError(StreemNetworkingError.unknown("Response and error are nil"))
+                    observer.onError(NikkaNetworkingError.unknown("Response and error are nil"))
                 }
             })
             return Disposables.create()

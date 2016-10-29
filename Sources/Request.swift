@@ -44,7 +44,7 @@ open class Request {
     /**
      Instance variable that allows us to keep the state of the response if it arrives before the handler is added
     */
-    private var responseDataTmp: (HTTPURLResponse?, Data, StreemError?)?
+    private var responseDataTmp: (HTTPURLResponse?, Data, NikkaError?)?
 
     /**
      Instance variable that allows us to keep the state of the response if it arrives before the handler is added
@@ -73,7 +73,7 @@ open class Request {
      An instance closure that can be define with the matching function:
      func response(_ handler:@escaping ((URLResponse?, Data, Error?)->Void))
      */
-    private var onCompleteData: ((HTTPURLResponse?, Data, StreemError?) -> Void)?
+    private var onCompleteData: ((HTTPURLResponse?, Data, NikkaError?) -> Void)?
 
     /**
      Initializer of Request
@@ -115,7 +115,7 @@ open class Request {
         let httpResponse = response as? HTTPURLResponse
         var error = error
         if httpResponse == nil && error == nil {
-            error = (response != nil) ? StreemNetworkingError.nonHTTPResponse : StreemNetworkingError.unknown("Response and Error are nil")
+            error = (response != nil) ? NikkaNetworkingError.nonHTTPResponse : NikkaNetworkingError.unknown("Response and Error are nil")
         }
 
         let validatedError = provider.validate(response: httpResponse, data: buffer, error: error)
@@ -134,9 +134,9 @@ open class Request {
         if let json = try? JSONSerialization.jsonObject(with: buffer as Data, options: JSONSerialization.ReadingOptions.allowFragments) {
             responseToReturn = Response(response: httpResponse, data: buffer, result: .success(json))
         } else if buffer.count == 0 {
-            responseToReturn = Response(response: httpResponse, data: buffer, result: .failure(StreemNetworkingError.emptyResponse))
+            responseToReturn = Response(response: httpResponse, data: buffer, result: .failure(NikkaNetworkingError.emptyResponse))
         } else {
-            responseToReturn = Response(response: httpResponse, data: buffer, result: .failure(StreemNetworkingError.jsonDeserialization))
+            responseToReturn = Response(response: httpResponse, data: buffer, result: .failure(NikkaNetworkingError.jsonDeserialization))
         }
         responseJSONTmp = responseToReturn
         onCompleteJSON?(responseToReturn)
@@ -170,7 +170,7 @@ open class Request {
      - returns: itself
      */
     @discardableResult
-    open func response(_ handler:@escaping ((HTTPURLResponse?, Data, StreemError?) -> Void)) -> Self {
+    open func response(_ handler:@escaping ((HTTPURLResponse?, Data, NikkaError?) -> Void)) -> Self {
         self.onCompleteData = handler
         if let response = responseDataTmp {
             handler(response.0, response.1, response.2)

@@ -23,7 +23,7 @@ import Foundation
  */
 public enum Result<Value> {
     case success(Value)
-    case failure(StreemError)
+    case failure(NikkaError)
 
     /**
      Computed variable that will return the value if the result is a success and nil otherwise
@@ -40,7 +40,7 @@ public enum Result<Value> {
     /**
      Computed variable that will return the error if the result is a failure and nil otherwise
      */
-    public var error: StreemError? {
+    public var error: NikkaError? {
         switch self {
         case .success:
             return nil

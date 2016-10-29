@@ -32,13 +32,13 @@ public extension Request {
             future.fill(downloadProgress: (receivedSize, expectedSize))
         }).uploadProgress({ (bytesSent, totalBytes) in
             future.fill(uploadProgress: (bytesSent, totalBytes))
-        }).response { (response: HTTPURLResponse?, data: Data, error: StreemError?) in
+        }).response { (response: HTTPURLResponse?, data: Data, error: NikkaError?) in
             if let response = response {
                 future.fill(result: .success(response, data))
             } else if let error = error {
                 future.fill(result: .failure(error))
             } else {
-                future.fill(result: .failure(StreemNetworkingError.unknown("Response and error are nil")))
+                future.fill(result: .failure(NikkaNetworkingError.unknown("Response and error are nil")))
             }
         }
 

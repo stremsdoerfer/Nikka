@@ -1,13 +1,13 @@
 //
 //  MapperFuturesTests.swift
-//  StreemNetworking
+//  Nikka
 //
 //  Created by Emilien on 10/15/16.
 //  Copyright © 2016 Emilien Stremsdoerfer. All rights reserved.
 //
 
 import XCTest
-@testable import StreemNetworking
+@testable import Nikka
 @testable import StreemMapper
 
 class MapperFuturesTests: XCTestCase {
@@ -82,7 +82,7 @@ class MapperFuturesTests: XCTestCase {
         futureIP.onComplete { (result: Result<TestIP>) in
             expectation.fulfill()
             XCTAssertNil(result.value)
-            XCTAssertTrue((result.error?.isEqual(err:StreemNetworkingError.jsonMapping("")))!)
+            XCTAssertTrue((result.error?.isEqual(err:NikkaNetworkingError.jsonMapping("")))!)
         }
         waitForExpectations(timeout: timeout, handler: nil)
     }
@@ -105,7 +105,7 @@ class MapperFuturesTests: XCTestCase {
         futureValues.onComplete { (result: Result<[TestValue]>) in
             expectation.fulfill()
             XCTAssertNil(result.value)
-            XCTAssertTrue((result.error?.isEqual(err:StreemNetworkingError.jsonMapping("")))!)
+            XCTAssertTrue((result.error?.isEqual(err:NikkaNetworkingError.jsonMapping("")))!)
         }
         waitForExpectations(timeout: timeout, handler: nil)
     }
@@ -162,7 +162,7 @@ class MapperFuturesTests: XCTestCase {
         postIP.onComplete { (result: Result<TestResponse>) in
             expectation.fulfill()
             XCTAssertNil(result.value)
-            XCTAssertTrue((result.error?.isEqual(err:StreemNetworkingError.jsonMapping("")))!)
+            XCTAssertTrue((result.error?.isEqual(err:NikkaNetworkingError.jsonMapping("")))!)
         }
         waitForExpectations(timeout: timeout, handler: nil)
     }
@@ -190,7 +190,7 @@ class MapperFuturesTests: XCTestCase {
         postIP.onComplete { (result: Result<TestResponse>) in
             expectation.fulfill()
             XCTAssertNil(result.value)
-            XCTAssertTrue((result.error?.isEqual(err:StreemNetworkingError.jsonMapping("")))!)
+            XCTAssertTrue((result.error?.isEqual(err:NikkaNetworkingError.jsonMapping("")))!)
         }
         waitForExpectations(timeout: timeout, handler: nil)
     }

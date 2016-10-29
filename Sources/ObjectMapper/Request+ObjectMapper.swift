@@ -32,7 +32,7 @@ extension Request {
                 if let responseObject = Mapper<T>().map(JSONObject: value) {
                     return .success(responseObject)
                 } else {
-                    return .failure(StreemNetworkingError.jsonMapping(value))
+                    return .failure(NikkaNetworkingError.jsonMapping(value))
                 }
             })
             completionHandler(Response(response: response.response, data: response.data, result: newResult))
@@ -52,7 +52,7 @@ extension Request {
                 if let responseObject: [T] = Mapper<T>().mapArray(JSONObject: value) {
                     return .success(responseObject)
                 } else {
-                    return .failure(StreemNetworkingError.jsonMapping(value))
+                    return .failure(NikkaNetworkingError.jsonMapping(value))
                 }
             })
             completionHandler(Response(response: response.response, data: response.data, result: newResult))

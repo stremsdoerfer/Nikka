@@ -1,12 +1,12 @@
 //
 //  MockProviders.swift
-//  StreemNetworking
+//  Nikka
 //
 //  Created by Emilien on 10/15/16.
 //  Copyright © 2016 Emilien Stremsdoerfer. All rights reserved.
 //
 
-@testable import StreemNetworking
+@testable import Nikka
 
 class TestProvider: HTTPProvider {
     var baseURL: URL { get { return URL(string: "https://httpbin.org")! }}
@@ -25,7 +25,7 @@ class TestParamsProvider: HTTPProvider {
 class TestProviderValidateAllHTTPCode: HTTPProvider {
     var baseURL: URL { get { return URL(string: "https://httpbin.org/")! }}
 
-    func validate(response: HTTPURLResponse?, data: Data, error: Error?) -> StreemError? {
+    func validate(response: HTTPURLResponse?, data: Data, error: Error?) -> NikkaError? {
         return nil
     }
 }
@@ -33,7 +33,7 @@ class TestProviderValidateAllHTTPCode: HTTPProvider {
 class TestProviderDeezer: HTTPProvider {
     var baseURL: URL { get { return URL(string: "https://api.deezer.com/")! }}
 
-    func validate(response: HTTPURLResponse?, data: Data, error: Error?) -> StreemError? {
+    func validate(response: HTTPURLResponse?, data: Data, error: Error?) -> NikkaError? {
         let json = (try? JSONSerialization.jsonObject(with: data, options: .allowFragments)) as? [String:Any]
 
         if let error = json?["error"] as? [String:Any], let code = error["code"] as? Int, let desc = error["message"] as? String {
@@ -43,7 +43,7 @@ class TestProviderDeezer: HTTPProvider {
     }
 }
 
-struct DeezerError: StreemError, Equatable {
+struct DeezerError: NikkaError, Equatable {
 
     public static func == (lhs: DeezerError, rhs: DeezerError) -> Bool {
         return lhs.code == rhs.code

@@ -32,7 +32,7 @@ extension Request {
                 if let responseObject: T = T.from(JSON:value) {
                     return .success(responseObject)
                 } else {
-                    return .failure(StreemNetworkingError.jsonMapping(value))
+                    return .failure(NikkaNetworkingError.jsonMapping(value))
                 }
             })
             completionHandler(Response(response: response.response, data: response.data, result: newResult))
@@ -52,7 +52,7 @@ extension Request {
                 if let responseObject: [T] = [T].from(JSON:value, rootKey: rootKey) {
                     return .success(responseObject)
                 } else {
-                    return .failure(StreemNetworkingError.jsonMapping(value))
+                    return .failure(NikkaNetworkingError.jsonMapping(value))
                 }
             })
             completionHandler(Response(response: response.response, data: response.data, result: newResult))

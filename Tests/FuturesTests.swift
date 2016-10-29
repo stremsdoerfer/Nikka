@@ -1,13 +1,13 @@
 //
 //  FuturesTests.swift
-//  StreemNetworking
+//  Nikka
 //
 //  Created by Emilien on 10/22/16.
 //  Copyright © 2016 Emilien Stremsdoerfer. All rights reserved.
 //
 
 import XCTest
-@testable import StreemNetworking
+@testable import Nikka
 
 class FuturesTests: XCTestCase {
 

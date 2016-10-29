@@ -89,7 +89,7 @@ extension URLRequest {
                 self.httpBody = data
                 self.setValue("application/json", forHTTPHeaderField: "Content-Type")
             } catch {
-                throw StreemNetworkingError.parameterEncoding(parameters)
+                throw NikkaNetworkingError.parameterEncoding(parameters)
             }
         case .form:
             let paramString = (parameters.map { "\($0)=\($1)" } as [String]).joined(separator: "&")

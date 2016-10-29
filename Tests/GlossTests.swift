@@ -1,13 +1,13 @@
 //
 //  GlossTests.swift
-//  StreemNetworking
+//  Nikka
 //
 //  Created by Emilien on 10/21/16.
 //  Copyright © 2016 Emilien Stremsdoerfer. All rights reserved.
 //
 
 import XCTest
-@testable import StreemNetworking
+@testable import Nikka
 @testable import Gloss
 
 class GlossTests: XCTestCase {
@@ -60,7 +60,7 @@ class GlossTests: XCTestCase {
         provider.request(.ip).responseObject { (response: Response<TestIP>) in
             expectation.fulfill()
             XCTAssertNil(response.result.value)
-            XCTAssertTrue((response.result.error?.isEqual(err: StreemNetworkingError.jsonMapping("")))!)
+            XCTAssertTrue((response.result.error?.isEqual(err: NikkaNetworkingError.jsonMapping("")))!)
         }
 
         waitForExpectations(timeout: timeout, handler: nil)

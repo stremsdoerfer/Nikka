@@ -4,7 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>StreemNetworking.xcscheme_^#shared#^_</key>
+		<key>Nikka-OSX.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>10</integer>
+		</dict>
+		<key>Nikka-iOS.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,6 +17,16 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>EBA947531DC4688B00EDEC2F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EBA9475B1DC4688B00EDEC2F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>EBFCB4791DA9DE18009036BD</key>
 		<dict>
 			<key>primary</key>
