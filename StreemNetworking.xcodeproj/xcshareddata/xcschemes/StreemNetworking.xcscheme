@@ -56,7 +56,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6BAB68ADEC50E1159BC2F2D1"
+               BlueprintIdentifier = "64F60254DB6A7581A5BFF218"
                BuildableName = "Pods_StreemNetworking.framework"
                BlueprintName = "Pods-StreemNetworking"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -70,7 +70,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C26217A0C7563567EF5733B3"
+               BlueprintIdentifier = "C8B0BC41D5090827BDA01131"
                BuildableName = "Pods_StreemNetworkingTests.framework"
                BlueprintName = "Pods-StreemNetworkingTests"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">

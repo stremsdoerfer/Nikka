@@ -3,7 +3,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
 def shared_pods
-    pod 'StreemMapper', '~> 6.1.0'
+    pod 'StreemMapper'
     pod 'Unbox'
     pod 'Gloss'
     pod 'Unbox'
