@@ -139,7 +139,7 @@
 		EB20ABB81DBC014700E793A2 /* RxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20ABB61DBC010B00E793A2 /* RxTests.swift */; };
 		EB20ABBA1DBC044500E793A2 /* FuturesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20ABB91DBC044500E793A2 /* FuturesTests.swift */; };
 		EB4D86AE1DBC2BAE00A4D621 /* MultipartForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4D86AD1DBC2BAE00A4D621 /* MultipartForm.swift */; };
-		EBFCB4841DA9DE18009036BD /* NikkaIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBFCB47A1DA9DE18009036BD /* NikkaIOS.framework */; };
+		EBFCB4841DA9DE18009036BD /* Nikka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBFCB47A1DA9DE18009036BD /* Nikka.framework */; };
 		EBFCB48B1DA9DE18009036BD /* Nikka.h in Headers */ = {isa = PBXBuildFile; fileRef = EBFCB47D1DA9DE18009036BD /* Nikka.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EBFCB4961DA9DE89009036BD /* RequestBuildingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4941DA9DE87009036BD /* RequestBuildingTests.swift */; };
 		EBFCB49F1DA9DF6D009036BD /* NikkaError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4981DA9DF6D009036BD /* NikkaError.swift */; };
@@ -190,19 +190,19 @@
 		EB11F5DC1DB2F1F800D034C2 /* MapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MapperTests.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		EB11F5DE1DB2FFB700D034C2 /* MapperRxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MapperRxTests.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		EB11F5E01DB2FFED00D034C2 /* MapperFuturesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MapperFuturesTests.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		EB120B121DC4754200D3D3E3 /* NikkaTvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NikkaTvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB120B121DC4754200D3D3E3 /* Nikka.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Nikka.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB120B141DC4754200D3D3E3 /* NikkaTvOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NikkaTvOS.h; sourceTree = "<group>"; };
 		EB120B151DC4754300D3D3E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EB120B2E1DC475CD00D3D3E3 /* NikkaWatchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NikkaWatchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB120B2E1DC475CD00D3D3E3 /* Nikka.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Nikka.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB120B301DC475CD00D3D3E3 /* NikkaWatchOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NikkaWatchOS.h; sourceTree = "<group>"; };
 		EB120B311DC475CD00D3D3E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EB120B991DC52E3D00D3D3E3 /* NikkaOSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NikkaOSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB120B991DC52E3D00D3D3E3 /* Nikka.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Nikka.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB120B9B1DC52E3D00D3D3E3 /* NikkaOSX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NikkaOSX.h; sourceTree = "<group>"; };
 		EB120B9C1DC52E3D00D3D3E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB1619821DB496F900AF11BA /* Future.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Future.swift; sourceTree = "<group>"; };
 		EB1920701DC52FA7003A974C /* NikkaCoreOSX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NikkaCoreOSX.h; sourceTree = "<group>"; };
 		EB1920711DC52FA7003A974C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EB1920851DC52FDC003A974C /* NikkaCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NikkaCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB1920851DC52FDC003A974C /* Nikka.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Nikka.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB1920871DC52FDD003A974C /* NikkaCoreIOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NikkaCoreIOS.h; sourceTree = "<group>"; };
 		EB1920881DC52FDD003A974C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB20AB6F1DBB267F00E793A2 /* Request+ObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = "Request+ObjectMapper.swift"; path = "../Request+ObjectMapper.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -228,7 +228,7 @@
 		EB20ABB61DBC010B00E793A2 /* RxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = RxTests.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		EB20ABB91DBC044500E793A2 /* FuturesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = FuturesTests.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		EB4D86AD1DBC2BAE00A4D621 /* MultipartForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MultipartForm.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		EBFCB47A1DA9DE18009036BD /* NikkaIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NikkaIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBFCB47A1DA9DE18009036BD /* Nikka.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Nikka.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBFCB47D1DA9DE18009036BD /* Nikka.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Nikka.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		EBFCB47E1DA9DE18009036BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBFCB4831DA9DE18009036BD /* NikkaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NikkaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -292,7 +292,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBFCB4841DA9DE18009036BD /* NikkaIOS.framework in Frameworks */,
+				EBFCB4841DA9DE18009036BD /* Nikka.framework in Frameworks */,
 				DEC3FAE0B1363D2C1A4D992F /* Pods_NikkaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -533,12 +533,12 @@
 		EBFCB47B1DA9DE18009036BD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EBFCB47A1DA9DE18009036BD /* NikkaIOS.framework */,
+				EBFCB47A1DA9DE18009036BD /* Nikka.framework */,
 				EBFCB4831DA9DE18009036BD /* NikkaTests.xctest */,
-				EB120B121DC4754200D3D3E3 /* NikkaTvOS.framework */,
-				EB120B2E1DC475CD00D3D3E3 /* NikkaWatchOS.framework */,
-				EB120B991DC52E3D00D3D3E3 /* NikkaOSX.framework */,
-				EB1920851DC52FDC003A974C /* NikkaCore.framework */,
+				EB120B121DC4754200D3D3E3 /* Nikka.framework */,
+				EB120B2E1DC475CD00D3D3E3 /* Nikka.framework */,
+				EB120B991DC52E3D00D3D3E3 /* Nikka.framework */,
+				EB1920851DC52FDC003A974C /* Nikka.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -639,7 +639,7 @@
 			);
 			name = NikkaTvOS;
 			productName = NikkaTvOS;
-			productReference = EB120B121DC4754200D3D3E3 /* NikkaTvOS.framework */;
+			productReference = EB120B121DC4754200D3D3E3 /* Nikka.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		EB120B2D1DC475CD00D3D3E3 /* NikkaWatchOS */ = {
@@ -659,7 +659,7 @@
 			);
 			name = NikkaWatchOS;
 			productName = NikkaWatchOS;
-			productReference = EB120B2E1DC475CD00D3D3E3 /* NikkaWatchOS.framework */;
+			productReference = EB120B2E1DC475CD00D3D3E3 /* Nikka.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		EB120B981DC52E3D00D3D3E3 /* NikkaOSX */ = {
@@ -679,7 +679,7 @@
 			);
 			name = NikkaOSX;
 			productName = NikkaOSX;
-			productReference = EB120B991DC52E3D00D3D3E3 /* NikkaOSX.framework */;
+			productReference = EB120B991DC52E3D00D3D3E3 /* Nikka.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		EB1920841DC52FDC003A974C /* NikkaCore */ = {
@@ -697,7 +697,7 @@
 			);
 			name = NikkaCore;
 			productName = NikkaCoreIOS;
-			productReference = EB1920851DC52FDC003A974C /* NikkaCore.framework */;
+			productReference = EB1920851DC52FDC003A974C /* Nikka.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		EBFCB4791DA9DE18009036BD /* NikkaIOS */ = {
@@ -718,7 +718,7 @@
 			);
 			name = NikkaIOS;
 			productName = StreemNetworking;
-			productReference = EBFCB47A1DA9DE18009036BD /* NikkaIOS.framework */;
+			productReference = EBFCB47A1DA9DE18009036BD /* Nikka.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		EBFCB4821DA9DE18009036BD /* NikkaTests */ = {
@@ -797,12 +797,12 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				EB1920841DC52FDC003A974C /* NikkaCore */,
 				EBFCB4791DA9DE18009036BD /* NikkaIOS */,
 				EB120B111DC4754200D3D3E3 /* NikkaTvOS */,
 				EB120B2D1DC475CD00D3D3E3 /* NikkaWatchOS */,
 				EB120B981DC52E3D00D3D3E3 /* NikkaOSX */,
 				EBFCB4821DA9DE18009036BD /* NikkaTests */,
-				EB1920841DC52FDC003A974C /* NikkaCore */,
 			);
 		};
 /* End PBXProject section */
@@ -1232,7 +1232,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.justalab.NikkaTvOS;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Nikka;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "appletvsimulator appletvos";
@@ -1256,7 +1256,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.justalab.NikkaTvOS;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Nikka;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "appletvsimulator appletvos";
@@ -1281,7 +1281,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.justalab.NikkaWatchOS;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Nikka;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "watchsimulator watchos";
@@ -1306,7 +1306,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.justalab.NikkaWatchOS;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Nikka;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "watchsimulator watchos";
@@ -1320,7 +1320,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A69A0E0353FBF3B1C8B01802 /* Pods-NikkaOSX.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = R69K2ALL6R;
@@ -1333,7 +1333,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.justalab.NikkaOSX;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Nikka;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = macosx;
@@ -1345,7 +1345,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2DB6DA790179E96452EF5427 /* Pods-NikkaOSX.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = R69K2ALL6R;
@@ -1358,7 +1358,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.justalab.NikkaOSX;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Nikka;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = macosx;
@@ -1379,7 +1379,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.justalab.NikkaCoreIOS;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Nikka;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx appletvos watchos";
 				SWIFT_VERSION = 3.0;
@@ -1399,7 +1399,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.justalab.NikkaCoreIOS;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Nikka;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx appletvos watchos";
 				SWIFT_VERSION = 3.0;
@@ -1529,7 +1529,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.justalab.StreemNetworking;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Nikka;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1554,7 +1554,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.justalab.StreemNetworking;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Nikka;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 3.0;
@@ -1565,7 +1565,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2458FB41549001CFA31103E3 /* Pods-NikkaTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = R69K2ALL6R;
 				INFOPLIST_FILE = Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1582,7 +1582,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FC1029109157171CABA3FE0D /* Pods-NikkaTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = R69K2ALL6R;
 				INFOPLIST_FILE = Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
