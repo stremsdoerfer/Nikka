@@ -27,6 +27,11 @@ target 'NikkaWatchOS' do
     shared_pods
 end
 
+target 'NikkaOSX' do
+    platform :osx, '10.10'
+    shared_pods
+end
+
 target 'NikkaTests' do
     shared_pods
 end

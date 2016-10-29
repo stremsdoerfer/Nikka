@@ -1,0 +1,14 @@
+github "ReactiveX/RxSwift" ~> 3.0
+github "JustaLab/mapper" ~> 6.1.0
+github "Unbox" ~> 2.2.0
+github "Gloss" ~> 1.1.0
+github "ModelMapper" ~> 
+
+pod 'StreemMapper'
+    pod 'Unbox'
+    pod 'Gloss'
+    pod 'Unbox'
+    pod 'ModelMapper'
+    pod 'ObjectMapper'
+    pod 'RxSwift', '~> 3.0.0'
+    pod 'RxCocoa', '~> 3.0.0'

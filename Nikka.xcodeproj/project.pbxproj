@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0D1B7F4F9713AA3C3B73B3CE /* Pods_NikkaIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7063DECE63CD2E35801F54E /* Pods_NikkaIOS.framework */; };
 		1E784FC59EE5C0910A538818 /* Pods_NikkaTvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9629791508F1BADC57C49ED /* Pods_NikkaTvOS.framework */; };
+		8571350F151FCE9198516D08 /* Pods_NikkaOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C83561EE9DD2EFFD1F2B628 /* Pods_NikkaOSX.framework */; };
 		A57383091CC61F1FE7A8267A /* Pods_NikkaWatchOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C782CF2B5311132D16B5DE72 /* Pods_NikkaWatchOS.framework */; };
 		DEC3FAE0B1363D2C1A4D992F /* Pods_NikkaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF8F3A9CFBD6F2A3F7B3188 /* Pods_NikkaTests.framework */; };
 		EB11F5CB1DB2CD7700D034C2 /* HTTPProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB11F5CA1DB2CD7700D034C2 /* HTTPProvider.swift */; };
@@ -21,7 +22,100 @@
 		EB11F5E11DB2FFED00D034C2 /* MapperFuturesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB11F5E01DB2FFED00D034C2 /* MapperFuturesTests.swift */; };
 		EB120B221DC4754300D3D3E3 /* NikkaTvOS.h in Headers */ = {isa = PBXBuildFile; fileRef = EB120B141DC4754200D3D3E3 /* NikkaTvOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EB120B321DC475CD00D3D3E3 /* NikkaWatchOS.h in Headers */ = {isa = PBXBuildFile; fileRef = EB120B301DC475CD00D3D3E3 /* NikkaWatchOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB120B361DC52CB500D3D3E3 /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1619821DB496F900AF11BA /* Future.swift */; };
+		EB120B371DC52CB500D3D3E3 /* HTTPProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB11F5CA1DB2CD7700D034C2 /* HTTPProvider.swift */; };
+		EB120B381DC52CB500D3D3E3 /* MultipartForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4D86AD1DBC2BAE00A4D621 /* MultipartForm.swift */; };
+		EB120B391DC52CB500D3D3E3 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB49A1DA9DF6D009036BD /* ParameterEncoding.swift */; };
+		EB120B3A1DC52CB500D3D3E3 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB49B1DA9DF6D009036BD /* Request.swift */; };
+		EB120B3B1DC52CB500D3D3E3 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB49C1DA9DF6D009036BD /* Response.swift */; };
+		EB120B3C1DC52CB500D3D3E3 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB49D1DA9DF6D009036BD /* Result.swift */; };
+		EB120B3D1DC52CB500D3D3E3 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB49E1DA9DF6D009036BD /* Route.swift */; };
+		EB120B3E1DC52CB500D3D3E3 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4991DA9DF6D009036BD /* SessionManager.swift */; };
+		EB120B3F1DC52CB500D3D3E3 /* NikkaError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4981DA9DF6D009036BD /* NikkaError.swift */; };
+		EB120B401DC52CCE00D3D3E3 /* Request+Gloss.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20AB7A1DBB39AC00E793A2 /* Request+Gloss.swift */; };
+		EB120B411DC52CCE00D3D3E3 /* Request+GlossRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20ABB31DBBFBBB00E793A2 /* Request+GlossRx.swift */; };
+		EB120B421DC52CCE00D3D3E3 /* Request+GlossFutures.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20ABB11DBBFBBB00E793A2 /* Request+GlossFutures.swift */; };
+		EB120B431DC52CCE00D3D3E3 /* Request+ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20AB6F1DBB267F00E793A2 /* Request+ObjectMapper.swift */; };
+		EB120B441DC52CCE00D3D3E3 /* Request+ObjectMapperRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20ABA61DBBFA7100E793A2 /* Request+ObjectMapperRx.swift */; };
+		EB120B451DC52CCE00D3D3E3 /* Request+ObjectMapperFutures.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20ABA41DBBFA7100E793A2 /* Request+ObjectMapperFutures.swift */; };
+		EB120B461DC52CCE00D3D3E3 /* Request+ModelMapperFutures.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20AB9E1DBBF9E000E793A2 /* Request+ModelMapperFutures.swift */; };
+		EB120B471DC52CCE00D3D3E3 /* Request+ModelMapperRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20ABA01DBBF9E000E793A2 /* Request+ModelMapperRx.swift */; };
+		EB120B481DC52CCE00D3D3E3 /* Request+ModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20AB9A1DBBF91C00E793A2 /* Request+ModelMapper.swift */; };
+		EB120B491DC52CCE00D3D3E3 /* Request+StreemMapperFutures.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20AB981DBBF43100E793A2 /* Request+StreemMapperFutures.swift */; };
+		EB120B4A1DC52CCE00D3D3E3 /* Request+StreemMapperRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20AB951DBBEA2900E793A2 /* Request+StreemMapperRx.swift */; };
+		EB120B4B1DC52CCE00D3D3E3 /* Request+StreemMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20AB8A1DBBE6E200E793A2 /* Request+StreemMapper.swift */; };
+		EB120B4C1DC52CCE00D3D3E3 /* Request+Unbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20AB7D1DBB3B8B00E793A2 /* Request+Unbox.swift */; };
+		EB120B4D1DC52CCE00D3D3E3 /* Request+UnboxRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20ABAC1DBBFACB00E793A2 /* Request+UnboxRx.swift */; };
+		EB120B4E1DC52CCE00D3D3E3 /* Request+UnboxFutures.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20ABAA1DBBFACB00E793A2 /* Request+UnboxFutures.swift */; };
+		EB120B4F1DC52CCE00D3D3E3 /* Request+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20AB881DBBE6E200E793A2 /* Request+Rx.swift */; };
+		EB120B501DC52CCE00D3D3E3 /* Request+Futures.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20AB861DBBE6E200E793A2 /* Request+Futures.swift */; };
+		EB120B511DC52D5000D3D3E3 /* Request+Gloss.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20AB7A1DBB39AC00E793A2 /* Request+Gloss.swift */; };
+		EB120B521DC52D5000D3D3E3 /* Request+GlossRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20ABB31DBBFBBB00E793A2 /* Request+GlossRx.swift */; };
+		EB120B531DC52D5000D3D3E3 /* Request+GlossFutures.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20ABB11DBBFBBB00E793A2 /* Request+GlossFutures.swift */; };
+		EB120B541DC52D5000D3D3E3 /* Request+ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20AB6F1DBB267F00E793A2 /* Request+ObjectMapper.swift */; };
+		EB120B551DC52D5000D3D3E3 /* Request+ObjectMapperRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20ABA61DBBFA7100E793A2 /* Request+ObjectMapperRx.swift */; };
+		EB120B561DC52D5000D3D3E3 /* Request+ObjectMapperFutures.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20ABA41DBBFA7100E793A2 /* Request+ObjectMapperFutures.swift */; };
+		EB120B571DC52D5000D3D3E3 /* Request+ModelMapperFutures.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20AB9E1DBBF9E000E793A2 /* Request+ModelMapperFutures.swift */; };
+		EB120B581DC52D5000D3D3E3 /* Request+ModelMapperRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20ABA01DBBF9E000E793A2 /* Request+ModelMapperRx.swift */; };
+		EB120B591DC52D5000D3D3E3 /* Request+ModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20AB9A1DBBF91C00E793A2 /* Request+ModelMapper.swift */; };
+		EB120B5A1DC52D5000D3D3E3 /* Request+StreemMapperFutures.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20AB981DBBF43100E793A2 /* Request+StreemMapperFutures.swift */; };
+		EB120B5B1DC52D5000D3D3E3 /* Request+StreemMapperRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20AB951DBBEA2900E793A2 /* Request+StreemMapperRx.swift */; };
+		EB120B5C1DC52D5000D3D3E3 /* Request+StreemMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20AB8A1DBBE6E200E793A2 /* Request+StreemMapper.swift */; };
+		EB120B5D1DC52D5000D3D3E3 /* Request+Unbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20AB7D1DBB3B8B00E793A2 /* Request+Unbox.swift */; };
+		EB120B5E1DC52D5000D3D3E3 /* Request+UnboxRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20ABAC1DBBFACB00E793A2 /* Request+UnboxRx.swift */; };
+		EB120B5F1DC52D5000D3D3E3 /* Request+UnboxFutures.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20ABAA1DBBFACB00E793A2 /* Request+UnboxFutures.swift */; };
+		EB120B601DC52D5000D3D3E3 /* Request+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20AB881DBBE6E200E793A2 /* Request+Rx.swift */; };
+		EB120B611DC52D5000D3D3E3 /* Request+Futures.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20AB861DBBE6E200E793A2 /* Request+Futures.swift */; };
+		EB120B621DC52D5000D3D3E3 /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1619821DB496F900AF11BA /* Future.swift */; };
+		EB120B631DC52D5000D3D3E3 /* HTTPProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB11F5CA1DB2CD7700D034C2 /* HTTPProvider.swift */; };
+		EB120B641DC52D5000D3D3E3 /* MultipartForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4D86AD1DBC2BAE00A4D621 /* MultipartForm.swift */; };
+		EB120B651DC52D5100D3D3E3 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB49A1DA9DF6D009036BD /* ParameterEncoding.swift */; };
+		EB120B661DC52D5100D3D3E3 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB49B1DA9DF6D009036BD /* Request.swift */; };
+		EB120B671DC52D5100D3D3E3 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB49C1DA9DF6D009036BD /* Response.swift */; };
+		EB120B681DC52D5100D3D3E3 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB49D1DA9DF6D009036BD /* Result.swift */; };
+		EB120B691DC52D5100D3D3E3 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB49E1DA9DF6D009036BD /* Route.swift */; };
+		EB120B6A1DC52D5100D3D3E3 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4991DA9DF6D009036BD /* SessionManager.swift */; };
+		EB120B6B1DC52D5100D3D3E3 /* NikkaError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4981DA9DF6D009036BD /* NikkaError.swift */; };
+		EB120B9D1DC52E3D00D3D3E3 /* NikkaOSX.h in Headers */ = {isa = PBXBuildFile; fileRef = EB120B9B1DC52E3D00D3D3E3 /* NikkaOSX.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB120BA11DC52E6A00D3D3E3 /* Request+Gloss.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20AB7A1DBB39AC00E793A2 /* Request+Gloss.swift */; };
+		EB120BA21DC52E6A00D3D3E3 /* Request+GlossRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20ABB31DBBFBBB00E793A2 /* Request+GlossRx.swift */; };
+		EB120BA31DC52E6A00D3D3E3 /* Request+GlossFutures.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20ABB11DBBFBBB00E793A2 /* Request+GlossFutures.swift */; };
+		EB120BA41DC52E6A00D3D3E3 /* Request+ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20AB6F1DBB267F00E793A2 /* Request+ObjectMapper.swift */; };
+		EB120BA51DC52E6A00D3D3E3 /* Request+ObjectMapperRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20ABA61DBBFA7100E793A2 /* Request+ObjectMapperRx.swift */; };
+		EB120BA61DC52E6A00D3D3E3 /* Request+ObjectMapperFutures.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20ABA41DBBFA7100E793A2 /* Request+ObjectMapperFutures.swift */; };
+		EB120BA71DC52E6A00D3D3E3 /* Request+ModelMapperFutures.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20AB9E1DBBF9E000E793A2 /* Request+ModelMapperFutures.swift */; };
+		EB120BA81DC52E6A00D3D3E3 /* Request+ModelMapperRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20ABA01DBBF9E000E793A2 /* Request+ModelMapperRx.swift */; };
+		EB120BA91DC52E6A00D3D3E3 /* Request+ModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20AB9A1DBBF91C00E793A2 /* Request+ModelMapper.swift */; };
+		EB120BAA1DC52E6A00D3D3E3 /* Request+StreemMapperFutures.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20AB981DBBF43100E793A2 /* Request+StreemMapperFutures.swift */; };
+		EB120BAB1DC52E6A00D3D3E3 /* Request+StreemMapperRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20AB951DBBEA2900E793A2 /* Request+StreemMapperRx.swift */; };
+		EB120BAC1DC52E6A00D3D3E3 /* Request+StreemMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20AB8A1DBBE6E200E793A2 /* Request+StreemMapper.swift */; };
+		EB120BAD1DC52E6A00D3D3E3 /* Request+Unbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20AB7D1DBB3B8B00E793A2 /* Request+Unbox.swift */; };
+		EB120BAE1DC52E6A00D3D3E3 /* Request+UnboxRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20ABAC1DBBFACB00E793A2 /* Request+UnboxRx.swift */; };
+		EB120BAF1DC52E6A00D3D3E3 /* Request+UnboxFutures.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20ABAA1DBBFACB00E793A2 /* Request+UnboxFutures.swift */; };
+		EB120BB01DC52E6A00D3D3E3 /* Request+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20AB881DBBE6E200E793A2 /* Request+Rx.swift */; };
+		EB120BB11DC52E6A00D3D3E3 /* Request+Futures.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20AB861DBBE6E200E793A2 /* Request+Futures.swift */; };
+		EB120BB21DC52E6A00D3D3E3 /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1619821DB496F900AF11BA /* Future.swift */; };
+		EB120BB31DC52E6A00D3D3E3 /* HTTPProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB11F5CA1DB2CD7700D034C2 /* HTTPProvider.swift */; };
+		EB120BB41DC52E6A00D3D3E3 /* MultipartForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4D86AD1DBC2BAE00A4D621 /* MultipartForm.swift */; };
+		EB120BB51DC52E6A00D3D3E3 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB49A1DA9DF6D009036BD /* ParameterEncoding.swift */; };
+		EB120BB61DC52E6A00D3D3E3 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB49B1DA9DF6D009036BD /* Request.swift */; };
+		EB120BB71DC52E6A00D3D3E3 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB49C1DA9DF6D009036BD /* Response.swift */; };
+		EB120BB81DC52E6A00D3D3E3 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB49D1DA9DF6D009036BD /* Result.swift */; };
+		EB120BB91DC52E6A00D3D3E3 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB49E1DA9DF6D009036BD /* Route.swift */; };
+		EB120BBA1DC52E6A00D3D3E3 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4991DA9DF6D009036BD /* SessionManager.swift */; };
+		EB120BBB1DC52E6A00D3D3E3 /* NikkaError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4981DA9DF6D009036BD /* NikkaError.swift */; };
 		EB1619831DB496F900AF11BA /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1619821DB496F900AF11BA /* Future.swift */; };
+		EB1920891DC52FDD003A974C /* NikkaCoreIOS.h in Headers */ = {isa = PBXBuildFile; fileRef = EB1920871DC52FDD003A974C /* NikkaCoreIOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB19208D1DC53010003A974C /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1619821DB496F900AF11BA /* Future.swift */; };
+		EB19208E1DC53010003A974C /* HTTPProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB11F5CA1DB2CD7700D034C2 /* HTTPProvider.swift */; };
+		EB19208F1DC53010003A974C /* MultipartForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4D86AD1DBC2BAE00A4D621 /* MultipartForm.swift */; };
+		EB1920901DC53010003A974C /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB49A1DA9DF6D009036BD /* ParameterEncoding.swift */; };
+		EB1920911DC53010003A974C /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB49B1DA9DF6D009036BD /* Request.swift */; };
+		EB1920921DC53010003A974C /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB49C1DA9DF6D009036BD /* Response.swift */; };
+		EB1920931DC53010003A974C /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB49D1DA9DF6D009036BD /* Result.swift */; };
+		EB1920941DC53010003A974C /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB49E1DA9DF6D009036BD /* Route.swift */; };
+		EB1920951DC53010003A974C /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4991DA9DF6D009036BD /* SessionManager.swift */; };
+		EB1920961DC53010003A974C /* NikkaError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4981DA9DF6D009036BD /* NikkaError.swift */; };
 		EB20AB711DBB267F00E793A2 /* Request+ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20AB6F1DBB267F00E793A2 /* Request+ObjectMapper.swift */; };
 		EB20AB751DBB2D4C00E793A2 /* ObjectMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20AB741DBB2D4C00E793A2 /* ObjectMapperTests.swift */; };
 		EB20AB7B1DBB39AC00E793A2 /* Request+Gloss.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20AB7A1DBB39AC00E793A2 /* Request+Gloss.swift */; };
@@ -102,7 +196,15 @@
 		EB120B2E1DC475CD00D3D3E3 /* NikkaWatchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NikkaWatchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB120B301DC475CD00D3D3E3 /* NikkaWatchOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NikkaWatchOS.h; sourceTree = "<group>"; };
 		EB120B311DC475CD00D3D3E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB120B991DC52E3D00D3D3E3 /* NikkaOSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NikkaOSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB120B9B1DC52E3D00D3D3E3 /* NikkaOSX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NikkaOSX.h; sourceTree = "<group>"; };
+		EB120B9C1DC52E3D00D3D3E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB1619821DB496F900AF11BA /* Future.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Future.swift; sourceTree = "<group>"; };
+		EB1920701DC52FA7003A974C /* NikkaCoreOSX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NikkaCoreOSX.h; sourceTree = "<group>"; };
+		EB1920711DC52FA7003A974C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB1920851DC52FDC003A974C /* NikkaCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NikkaCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB1920871DC52FDD003A974C /* NikkaCoreIOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NikkaCoreIOS.h; sourceTree = "<group>"; };
+		EB1920881DC52FDD003A974C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB20AB6F1DBB267F00E793A2 /* Request+ObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = "Request+ObjectMapper.swift"; path = "../Request+ObjectMapper.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		EB20AB741DBB2D4C00E793A2 /* ObjectMapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ObjectMapperTests.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		EB20AB7A1DBB39AC00E793A2 /* Request+Gloss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = "Request+Gloss.swift"; path = "../../Gloss/Request+Gloss.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -160,6 +262,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				A57383091CC61F1FE7A8267A /* Pods_NikkaWatchOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB120B951DC52E3D00D3D3E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8571350F151FCE9198516D08 /* Pods_NikkaOSX.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB1920811DC52FDC003A974C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +379,33 @@
 				EB120B311DC475CD00D3D3E3 /* Info.plist */,
 			);
 			path = NikkaWatchOS;
+			sourceTree = "<group>";
+		};
+		EB120B9A1DC52E3D00D3D3E3 /* NikkaOSX */ = {
+			isa = PBXGroup;
+			children = (
+				EB120B9B1DC52E3D00D3D3E3 /* NikkaOSX.h */,
+				EB120B9C1DC52E3D00D3D3E3 /* Info.plist */,
+			);
+			path = NikkaOSX;
+			sourceTree = "<group>";
+		};
+		EB19206F1DC52FA7003A974C /* NikkaCoreOSX */ = {
+			isa = PBXGroup;
+			children = (
+				EB1920701DC52FA7003A974C /* NikkaCoreOSX.h */,
+				EB1920711DC52FA7003A974C /* Info.plist */,
+			);
+			path = NikkaCoreOSX;
+			sourceTree = "<group>";
+		};
+		EB1920861DC52FDD003A974C /* NikkaCoreIOS */ = {
+			isa = PBXGroup;
+			children = (
+				EB1920871DC52FDD003A974C /* NikkaCoreIOS.h */,
+				EB1920881DC52FDD003A974C /* Info.plist */,
+			);
+			path = NikkaCoreIOS;
 			sourceTree = "<group>";
 		};
 		EB20AB721DBB268900E793A2 /* Extensions */ = {
@@ -377,6 +521,9 @@
 				EBFCB4871DA9DE18009036BD /* Tests */,
 				EB120B131DC4754200D3D3E3 /* NikkaTvOS */,
 				EB120B2F1DC475CD00D3D3E3 /* NikkaWatchOS */,
+				EB120B9A1DC52E3D00D3D3E3 /* NikkaOSX */,
+				EB19206F1DC52FA7003A974C /* NikkaCoreOSX */,
+				EB1920861DC52FDD003A974C /* NikkaCoreIOS */,
 				EBFCB47B1DA9DE18009036BD /* Products */,
 				D7C6FDEC16E01EE80AF6D18E /* Pods */,
 				0093380EF03B455B5AFA07C5 /* Frameworks */,
@@ -390,6 +537,8 @@
 				EBFCB4831DA9DE18009036BD /* NikkaTests.xctest */,
 				EB120B121DC4754200D3D3E3 /* NikkaTvOS.framework */,
 				EB120B2E1DC475CD00D3D3E3 /* NikkaWatchOS.framework */,
+				EB120B991DC52E3D00D3D3E3 /* NikkaOSX.framework */,
+				EB1920851DC52FDC003A974C /* NikkaCore.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -446,6 +595,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EB120B961DC52E3D00D3D3E3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB120B9D1DC52E3D00D3D3E3 /* NikkaOSX.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB1920821DC52FDC003A974C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB1920891DC52FDD003A974C /* NikkaCoreIOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EBFCB4771DA9DE18009036BD /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -495,6 +660,44 @@
 			name = NikkaWatchOS;
 			productName = NikkaWatchOS;
 			productReference = EB120B2E1DC475CD00D3D3E3 /* NikkaWatchOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		EB120B981DC52E3D00D3D3E3 /* NikkaOSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB120B9E1DC52E3D00D3D3E3 /* Build configuration list for PBXNativeTarget "NikkaOSX" */;
+			buildPhases = (
+				5A05438BAA11E105C9DC9C82 /* [CP] Check Pods Manifest.lock */,
+				EB120B941DC52E3D00D3D3E3 /* Sources */,
+				EB120B951DC52E3D00D3D3E3 /* Frameworks */,
+				EB120B961DC52E3D00D3D3E3 /* Headers */,
+				EB120B971DC52E3D00D3D3E3 /* Resources */,
+				10BD1613D10EF8B77E10E314 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NikkaOSX;
+			productName = NikkaOSX;
+			productReference = EB120B991DC52E3D00D3D3E3 /* NikkaOSX.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		EB1920841DC52FDC003A974C /* NikkaCore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB19208A1DC52FDD003A974C /* Build configuration list for PBXNativeTarget "NikkaCore" */;
+			buildPhases = (
+				EB1920801DC52FDC003A974C /* Sources */,
+				EB1920811DC52FDC003A974C /* Frameworks */,
+				EB1920821DC52FDC003A974C /* Headers */,
+				EB1920831DC52FDC003A974C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NikkaCore;
+			productName = NikkaCoreIOS;
+			productReference = EB1920851DC52FDC003A974C /* NikkaCore.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		EBFCB4791DA9DE18009036BD /* NikkaIOS */ = {
@@ -559,6 +762,16 @@
 						DevelopmentTeam = R69K2ALL6R;
 						ProvisioningStyle = Automatic;
 					};
+					EB120B981DC52E3D00D3D3E3 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = R69K2ALL6R;
+						ProvisioningStyle = Automatic;
+					};
+					EB1920841DC52FDC003A974C = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = R69K2ALL6R;
+						ProvisioningStyle = Automatic;
+					};
 					EBFCB4791DA9DE18009036BD = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = R69K2ALL6R;
@@ -587,7 +800,9 @@
 				EBFCB4791DA9DE18009036BD /* NikkaIOS */,
 				EB120B111DC4754200D3D3E3 /* NikkaTvOS */,
 				EB120B2D1DC475CD00D3D3E3 /* NikkaWatchOS */,
+				EB120B981DC52E3D00D3D3E3 /* NikkaOSX */,
 				EBFCB4821DA9DE18009036BD /* NikkaTests */,
+				EB1920841DC52FDC003A974C /* NikkaCore */,
 			);
 		};
 /* End PBXProject section */
@@ -601,6 +816,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		EB120B2C1DC475CD00D3D3E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB120B971DC52E3D00D3D3E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB1920831DC52FDC003A974C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -624,6 +853,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		10BD1613D10EF8B77E10E314 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NikkaOSX/Pods-NikkaOSX-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		1B9759EF71191C00CB74640E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -651,7 +895,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		31D3E7F205EE2DAB3FD69A9A /* [CP] Embed Pods Frameworks */ = {
@@ -681,7 +925,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5A05438BAA11E105C9DC9C82 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		7A95DAC2A0150C7F3098B8C3 /* [CP] Check Pods Manifest.lock */ = {
@@ -696,7 +955,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		C7F4A6D84F393560C90F2B4B /* [CP] Copy Pods Resources */ = {
@@ -726,7 +985,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		D92DA0B5F23DF089E0422D91 /* [CP] Copy Pods Resources */ = {
@@ -779,6 +1038,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB120B401DC52CCE00D3D3E3 /* Request+Gloss.swift in Sources */,
+				EB120B411DC52CCE00D3D3E3 /* Request+GlossRx.swift in Sources */,
+				EB120B421DC52CCE00D3D3E3 /* Request+GlossFutures.swift in Sources */,
+				EB120B431DC52CCE00D3D3E3 /* Request+ObjectMapper.swift in Sources */,
+				EB120B441DC52CCE00D3D3E3 /* Request+ObjectMapperRx.swift in Sources */,
+				EB120B451DC52CCE00D3D3E3 /* Request+ObjectMapperFutures.swift in Sources */,
+				EB120B461DC52CCE00D3D3E3 /* Request+ModelMapperFutures.swift in Sources */,
+				EB120B471DC52CCE00D3D3E3 /* Request+ModelMapperRx.swift in Sources */,
+				EB120B481DC52CCE00D3D3E3 /* Request+ModelMapper.swift in Sources */,
+				EB120B491DC52CCE00D3D3E3 /* Request+StreemMapperFutures.swift in Sources */,
+				EB120B4A1DC52CCE00D3D3E3 /* Request+StreemMapperRx.swift in Sources */,
+				EB120B4B1DC52CCE00D3D3E3 /* Request+StreemMapper.swift in Sources */,
+				EB120B4C1DC52CCE00D3D3E3 /* Request+Unbox.swift in Sources */,
+				EB120B4D1DC52CCE00D3D3E3 /* Request+UnboxRx.swift in Sources */,
+				EB120B4E1DC52CCE00D3D3E3 /* Request+UnboxFutures.swift in Sources */,
+				EB120B4F1DC52CCE00D3D3E3 /* Request+Rx.swift in Sources */,
+				EB120B501DC52CCE00D3D3E3 /* Request+Futures.swift in Sources */,
+				EB120B361DC52CB500D3D3E3 /* Future.swift in Sources */,
+				EB120B371DC52CB500D3D3E3 /* HTTPProvider.swift in Sources */,
+				EB120B381DC52CB500D3D3E3 /* MultipartForm.swift in Sources */,
+				EB120B391DC52CB500D3D3E3 /* ParameterEncoding.swift in Sources */,
+				EB120B3A1DC52CB500D3D3E3 /* Request.swift in Sources */,
+				EB120B3B1DC52CB500D3D3E3 /* Response.swift in Sources */,
+				EB120B3C1DC52CB500D3D3E3 /* Result.swift in Sources */,
+				EB120B3D1DC52CB500D3D3E3 /* Route.swift in Sources */,
+				EB120B3E1DC52CB500D3D3E3 /* SessionManager.swift in Sources */,
+				EB120B3F1DC52CB500D3D3E3 /* NikkaError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -786,6 +1072,84 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB120B511DC52D5000D3D3E3 /* Request+Gloss.swift in Sources */,
+				EB120B521DC52D5000D3D3E3 /* Request+GlossRx.swift in Sources */,
+				EB120B531DC52D5000D3D3E3 /* Request+GlossFutures.swift in Sources */,
+				EB120B541DC52D5000D3D3E3 /* Request+ObjectMapper.swift in Sources */,
+				EB120B551DC52D5000D3D3E3 /* Request+ObjectMapperRx.swift in Sources */,
+				EB120B561DC52D5000D3D3E3 /* Request+ObjectMapperFutures.swift in Sources */,
+				EB120B571DC52D5000D3D3E3 /* Request+ModelMapperFutures.swift in Sources */,
+				EB120B581DC52D5000D3D3E3 /* Request+ModelMapperRx.swift in Sources */,
+				EB120B591DC52D5000D3D3E3 /* Request+ModelMapper.swift in Sources */,
+				EB120B5A1DC52D5000D3D3E3 /* Request+StreemMapperFutures.swift in Sources */,
+				EB120B5B1DC52D5000D3D3E3 /* Request+StreemMapperRx.swift in Sources */,
+				EB120B5C1DC52D5000D3D3E3 /* Request+StreemMapper.swift in Sources */,
+				EB120B5D1DC52D5000D3D3E3 /* Request+Unbox.swift in Sources */,
+				EB120B5E1DC52D5000D3D3E3 /* Request+UnboxRx.swift in Sources */,
+				EB120B5F1DC52D5000D3D3E3 /* Request+UnboxFutures.swift in Sources */,
+				EB120B601DC52D5000D3D3E3 /* Request+Rx.swift in Sources */,
+				EB120B611DC52D5000D3D3E3 /* Request+Futures.swift in Sources */,
+				EB120B621DC52D5000D3D3E3 /* Future.swift in Sources */,
+				EB120B631DC52D5000D3D3E3 /* HTTPProvider.swift in Sources */,
+				EB120B641DC52D5000D3D3E3 /* MultipartForm.swift in Sources */,
+				EB120B651DC52D5100D3D3E3 /* ParameterEncoding.swift in Sources */,
+				EB120B661DC52D5100D3D3E3 /* Request.swift in Sources */,
+				EB120B671DC52D5100D3D3E3 /* Response.swift in Sources */,
+				EB120B681DC52D5100D3D3E3 /* Result.swift in Sources */,
+				EB120B691DC52D5100D3D3E3 /* Route.swift in Sources */,
+				EB120B6A1DC52D5100D3D3E3 /* SessionManager.swift in Sources */,
+				EB120B6B1DC52D5100D3D3E3 /* NikkaError.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB120B941DC52E3D00D3D3E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB120BA11DC52E6A00D3D3E3 /* Request+Gloss.swift in Sources */,
+				EB120BA21DC52E6A00D3D3E3 /* Request+GlossRx.swift in Sources */,
+				EB120BA31DC52E6A00D3D3E3 /* Request+GlossFutures.swift in Sources */,
+				EB120BA41DC52E6A00D3D3E3 /* Request+ObjectMapper.swift in Sources */,
+				EB120BA51DC52E6A00D3D3E3 /* Request+ObjectMapperRx.swift in Sources */,
+				EB120BA61DC52E6A00D3D3E3 /* Request+ObjectMapperFutures.swift in Sources */,
+				EB120BA71DC52E6A00D3D3E3 /* Request+ModelMapperFutures.swift in Sources */,
+				EB120BA81DC52E6A00D3D3E3 /* Request+ModelMapperRx.swift in Sources */,
+				EB120BA91DC52E6A00D3D3E3 /* Request+ModelMapper.swift in Sources */,
+				EB120BAA1DC52E6A00D3D3E3 /* Request+StreemMapperFutures.swift in Sources */,
+				EB120BAB1DC52E6A00D3D3E3 /* Request+StreemMapperRx.swift in Sources */,
+				EB120BAC1DC52E6A00D3D3E3 /* Request+StreemMapper.swift in Sources */,
+				EB120BAD1DC52E6A00D3D3E3 /* Request+Unbox.swift in Sources */,
+				EB120BAE1DC52E6A00D3D3E3 /* Request+UnboxRx.swift in Sources */,
+				EB120BAF1DC52E6A00D3D3E3 /* Request+UnboxFutures.swift in Sources */,
+				EB120BB01DC52E6A00D3D3E3 /* Request+Rx.swift in Sources */,
+				EB120BB11DC52E6A00D3D3E3 /* Request+Futures.swift in Sources */,
+				EB120BB21DC52E6A00D3D3E3 /* Future.swift in Sources */,
+				EB120BB31DC52E6A00D3D3E3 /* HTTPProvider.swift in Sources */,
+				EB120BB41DC52E6A00D3D3E3 /* MultipartForm.swift in Sources */,
+				EB120BB51DC52E6A00D3D3E3 /* ParameterEncoding.swift in Sources */,
+				EB120BB61DC52E6A00D3D3E3 /* Request.swift in Sources */,
+				EB120BB71DC52E6A00D3D3E3 /* Response.swift in Sources */,
+				EB120BB81DC52E6A00D3D3E3 /* Result.swift in Sources */,
+				EB120BB91DC52E6A00D3D3E3 /* Route.swift in Sources */,
+				EB120BBA1DC52E6A00D3D3E3 /* SessionManager.swift in Sources */,
+				EB120BBB1DC52E6A00D3D3E3 /* NikkaError.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB1920801DC52FDC003A974C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB19208D1DC53010003A974C /* Future.swift in Sources */,
+				EB19208E1DC53010003A974C /* HTTPProvider.swift in Sources */,
+				EB19208F1DC53010003A974C /* MultipartForm.swift in Sources */,
+				EB1920901DC53010003A974C /* ParameterEncoding.swift in Sources */,
+				EB1920911DC53010003A974C /* Request.swift in Sources */,
+				EB1920921DC53010003A974C /* Response.swift in Sources */,
+				EB1920931DC53010003A974C /* Result.swift in Sources */,
+				EB1920941DC53010003A974C /* Route.swift in Sources */,
+				EB1920951DC53010003A974C /* SessionManager.swift in Sources */,
+				EB1920961DC53010003A974C /* NikkaError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -949,6 +1313,96 @@
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Release;
+		};
+		EB120B9F1DC52E3D00D3D3E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A69A0E0353FBF3B1C8B01802 /* Pods-NikkaOSX.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = R69K2ALL6R;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = NikkaOSX/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.justalab.NikkaOSX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = macosx;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		EB120BA01DC52E3D00D3D3E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DB6DA790179E96452EF5427 /* Pods-NikkaOSX.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = R69K2ALL6R;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = NikkaOSX/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.justalab.NikkaOSX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = macosx;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		EB19208B1DC52FDD003A974C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = R69K2ALL6R;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = NikkaCoreIOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.justalab.NikkaCoreIOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx appletvos watchos";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		EB19208C1DC52FDD003A974C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = R69K2ALL6R;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = NikkaCoreIOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.justalab.NikkaCoreIOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx appletvos watchos";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -1118,6 +1572,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.justalab.StreemNetworkingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -1133,6 +1589,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.justalab.StreemNetworkingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -1154,6 +1612,24 @@
 			buildConfigurations = (
 				EB120B331DC475CD00D3D3E3 /* Debug */,
 				EB120B341DC475CD00D3D3E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB120B9E1DC52E3D00D3D3E3 /* Build configuration list for PBXNativeTarget "NikkaOSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB120B9F1DC52E3D00D3D3E3 /* Debug */,
+				EB120BA01DC52E3D00D3D3E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB19208A1DC52FDD003A974C /* Build configuration list for PBXNativeTarget "NikkaCore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB19208B1DC52FDD003A974C /* Debug */,
+				EB19208C1DC52FDD003A974C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

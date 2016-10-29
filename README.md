@@ -3,6 +3,8 @@
 [![Build Status](https://api.travis-ci.org/JustaLab/Nikka.svg?branch=master)](https://travis-ci.org/JustaLab/Nikka)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 ![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Nikka.svg)
+[![Platform](https://img.shields.io/cocoapods/p/Nikka.svg?style=flat)](http://cocoadocs.org/docsets/Nikka)
+
 
 # Nikka
 Nikka is a super simple Swift HTTP networking library that comes with many modules

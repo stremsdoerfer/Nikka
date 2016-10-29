@@ -9,15 +9,25 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>NikkaTvOS.xcscheme</key>
+		<key>Nikka-macOS.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>Nikka-tvOS.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
-		<key>NikkaWatchOS.xcscheme</key>
+		<key>Nikka-watchOS.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>19</integer>
+			<integer>2</integer>
+		</dict>
+		<key>NikkaCore.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>38</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -43,6 +53,26 @@
 			<true/>
 		</dict>
 		<key>EB120B2D1DC475CD00D3D3E3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EB120B701DC52DA300D3D3E3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EB120B981DC52E3D00D3D3E3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EB19206D1DC52FA7003A974C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EB1920841DC52FDC003A974C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
