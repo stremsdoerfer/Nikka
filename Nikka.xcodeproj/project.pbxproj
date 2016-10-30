@@ -133,15 +133,6 @@
 		EB20ABB51DBBFBBB00E793A2 /* Request+GlossRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20ABB31DBBFBBB00E793A2 /* Request+GlossRx.swift */; };
 		EB20ABB81DBC014700E793A2 /* RxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20ABB61DBC010B00E793A2 /* RxTests.swift */; };
 		EB20ABBA1DBC044500E793A2 /* FuturesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20ABB91DBC044500E793A2 /* FuturesTests.swift */; };
-		EB2D17301DC5717B00234DF6 /* Gloss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB2D17271DC5717B00234DF6 /* Gloss.framework */; };
-		EB2D17311DC5717B00234DF6 /* Mapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB2D17281DC5717B00234DF6 /* Mapper.framework */; };
-		EB2D17321DC5717B00234DF6 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB2D17291DC5717B00234DF6 /* ObjectMapper.framework */; };
-		EB2D17331DC5717B00234DF6 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB2D172A1DC5717B00234DF6 /* RxBlocking.framework */; };
-		EB2D17341DC5717B00234DF6 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB2D172B1DC5717B00234DF6 /* RxCocoa.framework */; };
-		EB2D17351DC5717B00234DF6 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB2D172C1DC5717B00234DF6 /* RxSwift.framework */; };
-		EB2D17361DC5717B00234DF6 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB2D172D1DC5717B00234DF6 /* RxTest.framework */; };
-		EB2D17371DC5717B00234DF6 /* StreemMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB2D172E1DC5717B00234DF6 /* StreemMapper.framework */; };
-		EB2D17381DC5717B00234DF6 /* Unbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB2D172F1DC5717B00234DF6 /* Unbox.framework */; };
 		EB4D86AE1DBC2BAE00A4D621 /* MultipartForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4D86AD1DBC2BAE00A4D621 /* MultipartForm.swift */; };
 		EBFCB4841DA9DE18009036BD /* Nikka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBFCB47A1DA9DE18009036BD /* Nikka.framework */; };
 		EBFCB48B1DA9DE18009036BD /* Nikka.h in Headers */ = {isa = PBXBuildFile; fileRef = EBFCB47D1DA9DE18009036BD /* Nikka.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -211,15 +202,6 @@
 		EB20ABB31DBBFBBB00E793A2 /* Request+GlossRx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Request+GlossRx.swift"; path = "Rx/Request+GlossRx.swift"; sourceTree = "<group>"; };
 		EB20ABB61DBC010B00E793A2 /* RxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = RxTests.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		EB20ABB91DBC044500E793A2 /* FuturesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = FuturesTests.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		EB2D17271DC5717B00234DF6 /* Gloss.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gloss.framework; path = Carthage/Build/iOS/Gloss.framework; sourceTree = "<group>"; };
-		EB2D17281DC5717B00234DF6 /* Mapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mapper.framework; path = Carthage/Build/iOS/Mapper.framework; sourceTree = "<group>"; };
-		EB2D17291DC5717B00234DF6 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
-		EB2D172A1DC5717B00234DF6 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
-		EB2D172B1DC5717B00234DF6 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
-		EB2D172C1DC5717B00234DF6 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
-		EB2D172D1DC5717B00234DF6 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
-		EB2D172E1DC5717B00234DF6 /* StreemMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StreemMapper.framework; path = Carthage/Build/iOS/StreemMapper.framework; sourceTree = "<group>"; };
-		EB2D172F1DC5717B00234DF6 /* Unbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Unbox.framework; path = Carthage/Build/iOS/Unbox.framework; sourceTree = "<group>"; };
 		EB4D86AD1DBC2BAE00A4D621 /* MultipartForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MultipartForm.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		EBFCB47A1DA9DE18009036BD /* Nikka.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Nikka.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBFCB47D1DA9DE18009036BD /* Nikka.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Nikka.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -269,15 +251,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB2D17341DC5717B00234DF6 /* RxCocoa.framework in Frameworks */,
-				EB2D17311DC5717B00234DF6 /* Mapper.framework in Frameworks */,
-				EB2D17351DC5717B00234DF6 /* RxSwift.framework in Frameworks */,
-				EB2D17381DC5717B00234DF6 /* Unbox.framework in Frameworks */,
-				EB2D17331DC5717B00234DF6 /* RxBlocking.framework in Frameworks */,
-				EB2D17371DC5717B00234DF6 /* StreemMapper.framework in Frameworks */,
-				EB2D17321DC5717B00234DF6 /* ObjectMapper.framework in Frameworks */,
-				EB2D17361DC5717B00234DF6 /* RxTest.framework in Frameworks */,
-				EB2D17301DC5717B00234DF6 /* Gloss.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,22 +447,6 @@
 			name = Unbox;
 			sourceTree = "<group>";
 		};
-		EB2D17261DC5712600234DF6 /* Carthage */ = {
-			isa = PBXGroup;
-			children = (
-				EB2D17271DC5717B00234DF6 /* Gloss.framework */,
-				EB2D17281DC5717B00234DF6 /* Mapper.framework */,
-				EB2D17291DC5717B00234DF6 /* ObjectMapper.framework */,
-				EB2D172A1DC5717B00234DF6 /* RxBlocking.framework */,
-				EB2D172B1DC5717B00234DF6 /* RxCocoa.framework */,
-				EB2D172C1DC5717B00234DF6 /* RxSwift.framework */,
-				EB2D172D1DC5717B00234DF6 /* RxTest.framework */,
-				EB2D172E1DC5717B00234DF6 /* StreemMapper.framework */,
-				EB2D172F1DC5717B00234DF6 /* Unbox.framework */,
-			);
-			name = Carthage;
-			sourceTree = "<group>";
-		};
 		EBFCB4701DA9DE18009036BD = {
 			isa = PBXGroup;
 			children = (
@@ -502,7 +459,6 @@
 				EB1920861DC52FDD003A974C /* NikkaCoreIOS */,
 				EBFCB47B1DA9DE18009036BD /* Products */,
 				0093380EF03B455B5AFA07C5 /* Frameworks */,
-				EB2D17261DC5712600234DF6 /* Carthage */,
 			);
 			sourceTree = "<group>";
 		};
