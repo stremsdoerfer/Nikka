@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		87601AFD5708F6A7B3B4C892 /* Pods_NikkaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3067D28DDC5D48BCD520EA5E /* Pods_NikkaTests.framework */; };
+		99ED17B0D1601EA163B64C6F /* Pods_NikkaOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 830E2A92CF13AC59DB3104CE /* Pods_NikkaOSX.framework */; };
+		B11678A9A8D5CE86F2B43C23 /* Pods_NikkaTvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C7FEFC8A1B597865492153A /* Pods_NikkaTvOS.framework */; };
+		BAEE79CCA14CC6D795E6F2E1 /* Pods_NikkaWatchOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A88F3BB4DE08C6A0B1AA46B1 /* Pods_NikkaWatchOS.framework */; };
 		EB11F5CB1DB2CD7700D034C2 /* HTTPProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB11F5CA1DB2CD7700D034C2 /* HTTPProvider.swift */; };
 		EB11F5CE1DB2CE8A00D034C2 /* MockProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB11F5CC1DB2CE4A00D034C2 /* MockProviders.swift */; };
 		EB11F5D11DB2DA3900D034C2 /* RequestSendingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB11F5CF1DB2DA1F00D034C2 /* RequestSendingTests.swift */; };
@@ -144,6 +148,7 @@
 		EBFCB4A31DA9DF6D009036BD /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB49C1DA9DF6D009036BD /* Response.swift */; };
 		EBFCB4A41DA9DF6D009036BD /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB49D1DA9DF6D009036BD /* Result.swift */; };
 		EBFCB4A51DA9DF6D009036BD /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB49E1DA9DF6D009036BD /* Route.swift */; };
+		FCD230D81A0E9CFFE216B24D /* Pods_NikkaIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 790D235B2B8D13742865F1C1 /* Pods_NikkaIOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +162,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D413CF6A276AE220F84121F /* Pods-NikkaTvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NikkaTvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-NikkaTvOS/Pods-NikkaTvOS.release.xcconfig"; sourceTree = "<group>"; };
+		2AE827A361100B5AA1F8EAA0 /* Pods-NikkaIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NikkaIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NikkaIOS/Pods-NikkaIOS.debug.xcconfig"; sourceTree = "<group>"; };
+		2ED7D5547772B38D01F0D6E9 /* Pods-NikkaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NikkaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NikkaTests/Pods-NikkaTests.release.xcconfig"; sourceTree = "<group>"; };
+		3067D28DDC5D48BCD520EA5E /* Pods_NikkaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NikkaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		38FC12E47EB310425F63F700 /* Pods-NikkaWatchOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NikkaWatchOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NikkaWatchOS/Pods-NikkaWatchOS.debug.xcconfig"; sourceTree = "<group>"; };
+		4A716B3AC654723BBB496A08 /* Pods-NikkaTvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NikkaTvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NikkaTvOS/Pods-NikkaTvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		4C7FEFC8A1B597865492153A /* Pods_NikkaTvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NikkaTvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		667926550842BB444EB11D4E /* Pods-NikkaWatchOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NikkaWatchOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-NikkaWatchOS/Pods-NikkaWatchOS.release.xcconfig"; sourceTree = "<group>"; };
+		6EA5D89E21936A5FADD1E5C6 /* Pods-NikkaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NikkaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NikkaTests/Pods-NikkaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		790D235B2B8D13742865F1C1 /* Pods_NikkaIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NikkaIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		830E2A92CF13AC59DB3104CE /* Pods_NikkaOSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NikkaOSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C0490C69E0F2ED8AE069268 /* Pods-NikkaIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NikkaIOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-NikkaIOS/Pods-NikkaIOS.release.xcconfig"; sourceTree = "<group>"; };
+		8CC9B3932C5941130F2B7B0E /* Pods-NikkaOSX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NikkaOSX.release.xcconfig"; path = "Pods/Target Support Files/Pods-NikkaOSX/Pods-NikkaOSX.release.xcconfig"; sourceTree = "<group>"; };
+		A88F3BB4DE08C6A0B1AA46B1 /* Pods_NikkaWatchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NikkaWatchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB11F5CA1DB2CD7700D034C2 /* HTTPProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = HTTPProvider.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		EB11F5CC1DB2CE4A00D034C2 /* MockProviders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MockProviders.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		EB11F5CF1DB2DA1F00D034C2 /* RequestSendingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = RequestSendingTests.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -216,6 +235,7 @@
 		EBFCB49C1DA9DF6D009036BD /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		EBFCB49D1DA9DF6D009036BD /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		EBFCB49E1DA9DF6D009036BD /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		F3F7A9CF2D9F726E53322981 /* Pods-NikkaOSX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NikkaOSX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NikkaOSX/Pods-NikkaOSX.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +243,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B11678A9A8D5CE86F2B43C23 /* Pods_NikkaTvOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +251,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAEE79CCA14CC6D795E6F2E1 /* Pods_NikkaWatchOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,6 +259,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99ED17B0D1601EA163B64C6F /* Pods_NikkaOSX.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +274,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCD230D81A0E9CFFE216B24D /* Pods_NikkaIOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBFCB4841DA9DE18009036BD /* Nikka.framework in Frameworks */,
+				87601AFD5708F6A7B3B4C892 /* Pods_NikkaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,8 +293,30 @@
 		0093380EF03B455B5AFA07C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				790D235B2B8D13742865F1C1 /* Pods_NikkaIOS.framework */,
+				830E2A92CF13AC59DB3104CE /* Pods_NikkaOSX.framework */,
+				3067D28DDC5D48BCD520EA5E /* Pods_NikkaTests.framework */,
+				4C7FEFC8A1B597865492153A /* Pods_NikkaTvOS.framework */,
+				A88F3BB4DE08C6A0B1AA46B1 /* Pods_NikkaWatchOS.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9210DE8592FA14BA1873C742 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2AE827A361100B5AA1F8EAA0 /* Pods-NikkaIOS.debug.xcconfig */,
+				8C0490C69E0F2ED8AE069268 /* Pods-NikkaIOS.release.xcconfig */,
+				F3F7A9CF2D9F726E53322981 /* Pods-NikkaOSX.debug.xcconfig */,
+				8CC9B3932C5941130F2B7B0E /* Pods-NikkaOSX.release.xcconfig */,
+				6EA5D89E21936A5FADD1E5C6 /* Pods-NikkaTests.debug.xcconfig */,
+				2ED7D5547772B38D01F0D6E9 /* Pods-NikkaTests.release.xcconfig */,
+				4A716B3AC654723BBB496A08 /* Pods-NikkaTvOS.debug.xcconfig */,
+				0D413CF6A276AE220F84121F /* Pods-NikkaTvOS.release.xcconfig */,
+				38FC12E47EB310425F63F700 /* Pods-NikkaWatchOS.debug.xcconfig */,
+				667926550842BB444EB11D4E /* Pods-NikkaWatchOS.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		EB11F5D81DB2F03D00D034C2 /* Core */ = {
@@ -459,6 +506,7 @@
 				EB1920861DC52FDD003A974C /* NikkaCoreIOS */,
 				EBFCB47B1DA9DE18009036BD /* Products */,
 				0093380EF03B455B5AFA07C5 /* Frameworks */,
+				9210DE8592FA14BA1873C742 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -636,11 +684,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBFCB48E1DA9DE18009036BD /* Build configuration list for PBXNativeTarget "NikkaIOS" */;
 			buildPhases = (
+				B5D261AFDA803FC17944765E /* [CP] Check Pods Manifest.lock */,
 				EBFCB4751DA9DE18009036BD /* Sources */,
 				EBFCB4761DA9DE18009036BD /* Frameworks */,
 				EBFCB4771DA9DE18009036BD /* Headers */,
 				EBFCB4781DA9DE18009036BD /* Resources */,
 				EBE34F1A1DC2FAF10057FDD9 /* ShellScript */,
+				5AF2CA96E7674EF0B3797449 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -873,7 +923,37 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		5AF2CA96E7674EF0B3797449 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NikkaIOS/Pods-NikkaIOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		7A95DAC2A0150C7F3098B8C3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B5D261AFDA803FC17944765E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1120,6 +1200,7 @@
 /* Begin XCBuildConfiguration section */
 		EB120B241DC4754300D3D3E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A716B3AC654723BBB496A08 /* Pods-NikkaTvOS.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
@@ -1143,6 +1224,7 @@
 		};
 		EB120B251DC4754300D3D3E3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D413CF6A276AE220F84121F /* Pods-NikkaTvOS.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
@@ -1166,6 +1248,7 @@
 		};
 		EB120B331DC475CD00D3D3E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38FC12E47EB310425F63F700 /* Pods-NikkaWatchOS.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -1190,6 +1273,7 @@
 		};
 		EB120B341DC475CD00D3D3E3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 667926550842BB444EB11D4E /* Pods-NikkaWatchOS.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -1214,6 +1298,7 @@
 		};
 		EB120B9F1DC52E3D00D3D3E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3F7A9CF2D9F726E53322981 /* Pods-NikkaOSX.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1238,6 +1323,7 @@
 		};
 		EB120BA01DC52E3D00D3D3E3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8CC9B3932C5941130F2B7B0E /* Pods-NikkaOSX.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1407,6 +1493,7 @@
 		};
 		EBFCB48F1DA9DE18009036BD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2AE827A361100B5AA1F8EAA0 /* Pods-NikkaIOS.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CLANG_ENABLE_MODULES = YES;
@@ -1436,6 +1523,7 @@
 		};
 		EBFCB4901DA9DE18009036BD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C0490C69E0F2ED8AE069268 /* Pods-NikkaIOS.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CLANG_ENABLE_MODULES = YES;
@@ -1463,8 +1551,9 @@
 		};
 		EBFCB4921DA9DE18009036BD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6EA5D89E21936A5FADD1E5C6 /* Pods-NikkaTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				DEVELOPMENT_TEAM = R69K2ALL6R;
 				INFOPLIST_FILE = Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1479,8 +1568,9 @@
 		};
 		EBFCB4931DA9DE18009036BD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ED7D5547772B38D01F0D6E9 /* Pods-NikkaTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				DEVELOPMENT_TEAM = R69K2ALL6R;
 				INFOPLIST_FILE = Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
