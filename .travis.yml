@@ -4,7 +4,6 @@ branches:
 
 language: objective-c
 osx_image: xcode8
-xcode_scheme: Nikka-iOS
 
 before_install:
 - pod repo remove master

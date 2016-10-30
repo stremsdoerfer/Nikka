@@ -1,3 +1,0 @@
-framework module Mapper {
-    header "Mapper-Swift.h"
-}

@@ -1,3 +1,5 @@
+Carthage/Build/*
+Carthage/Checkouts/*
 Pods/*
 Podfile.lock
 StreemNetworking.xcodeproj/project.xcworkspace/xcuserdata/*

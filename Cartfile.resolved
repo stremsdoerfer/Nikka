@@ -1,1 +1,6 @@
-github "JustaLab/mapper" "6.1.1"
+github "hkellaway/Gloss" "1.1.0"
+github "Hearst-DD/ObjectMapper" "2.2.0"
+github "ReactiveX/RxSwift" "3.0.0"
+github "JustaLab/StreemMapper" "6.1.2"
+github "JohnSundell/Unbox" "2.2.0"
+github "lyft/mapper" "5.0.0"
