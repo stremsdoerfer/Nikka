@@ -104,17 +104,6 @@
 		EB120BBA1DC52E6A00D3D3E3 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4991DA9DF6D009036BD /* SessionManager.swift */; };
 		EB120BBB1DC52E6A00D3D3E3 /* NikkaError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4981DA9DF6D009036BD /* NikkaError.swift */; };
 		EB1619831DB496F900AF11BA /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1619821DB496F900AF11BA /* Future.swift */; };
-		EB1920891DC52FDD003A974C /* NikkaCoreIOS.h in Headers */ = {isa = PBXBuildFile; fileRef = EB1920871DC52FDD003A974C /* NikkaCoreIOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EB19208D1DC53010003A974C /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1619821DB496F900AF11BA /* Future.swift */; };
-		EB19208E1DC53010003A974C /* HTTPProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB11F5CA1DB2CD7700D034C2 /* HTTPProvider.swift */; };
-		EB19208F1DC53010003A974C /* MultipartForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4D86AD1DBC2BAE00A4D621 /* MultipartForm.swift */; };
-		EB1920901DC53010003A974C /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB49A1DA9DF6D009036BD /* ParameterEncoding.swift */; };
-		EB1920911DC53010003A974C /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB49B1DA9DF6D009036BD /* Request.swift */; };
-		EB1920921DC53010003A974C /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB49C1DA9DF6D009036BD /* Response.swift */; };
-		EB1920931DC53010003A974C /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB49D1DA9DF6D009036BD /* Result.swift */; };
-		EB1920941DC53010003A974C /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB49E1DA9DF6D009036BD /* Route.swift */; };
-		EB1920951DC53010003A974C /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4991DA9DF6D009036BD /* SessionManager.swift */; };
-		EB1920961DC53010003A974C /* NikkaError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4981DA9DF6D009036BD /* NikkaError.swift */; };
 		EB20AB711DBB267F00E793A2 /* Request+ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20AB6F1DBB267F00E793A2 /* Request+ObjectMapper.swift */; };
 		EB20AB751DBB2D4C00E793A2 /* ObjectMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20AB741DBB2D4C00E793A2 /* ObjectMapperTests.swift */; };
 		EB20AB7B1DBB39AC00E793A2 /* Request+Gloss.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20AB7A1DBB39AC00E793A2 /* Request+Gloss.swift */; };
@@ -196,7 +185,6 @@
 		EB1619821DB496F900AF11BA /* Future.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Future.swift; sourceTree = "<group>"; };
 		EB1920701DC52FA7003A974C /* NikkaCoreOSX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NikkaCoreOSX.h; sourceTree = "<group>"; };
 		EB1920711DC52FA7003A974C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EB1920851DC52FDC003A974C /* Nikka.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Nikka.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB1920871DC52FDD003A974C /* NikkaCoreIOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NikkaCoreIOS.h; sourceTree = "<group>"; };
 		EB1920881DC52FDD003A974C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB20AB6F1DBB267F00E793A2 /* Request+ObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = "Request+ObjectMapper.swift"; path = "../Request+ObjectMapper.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -260,13 +248,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				99ED17B0D1601EA163B64C6F /* Pods_NikkaOSX.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EB1920811DC52FDC003A974C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,7 +499,6 @@
 				EB120B121DC4754200D3D3E3 /* Nikka.framework */,
 				EB120B2E1DC475CD00D3D3E3 /* Nikka.framework */,
 				EB120B991DC52E3D00D3D3E3 /* Nikka.framework */,
-				EB1920851DC52FDC003A974C /* Nikka.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -580,14 +560,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB120B9D1DC52E3D00D3D3E3 /* NikkaOSX.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EB1920821DC52FDC003A974C /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EB1920891DC52FDD003A974C /* NikkaCoreIOS.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,24 +634,6 @@
 			productReference = EB120B991DC52E3D00D3D3E3 /* Nikka.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		EB1920841DC52FDC003A974C /* NikkaCore */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = EB19208A1DC52FDD003A974C /* Build configuration list for PBXNativeTarget "NikkaCore" */;
-			buildPhases = (
-				EB1920801DC52FDC003A974C /* Sources */,
-				EB1920811DC52FDC003A974C /* Frameworks */,
-				EB1920821DC52FDC003A974C /* Headers */,
-				EB1920831DC52FDC003A974C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = NikkaCore;
-			productName = NikkaCoreIOS;
-			productReference = EB1920851DC52FDC003A974C /* Nikka.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		EBFCB4791DA9DE18009036BD /* NikkaIOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBFCB48E1DA9DE18009036BD /* Build configuration list for PBXNativeTarget "NikkaIOS" */;
@@ -747,11 +701,6 @@
 						DevelopmentTeam = R69K2ALL6R;
 						ProvisioningStyle = Automatic;
 					};
-					EB1920841DC52FDC003A974C = {
-						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = R69K2ALL6R;
-						ProvisioningStyle = Automatic;
-					};
 					EBFCB4791DA9DE18009036BD = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = R69K2ALL6R;
@@ -777,7 +726,6 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EB1920841DC52FDC003A974C /* NikkaCore */,
 				EBFCB4791DA9DE18009036BD /* NikkaIOS */,
 				EB120B111DC4754200D3D3E3 /* NikkaTvOS */,
 				EB120B2D1DC475CD00D3D3E3 /* NikkaWatchOS */,
@@ -803,13 +751,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		EB120B971DC52E3D00D3D3E3 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EB1920831DC52FDC003A974C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1116,23 +1057,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EB1920801DC52FDC003A974C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EB19208D1DC53010003A974C /* Future.swift in Sources */,
-				EB19208E1DC53010003A974C /* HTTPProvider.swift in Sources */,
-				EB19208F1DC53010003A974C /* MultipartForm.swift in Sources */,
-				EB1920901DC53010003A974C /* ParameterEncoding.swift in Sources */,
-				EB1920911DC53010003A974C /* Request.swift in Sources */,
-				EB1920921DC53010003A974C /* Response.swift in Sources */,
-				EB1920931DC53010003A974C /* Result.swift in Sources */,
-				EB1920941DC53010003A974C /* Route.swift in Sources */,
-				EB1920951DC53010003A974C /* SessionManager.swift in Sources */,
-				EB1920961DC53010003A974C /* NikkaError.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		EBFCB4751DA9DE18009036BD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1342,46 +1266,6 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = macosx;
-				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
-		EB19208B1DC52FDD003A974C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = R69K2ALL6R;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = NikkaCoreIOS/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.justalab.NikkaCoreIOS;
-				PRODUCT_NAME = Nikka;
-				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx appletvos watchos";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Debug;
-		};
-		EB19208C1DC52FDD003A974C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = R69K2ALL6R;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = NikkaCoreIOS/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.justalab.NikkaCoreIOS;
-				PRODUCT_NAME = Nikka;
-				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx appletvos watchos";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -1609,15 +1493,6 @@
 			buildConfigurations = (
 				EB120B9F1DC52E3D00D3D3E3 /* Debug */,
 				EB120BA01DC52E3D00D3D3E3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		EB19208A1DC52FDD003A974C /* Build configuration list for PBXNativeTarget "NikkaCore" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				EB19208B1DC52FDD003A974C /* Debug */,
-				EB19208C1DC52FDD003A974C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -10,4 +10,4 @@ before_install:
 - pod setup
 
 script:
-- xcodebuild clean build test -workspace Nikka.xcworkspace -scheme Nikka-iOS -destination "name=iPhone 6s"
+- xcodebuild clean build test -workspace Nikka.xcworkspace -scheme Nikka-iOS -destination "name=iPhone 6s" ONLY_ACTIVE_ARCH=NO
