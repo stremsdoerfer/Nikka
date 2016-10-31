@@ -2,6 +2,7 @@ Carthage/Build/*
 Carthage/Checkouts/*
 Pods/*
 Podfile.lock
+.DS_Store
 StreemNetworking.xcodeproj/project.xcworkspace/xcuserdata/*
 StreemNetworking.xcworkspace/contents.xcworkspacedata
 StreemNetworking.xcworkspace/xcuserdata/*
