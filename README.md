@@ -1,17 +1,16 @@
 <p align="center"><img src="https://raw.githubusercontent.com/JustaLab/Nikka/master/cover.png"/></p>
 
 [![Build Status](https://api.travis-ci.org/JustaLab/Nikka.svg?branch=master)](https://travis-ci.org/JustaLab/Nikka)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Nikka.svg)](http://cocoadocs.org/docsets/Nikka)
 [![Platform](https://img.shields.io/cocoapods/p/Nikka.svg?style=flat)](http://cocoadocs.org/docsets/Nikka)
 
 
 # Nikka
-Nikka is a super simple Swift HTTP networking library that comes with many modules
+Nikka is a super simple Swift HTTP networking library that comes with many extensions to make it modular and really powerful.
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Modules](#modules)
+- [Extensions](#extensions)
 
 ## Installation
 
@@ -46,13 +45,13 @@ class MyProvider:HTTPProvider {
 }
 ...
 
-//This will send a POST request to the endpoint https://my-website.com/api/login with a json body `{"email":"foo@gmail.com","password":"bar"}``
+//This will send a GET request to the endpoint https://my-website.com/api/me/friends
 MyProvider().request(Route(path:"/me/friends")).responseJSON { (response:Response<Any>) in
     //Parse here the object as an array or dictionary            
 }
 ```
 
-What is great with Nikka, is that it's highly scalable, and modular. So you are able to define your endpoints wherever you want.
+What is great with Nikka, is that it's highly scalable, and modular. You can define your endpoints wherever you want. It's up to you if you want them all in one file or if you prefer to split them among your different objects.
 Here is a nice way of presenting your endpoints and using them:
 
 ```swift
@@ -97,7 +96,7 @@ Nikka currently supports 3 types of encoding, which are `json`, `form`, and `url
 
 ### Multipart
 
-A Route is also able to have a multipart form. Here's a simple way to upload a multipart image:
+A Route also supports multipart form. Here's a simple way to upload a multipart image:
 
 
 ```swift
@@ -124,9 +123,11 @@ MyProvider().request(.uploadImage(image)).uploadProgress { (sent, total) in
 
 ## Provider
 
-The Provider can be highly customized if you want for instance to add default parameters to every request or validate every response the same way.
+The Provider is a type that implements `HTTPProvider` and that will map the behavior of your API. It can be highly customized:
 
 ### Additional parameters and headers
+If your API requires some headers or parameters for every request, you can set them in the declaration of the provider.
+
 ```swift
 class MyProvider:HTTPProvider {
     var baseURL = URL(string:"https://my-website.com/api")!
@@ -136,10 +137,9 @@ class MyProvider:HTTPProvider {
 ```
 
 ### Validating a response
-API have a lot of different ways of handling errors. Some will just return an HTTP error code, some will have description with that error, some might also always return HTTP 200 and give customized errors.
-You can define a specific behavior for your provider in order to define a failure and a success.
+APIs have a lot of different ways of handling errors. Nikka allows you to create your own errors that propagate it through the app, if you get a response you don't expect.
 
-Let's take for instance the Deezer API, that returns a HTTP code 200 when it cannot find a song with a given ID.
+Let's take for instance the Deezer API, that returns a HTTP code 200 when it cannot find a song with a given ID. In your basic provider, 200 doesn't throw an error, but content of the response can't be parsed either. Here's how to deal with it:
 
 https://api.deezer.com/track/313555658769 will return:
 ```json
@@ -152,9 +152,9 @@ https://api.deezer.com/track/313555658769 will return:
 }
 ```
 
-You should first define your own error that conforms to the StreemError protocol:
+You should first define your own error that conforms to the NikkaError protocol:
 ```swift
-struct DeezerError : StreemError, Equatable{
+struct DeezerError : NikkaError, Equatable{
     var description:String
     var code:Int
 
@@ -175,7 +175,7 @@ Then when declaring your provider, you can implement the `validate` method, that
 class DeezerProvider:HTTPProvider {
     var baseURL = URL(string:"https://api.deezer.com")!
 
-    func validate(response: HTTPURLResponse, data: Data, error: Error?) -> StreemError? {
+    func validate(response: HTTPURLResponse, data: Data, error: Error?) -> NikkaError? {
         let jsonError = (try? JSONSerialization.jsonObject(with: data, options: .allowFragments)) as? [String:Any]
         if let error = json?["error"] as? [String:Any], let code = error["code"] as? Int, let desc = error["message"] as? String {
             return DeezerError(code:code, description:desc)
@@ -210,7 +210,7 @@ In some cases, it is useful to define a certain behavior when an error is encoun
 class MyProvider:HTTPProvider {
     var baseURL:URL { return URL(string:"https://my-website.com/api")!}
 
-    func shouldContinue(with error: StreemError) -> Bool {
+    func shouldContinue(with error: NikkaError) -> Bool {
         if let err = error as? NikkaError , err == NikkaError.http(401){
             print("should log out")
             return false
@@ -222,7 +222,7 @@ class MyProvider:HTTPProvider {
 
 ### Without Provider
 
-In some cases, it doesn't make sense to define a provider because you already have a full URL. You can use the Default Provider for that extent. It allows you to send a request by passing a route object with its full path.
+In some cases, it doesn't make sense to define a provider because you already have a full URL. You can use the Default Provider for that extent. It allows you to send a request by passing a route with its full path.
 
 ```swift
 DefaultProvider.request(Route(path:"https://my-website.com/api/user/1")).responseJSON { (response:Response<Any>) in
@@ -236,19 +236,19 @@ DefaultProvider.request(Route(path:"https://my-website.com/api/user/1")).respons
 ```
 
 
-## Modules
+## Extensions
 Nikka works very well with JSON, it currently supports the libraries below to parse your data.
 
 - [Gloss](https://github.com/hkellaway/Gloss) - [documentation](Sources/Gloss/README.md)
 - [ModelMapper](https://github.com/lyft/mapper) - [documentation](Sources/ModelMapper/README.md)
 - [ObjectMapper](https://github.com/Hearst-DD/ObjectMapper) - [documentation](Sources/ObjectMapper/README.md)
-- [StreemMapper](https://github.com/JustaLab/mapper) - [documentation](Sources/StreemMapper/README.md)
+- [StreemMapper](https://github.com/JustaLab/StreemMapper) - [documentation](Sources/StreemMapper/README.md)
 - [Unbox](https://github.com/JohnSundell/Unbox) - [documentation](Sources/Unbox/README.md)
 
-By using one of those modules, you'll be able to send a request and get your object right away:
+By using one of those extensions, you'll be able to send a request and get your object right away:
 ```swift
 MyProvider().request(Route(path:"/user/1234")).responseObject { (response:Response<User>) in
-    //You can get the user like this:
+    //You can check the content of the response for a user
     let user = response.result.value //This is a User?
 
     //Or you can switch on the response result if you want to manage an error case
@@ -261,14 +261,14 @@ MyProvider().request(Route(path:"/user/1234")).responseObject { (response:Respon
 }
 ```
 
-Additionally Nikka supports [Futures](https://en.wikipedia.org/wiki/Futures_and_promises) and [RxSwift](https://github.com/ReactiveX/RxSwift) with modules that can be used with CocoaPods by adding this to your PodFile:
+Additionally Nikka supports [Futures](https://en.wikipedia.org/wiki/Futures_and_promises) and [RxSwift](https://github.com/ReactiveX/RxSwift) with extensions that can be used with CocoaPods by adding this to your PodFile:
 
 ```ruby
 pod "Nikka/Futures"
 pod "Nikka/Rx"
 ```
 
-Note that when importing a module, the core and dependencies are automatically imported as well.
+Note that when importing a module, the core dependency is automatically imported as well, so you don't need to have both one of the above and the Nikka single pod.
 
 
 ### Futures
@@ -304,7 +304,7 @@ loginJSONFuture.onComplete { (result:Result<(HTTPURLResponse, Data)>) in
 
 ### RxSwift
 
-Even better, the Rx module. Similarly to the Future module, it will return Rx Observable that can be chained.
+Even better, the Rx extension. Similarly to the Future extension, it will return Rx Observable that can be chained.
 
 I would encourage you to use the Rx module along with a JSON library mentioned above. It is more powerful. However if for some reason you you like to get a Observable with a JSON object or with the data return by the request. You could do the following:
 
