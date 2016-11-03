@@ -122,4 +122,3 @@ Pod::Spec.new do |s|
   end
 
 end
-Contact GitHub API Training Shop Blog About
