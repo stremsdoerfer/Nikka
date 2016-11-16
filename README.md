@@ -51,7 +51,7 @@ MyProvider().request(Route(path:"/me/friends")).responseJSON { (response:Respons
 }
 ```
 
-What is great with Nikka, is that it's highly scalable, and modular. You can define your endpoints wherever you want. It's up to you if you want them all in one file or if you prefer to split them among your different objects.
+What is great with Nikka, is that it's highly scalable, and modular. You can define your endpoints wherever you want. It's up to you, if you want them all in one file or if you prefer to split them among your different services.
 Here is a nice way of presenting your endpoints and using them:
 
 ```swift
