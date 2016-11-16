@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                      = "Nikka"
-  s.version                   = "1.0.0"
+  s.version                   = "1.0.5"
   s.summary                   = "A Networking library for Swift"
   s.homepage                  = "https://github.com/Justalab/Nikka"
   s.license                   = "Apache License, Version 2.0"
