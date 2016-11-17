@@ -14,9 +14,6 @@ env:
 language: objective-c
 osx_image: xcode8
 
-before_install:
-- pod repo remove master
-- pod setup
 
 script:
   - if [ $RUN_TESTS == "YES" ]; then
