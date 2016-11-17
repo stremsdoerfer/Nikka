@@ -15,6 +15,7 @@ language: objective-c
 osx_image: xcode8
 
 before_install:
+- sudo gem install cocoapods --pre
 - pod setup
 
 script:
