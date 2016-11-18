@@ -171,8 +171,6 @@
 		EB11F5E01DB2FFED00D034C2 /* MapperFuturesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MapperFuturesTests.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		EB120B121DC4754200D3D3E3 /* Nikka.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Nikka.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB120B2E1DC475CD00D3D3E3 /* Nikka.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Nikka.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EB120B301DC475CD00D3D3E3 /* NikkaWatchOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NikkaWatchOS.h; sourceTree = "<group>"; };
-		EB120B311DC475CD00D3D3E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB120B991DC52E3D00D3D3E3 /* Nikka.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Nikka.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB1619821DB496F900AF11BA /* Future.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Future.swift; sourceTree = "<group>"; };
 		EB17ACC41DCAEFC40037FBFA /* Request+GlossFutures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Request+GlossFutures.swift"; path = "Sources/Gloss/Futures/Request+GlossFutures.swift"; sourceTree = SOURCE_ROOT; };
@@ -311,15 +309,6 @@
 			name = Mapper;
 			sourceTree = "<group>";
 		};
-		EB120B2F1DC475CD00D3D3E3 /* NikkaWatchOS */ = {
-			isa = PBXGroup;
-			children = (
-				EB120B301DC475CD00D3D3E3 /* NikkaWatchOS.h */,
-				EB120B311DC475CD00D3D3E3 /* Info.plist */,
-			);
-			path = NikkaWatchOS;
-			sourceTree = "<group>";
-		};
 		EB20AB721DBB268900E793A2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -431,7 +420,6 @@
 			children = (
 				EBFCB47C1DA9DE18009036BD /* Sources */,
 				EBFCB4871DA9DE18009036BD /* Tests */,
-				EB120B2F1DC475CD00D3D3E3 /* NikkaWatchOS */,
 				EBFCB47B1DA9DE18009036BD /* Products */,
 				0093380EF03B455B5AFA07C5 /* Frameworks */,
 				9210DE8592FA14BA1873C742 /* Pods */,
