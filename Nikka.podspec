@@ -6,6 +6,9 @@ Pod::Spec.new do |s|
   s.license                   = "Apache License, Version 2.0"
   s.author                    = { "Emilien Stremsdoerfer" => "emstre@gmail.com" }
   s.ios.deployment_target     = "8.0"
+  s.osx.deployment_target     = "10.10"
+  s.tvos.deployment_target    = "9.0"
+  s.watchos.deployment_target = "2.0"
   s.source                    = { :git => "https://github.com/Justalab/Nikka.git", :tag => s.version}
   s.requires_arc              = true
   s.default_subspec           = "Core"
