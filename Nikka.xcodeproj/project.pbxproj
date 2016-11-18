@@ -514,6 +514,7 @@
 				EB120B0F1DC4754200D3D3E3 /* Headers */,
 				EB120B101DC4754200D3D3E3 /* Resources */,
 				1B9759EF71191C00CB74640E /* [CP] Copy Pods Resources */,
+				EB3C90171DDF1FCF00D9A367 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -534,6 +535,7 @@
 				EB120B2B1DC475CD00D3D3E3 /* Headers */,
 				EB120B2C1DC475CD00D3D3E3 /* Resources */,
 				D92DA0B5F23DF089E0422D91 /* [CP] Copy Pods Resources */,
+				EB3C90161DDF1FC800D9A367 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -554,6 +556,7 @@
 				EB120B961DC52E3D00D3D3E3 /* Headers */,
 				EB120B971DC52E3D00D3D3E3 /* Resources */,
 				10BD1613D10EF8B77E10E314 /* [CP] Copy Pods Resources */,
+				EB3C90151DDF1FB600D9A367 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -869,9 +872,48 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NikkaTests/Pods-NikkaTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EBE34F1A1DC2FAF10057FDD9 /* ShellScript */ = {
+		EB3C90151DDF1FB600D9A367 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		EB3C90161DDF1FC800D9A367 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		EB3C90171DDF1FCF00D9A367 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		EBE34F1A1DC2FAF10057FDD9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -1166,7 +1208,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.justalab.NikkaOSX;
 				PRODUCT_NAME = Nikka;
 				SDKROOT = macosx;
@@ -1204,7 +1246,7 @@
 		EBFCB48C1DA9DE18009036BD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1261,7 +1303,7 @@
 		EBFCB48D1DA9DE18009036BD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1320,15 +1362,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.justalab.StreemNetworking;
 				PRODUCT_NAME = Nikka;
 				SKIP_INSTALL = YES;
@@ -1350,10 +1389,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1370,7 +1406,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6EA5D89E21936A5FADD1E5C6 /* Pods-NikkaTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = R69K2ALL6R;
 				INFOPLIST_FILE = Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1388,7 +1424,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2ED7D5547772B38D01F0D6E9 /* Pods-NikkaTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = R69K2ALL6R;
 				INFOPLIST_FILE = Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
