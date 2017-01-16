@@ -5,7 +5,6 @@ variable_name:
     - id
     - ip
     - f
-disabled_rules:
-  - nesting
 excluded: # paths to ignore during linting. Takes precedence over `included`.
   - Pods
+  - Tests
