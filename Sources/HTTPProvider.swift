@@ -64,6 +64,14 @@ public protocol HTTPProvider {
      - returns: a boolean that tells us whether or not we should send a result back
      */
     func shouldContinue(with error: NikkaError) -> Bool
+
+    /**
+     A function that allows you to define the default encoding for an HTTPMethod.
+     By default this will return json for .post but you can implement that function to return .form instead
+     - parameter method: the HTTPMethod for which you need to define the encoding
+     - returns: The proper encoding
+     */
+    func defaultEncoding(for method: HTTPMethod) -> ParameterEncoding
 }
 
 /**
@@ -116,6 +124,18 @@ public extension HTTPProvider {
     }
 
     /**
+     Function that provides the default encoding for every HTTP method
+     */
+    func defaultEncoding(for method: HTTPMethod) -> ParameterEncoding {
+        switch method {
+        case .get, .connect, .head, .options, .patch, .delete, .trace :
+            return .url
+        case .post, .put :
+            return .json
+        }
+    }
+
+    /**
      This is the method that needs to be called from a provider to send the request.
      - parameter route: the route object that defines the request
      - returns: the request being sent
@@ -131,7 +151,7 @@ public extension HTTPProvider {
             if let form = route.multipartForm {
                 try request.encode(form: form)
             } else {
-               try request.encode(parameters: allParams, encoding: route.encoding)
+               try request.encode(parameters: allParams, encoding: route.encoding ?? self.defaultEncoding(for: route.method))
             }
         } catch (let error) {
             let NikkaError = error as? NikkaError

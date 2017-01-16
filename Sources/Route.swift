@@ -44,7 +44,7 @@ public struct Route {
     /**
      The encoding to use for the parameters. Default is json for HTTPMethod .post and .put, and .url for the others
     */
-    let encoding: ParameterEncoding
+    let encoding: ParameterEncoding?
 
     /**
      */
@@ -64,7 +64,7 @@ public struct Route {
         self.path = path
         self.params = params
         self.headers = headers
-        self.encoding = encoding ?? ParameterEncoding.defaultEncoding(for:method)
+        self.encoding = encoding
         self.multipartForm = multipartForm
     }
 }

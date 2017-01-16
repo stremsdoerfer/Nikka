@@ -44,18 +44,6 @@ public enum ParameterEncoding {
      form encoding will url encode the parameters and put them in the body of the request
     */
     case form
-
-    /**
-     Function that provides the default encoding for every HTTP method
-    */
-    static func defaultEncoding(for method: HTTPMethod) -> ParameterEncoding {
-        switch method {
-        case .get, .connect, .head, .options, .patch, .delete, .trace :
-            return .url
-        case .post, .put :
-            return .json
-        }
-    }
 }
 
 /**
