@@ -119,6 +119,7 @@ public enum NikkaNetworkingError: NikkaError, Equatable {
     /**
      Equatable implementation
      */
+    //swiftlint:disable:next cyclomatic_complexity
     public static func == (lhs: NikkaNetworkingError, rhs: NikkaNetworkingError) -> Bool {
         switch lhs {
         case .parameterEncoding(_):
