@@ -154,8 +154,12 @@ open class Future<T> {
             case .success(let value):
                 let tmp = f(value)
                 tmp.onComplete(newFuture.fill)
-                tmp.onDownloadProgress(newFuture.fill)
-                tmp.onUploadProgress(newFuture.fill)
+                tmp.onDownloadProgress({ (received, expected) in
+                    newFuture.fill(downloadProgress: (received, expected))
+                })
+                tmp.onUploadProgress({ (sent, total) in
+                    newFuture.fill(uploadProgress: (sent, total))
+                })
             case .failure(let error):
                 newFuture.fill(result:.failure(error))
             }

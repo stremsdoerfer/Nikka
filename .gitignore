@@ -2,7 +2,7 @@ Carthage/Build/*
 Carthage/Checkouts/*
 Pods/*
 Podfile.lock
-.DS_Store
+**/.DS_Store
 Nikka.xcodeproj/project.xcworkspace/xcuserdata/*
 Nikka.xcodeproj/xcuserdata/*
 Nikka.xcworkspace/contents.xcworkspacedata

@@ -34,7 +34,7 @@ public extension Request {
             future.fill(uploadProgress: (bytesSent, totalBytes))
         }).response { (response: HTTPURLResponse?, data: Data, error: NikkaError?) in
             if let response = response {
-                future.fill(result: .success(response, data))
+                future.fill(result: .success((response, data)))
             } else if let error = error {
                 future.fill(result: .failure(error))
             } else {

@@ -6,6 +6,7 @@
 //  Copyright © 2016 Emilien Stremsdoerfer. All rights reserved.
 //
 
+import Foundation
 @testable import Nikka
 
 class TestProvider: HTTPProvider {
