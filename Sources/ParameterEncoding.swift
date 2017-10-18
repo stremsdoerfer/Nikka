@@ -58,7 +58,7 @@ extension URLRequest {
      - parameter parameters: A dictionary that needs to be encoded
      - parameter encoding: The encoding in which the parameters should be encoded
     */
-    mutating func encode(parameters: [String:Any]?, encoding: ParameterEncoding) throws {
+    mutating func encode(parameters: [String: Any]?, encoding: ParameterEncoding) throws {
         guard let parameters = parameters else {return}
 
         switch encoding {

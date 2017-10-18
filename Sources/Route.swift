@@ -24,7 +24,7 @@ public struct Route {
     /**
      The HTTP headers to be sent with the request
     */
-    let headers: [String:String]?
+    let headers: [String: String]?
 
     /**
      The HTTP Method to send the request as
@@ -39,7 +39,7 @@ public struct Route {
     /**
      The parameters to be sent with the request
     */
-    let params: [String:Any]?
+    let params: [String: Any]?
 
     /**
      The encoding to use for the parameters. Default is json for HTTPMethod .post and .put, and .url for the others
@@ -56,8 +56,8 @@ public struct Route {
     */
     public init(path: String,
                 method: HTTPMethod = .get,
-                params: [String:Any]? = nil,
-                headers: [String:String]? = nil,
+                params: [String: Any]? = nil,
+                headers: [String: String]? = nil,
                 encoding: ParameterEncoding? = nil,
                 multipartForm: MultipartForm? = nil) {
         self.method = method

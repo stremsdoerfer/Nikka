@@ -24,7 +24,7 @@ public protocol SessionManagerDelegate: URLSessionDataDelegate {
     /**
      Dictionary that allows to get a request based on the task generated when the request is sent
     */
-    var requests: [URLSessionTask:Request] { get set}
+    var requests: [URLSessionTask: Request] { get set}
 }
 
 /**
@@ -34,7 +34,7 @@ class SessionManager: NSObject, SessionManagerDelegate {
 
     static let `default` = SessionManager()
 
-    var requests = [URLSessionTask:Request]()
+    var requests = [URLSessionTask: Request]()
 
     func urlSession(_ session: URLSession, task: URLSessionTask,
                     didSendBodyData bytesSent: Int64, totalBytesSent: Int64, totalBytesExpectedToSend: Int64) {
@@ -44,7 +44,7 @@ class SessionManager: NSObject, SessionManagerDelegate {
 
     func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data) {
         guard let request = requests[dataTask] else {return}
-        request.append(data:data)
+        request.append(data: data)
     }
 
     func urlSession(_ session: URLSession, dataTask: URLSessionDataTask,

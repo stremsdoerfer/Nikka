@@ -40,12 +40,12 @@ public protocol HTTPProvider {
     /**
      Defaults Headers, those headers can be provided when implementing the protocol. They will be added to each request
      */
-    var additionalHeaders: [String:String] { get }
+    var additionalHeaders: [String: String] { get }
 
     /**
      Addional Parameters, those parameters can be provided when implementing the protocol. They will be added to each request
      */
-    var additionalParams: [String:Any] { get }
+    var additionalParams: [String: Any] { get }
 
     /**
      Validation function, it is called when a request is received.
@@ -82,24 +82,24 @@ public extension HTTPProvider {
     /**
      The default delegate uses the default instance of SessionManager
      */
-    var delegate: SessionManagerDelegate { get { return SessionManager.default } }
+    var delegate: SessionManagerDelegate { return SessionManager.default }
 
     /**
      The default session will occur on the main queue and with its configuration. A default delegate is implemented.
     */
     var session: URLSession {
-        get { return URLSession(configuration: .default, delegate: delegate, delegateQueue: OperationQueue.main)}
+       return URLSession(configuration: .default, delegate: delegate, delegateQueue: OperationQueue.main)
     }
 
     /**
      Default headers should be left empty
      */
-    var additionalHeaders: [String:String] { get { return [String:String]() } }
+    var additionalHeaders: [String: String] { return [String: String]() }
 
     /**
      Default params should be left empty
     */
-    var additionalParams: [String:Any] { get { return [String:Any]() } }
+    var additionalParams: [String: Any] { return [String: Any]() }
 
     /**
      Default validation.
@@ -155,7 +155,7 @@ public extension HTTPProvider {
             }
         } catch (let error) {
             let NikkaError = error as? NikkaError
-            let r = Request(urlRequest: request, provider:self)
+            let r = Request(urlRequest: request, provider: self)
             r.onComplete(response: nil, error: NikkaError ?? NikkaNetworkingError.parameterEncoding(allParams))
             return r
         }
@@ -167,7 +167,7 @@ public extension HTTPProvider {
             request.setValue($1, forHTTPHeaderField: $0)
         })
 
-        let r = Request(urlRequest: request, provider:self)
+        let r = Request(urlRequest: request, provider: self)
 
         let task = session.dataTask(with: request)
         delegate.requests[task] = r
@@ -195,12 +195,12 @@ public class DefaultProvider: HTTPProvider {
     */
     public static func request(_ route: Route) -> Request {
         let newRoute = Route(path: "", method: route.method, params: route.params, headers: route.headers, encoding: route.encoding)
-        if let url = URL(string:route.path) {
+        if let url = URL(string: route.path) {
             let emptyProvider = DefaultProvider(baseURL: url)
             return emptyProvider.request(newRoute)
         } else {
-            let defaultURL = URL(string:"https://google.com")!
-            let r = Request(urlRequest: URLRequest(url:defaultURL), provider:DefaultProvider(baseURL: defaultURL))
+            let defaultURL = URL(string: "https://google.com")!
+            let r = Request(urlRequest: URLRequest(url: defaultURL), provider: DefaultProvider(baseURL: defaultURL))
             r.onComplete(response: nil, error: NikkaNetworkingError.invalidURL(route.path))
             return r
         }

@@ -12,7 +12,7 @@ public struct MultipartForm {
 
     let boundary = "Boundary-\(UUID().uuidString)"
 
-    private var parameters = [String:Any]()
+    private var parameters = [String: Any]()
 
     private var dataParameters = [(String, Data, String, String)]()
 
@@ -35,6 +35,7 @@ public struct MultipartForm {
             try data.append("\(param.1)\r\n".safeData())
         }
 
+        //swiftlint:disable:next large_tuple
         try dataParameters.forEach { (param: (String, Data, String, String)) in
             try data.append("--\(boundary)\r\n".safeData())
             try data.append("Content-Disposition: form-data; name=\"\(param.0)\"; filename=\"\(param.2)\"\r\n".safeData())

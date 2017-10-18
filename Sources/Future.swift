@@ -128,8 +128,8 @@ open class Future<T> {
         let newFuture = Future<U>()
         self.completionHandler = {(value: Result<T>) in
             switch value {
-            case .success(let value): newFuture.fill(result:.success(f(value)))
-            case .failure(let err): newFuture.fill(result:.failure(err))
+            case .success(let value): newFuture.fill(result: .success(f(value)))
+            case .failure(let err): newFuture.fill(result: .failure(err))
             }
         }
         self.downloadProgressHandler = {(receivedSize, expectedSize) in
@@ -161,7 +161,7 @@ open class Future<T> {
                     newFuture.fill(uploadProgress: (sent, total))
                 })
             case .failure(let error):
-                newFuture.fill(result:.failure(error))
+                newFuture.fill(result: .failure(error))
             }
         }
         self.onDownloadProgress { (receivedSize, expectedSize) in
