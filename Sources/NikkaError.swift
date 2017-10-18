@@ -30,7 +30,7 @@ public protocol NikkaError: Error, CustomStringConvertible {
 /**
  NikkaError extension that compares two NikkaError that conforms to Equatable
  */
-public extension NikkaError where Self : Equatable {
+public extension NikkaError where Self: Equatable {
     public func isEqual(err: NikkaError) -> Bool {
         if let err = err as? Self {return self == err}
         return false
@@ -90,15 +90,24 @@ public enum NikkaNetworkingError: NikkaError, Equatable {
 
     public var description: String {
         switch self {
-            case .parameterEncoding(let value): return "An error occurred while encoding parameter: \(value)"
-            case .multipartEncoding(let value): return "An error occurred while creating multipart data: \(value)"
-            case .jsonDeserialization: return "Could not parse data to JSON."
-            case .http(let code): return "HTTP Error occured with code:\(code)"
-            case .emptyResponse: return "Tried to deserialize response, but no data was found"
-            case .invalidURL(let url): return "Provided URL is not valid: \(url)"
-            case .nonHTTPResponse: return "Response was not an HTTP response, aborting."
-            case .jsonMapping(let object): return "Could not map json object to object, json:\(object)"
-            case .unknown(let description): return description
+        case .parameterEncoding(let value):
+            return "An error occurred while encoding parameter: \(value)"
+        case .multipartEncoding(let value):
+            return "An error occurred while creating multipart data: \(value)"
+        case .jsonDeserialization:
+            return "Could not parse data to JSON."
+        case .http(let code):
+            return "HTTP Error occured with code:\(code)"
+        case .emptyResponse:
+            return "Tried to deserialize response, but no data was found"
+        case .invalidURL(let url):
+            return "Provided URL is not valid: \(url)"
+        case .nonHTTPResponse:
+            return "Response was not an HTTP response, aborting."
+        case .jsonMapping(let object):
+            return "Could not map json object to object, json:\(object)"
+        case .unknown(let description):
+            return description
         }
     }
 
@@ -122,23 +131,23 @@ public enum NikkaNetworkingError: NikkaError, Equatable {
     //swiftlint:disable:next cyclomatic_complexity
     public static func == (lhs: NikkaNetworkingError, rhs: NikkaNetworkingError) -> Bool {
         switch lhs {
-        case .parameterEncoding(_):
+        case .parameterEncoding:
             if case .parameterEncoding = rhs { return true }
-        case .multipartEncoding(_):
+        case .multipartEncoding:
             if case .multipartEncoding = rhs { return true }
         case .emptyResponse:
             if case .emptyResponse = rhs { return true }
         case .http(let codeA):
             if case .http(let codeB) = rhs { return codeA == codeB}
-        case .unknown(_):
+        case .unknown:
             if case .unknown = rhs { return true }
         case .jsonDeserialization:
             if case .jsonDeserialization = rhs { return true }
-        case .invalidURL(_):
+        case .invalidURL:
             if case .invalidURL = rhs { return true }
         case .nonHTTPResponse:
             if case .nonHTTPResponse = rhs { return true }
-        case .jsonMapping(_):
+        case .jsonMapping:
             if case .jsonMapping = rhs { return true }
         }
         return false
