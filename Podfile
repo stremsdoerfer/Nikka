@@ -3,8 +3,8 @@ use_frameworks!
 platform :ios, '8.0'
 
 def shared_pods
-    pod 'RxSwift', '~> 4.0.0-rc.0'
-    pod 'RxCocoa', '~> 4.0.0-rc.0'
+    pod 'RxSwift', '~> 4.0.0'
+    pod 'RxCocoa', '~> 4.0.0'
 end
 
 
