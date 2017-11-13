@@ -118,7 +118,7 @@ open class Future<T> {
      - parameter handler: The closure that takes the result as parameter
      */
     @discardableResult
-    func onSuccess(_ handler: @escaping ((T) -> Void)) -> Future {
+    public func onSuccess(_ handler: @escaping ((T) -> Void)) -> Future {
         successHandler = handler
         if let value = result?.value { //If result was already filled we call the handler with the stored value
             handler(value)
@@ -132,7 +132,7 @@ open class Future<T> {
       - parameter handler: The closure that takes a NikkaError as parameter
     */
     @discardableResult
-    func onError(_ handler: @escaping ((NikkaError) -> Void)) -> Future {
+    public func onError(_ handler: @escaping ((NikkaError) -> Void)) -> Future {
         errorHandler = handler
         if let err = result?.error { //If result was already filled we call the handler with the stored value
             handler(err)
