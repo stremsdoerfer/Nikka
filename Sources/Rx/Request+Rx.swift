@@ -60,4 +60,41 @@ public extension Request {
             return Disposables.create()
         }
     }
+
+    /**
+     Method that creates an Observable from a json response
+     - returns: Observable<T> The created observable
+     */
+    func responseObject<T: Decodable>() -> Observable<T> {
+        return Observable.create { observer in
+            self.responseObject({ (response: Response<T>) in
+                switch response.result {
+                case .success(let value):
+                    observer.onNext(value)
+                    observer.on(.completed)
+                case .failure(let error):
+                    observer.onError(error)
+                }
+            })
+            return Disposables.create()
+        }
+    }
+
+    /**
+     Method that creates an Observable from a json response
+     - returns: Observable<Void> The created observable
+     */
+    func response() -> Observable<Void> {
+        return Observable.create { observer in
+            self.response({ (_, _, error) in
+                if let err = error {
+                    observer.onError(err)
+                } else {
+                    observer.onNext(())
+                    observer.on(.completed)
+                }
+            })
+            return Disposables.create()
+        }
+    }
 }

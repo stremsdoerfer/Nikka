@@ -55,4 +55,36 @@ class FuturesTests: XCTestCase {
 
         waitForExpectations(timeout: timeout, handler: nil)
     }
+    
+    func testObjFuture() {
+        struct Ip: Decodable {
+            let origin: String
+        }
+        let provider = TestProvider()
+        let ipObs: Future<Ip> = provider.request(.ip).responseObject()
+        let expectation = self.expectation(description: "Decodable request should succeed")
+        
+        ipObs.onSuccess { (ip) in
+            expectation.fulfill()
+            XCTAssert(ip.origin != "")
+        }.onError { _ in
+            expectation.fulfill()
+            XCTFail()
+        }
+        waitForExpectations(timeout: timeout, handler: nil)
+    }
+    
+    func testVoidFuture(){
+        let provider = TestProvider()
+        let ipObs: Future<Void> = provider.request(.ip).response()
+        let expectation = self.expectation(description: "Void request should succeed")
+        
+        ipObs.onComplete { (result) in
+            expectation.fulfill()
+            if result.error != nil {
+                XCTFail()
+            }
+        }
+        waitForExpectations(timeout: timeout, handler: nil)
+    }
 }

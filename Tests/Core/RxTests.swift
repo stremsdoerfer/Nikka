@@ -27,7 +27,7 @@ class RxTests: XCTestCase {
                 return
             }
             XCTAssertNotEqual(ip, "")
-        }).addDisposableTo(bag)
+        }).disposed(by: bag)
 
         waitForExpectations(timeout: timeout, handler: nil)
     }
@@ -42,9 +42,42 @@ class RxTests: XCTestCase {
             XCTAssertEqual(response.0.statusCode, 200)
             let object = try? JSONSerialization.jsonObject(with: response.1, options: .allowFragments)
             XCTAssertNotNil(object)
-        }).addDisposableTo(bag)
+        }).disposed(by: bag)
 
         waitForExpectations(timeout: timeout, handler: nil)
     }
 
+    func testObjObs() {
+        struct Ip: Decodable {
+            let origin: String
+        }
+        let provider = TestProvider()
+        let ipObs: Observable<Ip> = provider.request(.ip).responseObject()
+        let expectation = self.expectation(description: "Decodable request should succeed")
+        
+        ipObs.subscribe(onNext: { (ip) in
+            expectation.fulfill()
+            XCTAssert(ip.origin != "")
+        }, onError: { _ in
+            expectation.fulfill()
+            XCTFail()
+        }).disposed(by: bag)
+
+        waitForExpectations(timeout: timeout, handler: nil)
+    }
+    
+    func testVoidObs(){
+        let provider = TestProvider()
+        let ipObs: Observable<Void> = provider.request(.ip).response()
+        let expectation = self.expectation(description: "Void request should succeed")
+        
+        ipObs.subscribe(onNext: { _ in
+            expectation.fulfill()
+        }, onError: { _ in
+            expectation.fulfill()
+            XCTFail()
+        }).disposed(by: bag)
+
+        waitForExpectations(timeout: timeout, handler: nil)
+    }
 }

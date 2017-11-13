@@ -53,6 +53,13 @@
 		EB20AB8E1DBBE6E200E793A2 /* Request+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20AB881DBBE6E200E793A2 /* Request+Rx.swift */; };
 		EB4D86AE1DBC2BAE00A4D621 /* MultipartForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4D86AD1DBC2BAE00A4D621 /* MultipartForm.swift */; };
 		EBBAC3561F95C359004E5286 /* Nikka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBFCB47A1DA9DE18009036BD /* Nikka.framework */; };
+		EBE5058C1FB9214500462097 /* FuturesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBAC3651F95CF97004E5286 /* FuturesTests.swift */; };
+		EBE5058D1FB9214800462097 /* MockProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBAC3661F95CF98004E5286 /* MockProviders.swift */; };
+		EBE5058E1FB9214A00462097 /* MockRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBAC3691F95CF98004E5286 /* MockRoutes.swift */; };
+		EBE5058F1FB9214D00462097 /* ProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBAC3681F95CF98004E5286 /* ProviderTests.swift */; };
+		EBE505901FB9215000462097 /* RequestBuildingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBAC3641F95CF97004E5286 /* RequestBuildingTests.swift */; };
+		EBE505911FB9215200462097 /* RequestSendingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBAC3631F95CF97004E5286 /* RequestSendingTests.swift */; };
+		EBE505921FB9215700462097 /* RxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBAC3671F95CF98004E5286 /* RxTests.swift */; };
 		EBFCB49F1DA9DF6D009036BD /* NikkaError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4981DA9DF6D009036BD /* NikkaError.swift */; };
 		EBFCB4A01DA9DF6D009036BD /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB4991DA9DF6D009036BD /* SessionManager.swift */; };
 		EBFCB4A11DA9DF6D009036BD /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB49A1DA9DF6D009036BD /* ParameterEncoding.swift */; };
@@ -427,7 +434,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Emilien Stremsdoerfer";
 				TargetAttributes = {
 					EB120B111DC4754200D3D3E3 = {
@@ -820,6 +827,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBE505911FB9215200462097 /* RequestSendingTests.swift in Sources */,
+				EBE505901FB9215000462097 /* RequestBuildingTests.swift in Sources */,
+				EBE5058F1FB9214D00462097 /* ProviderTests.swift in Sources */,
+				EBE5058E1FB9214A00462097 /* MockRoutes.swift in Sources */,
+				EBE505921FB9215700462097 /* RxTests.swift in Sources */,
+				EBE5058D1FB9214800462097 /* MockProviders.swift in Sources */,
+				EBE5058C1FB9214500462097 /* FuturesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1071,7 +1085,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -1079,7 +1095,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
@@ -1112,6 +1132,7 @@
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1128,7 +1149,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -1136,7 +1159,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
@@ -1161,6 +1188,7 @@
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";

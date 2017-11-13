@@ -191,4 +191,27 @@ open class Request {
         }
         return self
     }
+
+    /**
+     Method that allows you to track when a request is completed
+     - parameter handler: A closure that takes a Response object as parameters
+     - returns: itself
+     */
+    @discardableResult
+    open func responseObject<T: Decodable>(_ handler:@escaping ((Response<T>) -> Void)) -> Self {
+        let newHandler: ((HTTPURLResponse?, Data, NikkaError?) -> Void) = { (response, data, error) in
+            if let err = error {
+                handler(Response(response: response, data: data, result: .failure(err)))
+            } else if let object = try? JSONDecoder().decode(T.self, from: data) {
+                handler(Response(response: response, data: data, result: .success(object)))
+            } else {
+                handler(Response(response: response, data: data, result: .failure(NikkaNetworkingError.jsonMapping(data))))
+            }
+        }
+        self.onCompleteData = newHandler
+        if let response = responseDataTmp {
+            newHandler(response.0, response.1, response.2)
+        }
+        return self
+    }
 }

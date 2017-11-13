@@ -61,4 +61,39 @@ public extension Request {
         return future
     }
 
+    /**
+     Method that creates an Future from the json response
+     - returns: Future<Void> The created future
+     */
+    func response() -> Future<Void> {
+        let future = Future<Void>()
+        self.downloadProgress({ (receivedSize, expectedSize) in
+            future.fill(downloadProgress: (receivedSize, expectedSize))
+        }).uploadProgress({ (bytesSent, totalBytes) in
+            future.fill(uploadProgress: (bytesSent, totalBytes))
+        }).response { (_, _, error) in
+            if let err = error {
+                future.fill(result: .failure(err))
+            } else {
+                future.fill(result: .success(()))
+            }
+        }
+        return future
+    }
+
+    /**
+     Method that creates an Future from the json response
+     - returns: Future<Void> The created future
+     */
+    func responseObject<T: Decodable>() -> Future<T> {
+        let future = Future<T>()
+        self.downloadProgress({ (receivedSize, expectedSize) in
+            future.fill(downloadProgress: (receivedSize, expectedSize))
+        }).uploadProgress({ (bytesSent, totalBytes) in
+            future.fill(uploadProgress: (bytesSent, totalBytes))
+        }).responseObject { (response) in
+            future.fill(result: response.result)
+        }
+        return future
+    }
 }
