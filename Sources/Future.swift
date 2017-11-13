@@ -45,6 +45,18 @@ open class Future<T> {
 
     /**
      An instance closure that can be define with the matching function:
+     func onSuccess(_ handler: @escaping ((T) -> Void)) -> Future
+    */
+    private var successHandler: ((T) -> Void)?
+
+    /**
+     An instance closure that can be define with the matching function:
+     func onError(_ handler: @escaping ((NikkaError) -> Void)) -> Future
+    */
+    private var errorHandler: ((NikkaError) -> Void)?
+
+    /**
+     An instance closure that can be define with the matching function:
      func onDownloadProgress(_ handler:@escaping((_ receivedSize:Int, _ expectedSize:Int) -> Void))
      */
     private var downloadProgressHandler:((_ receivedSize: Int, _ expectedSize: Int) -> Void)?
@@ -62,6 +74,12 @@ open class Future<T> {
     func fill(result: Result<T>) {
         self.result = result
         completionHandler?(result)
+        switch result {
+        case .failure(let error):
+            errorHandler?(error)
+        case .success(let value):
+            successHandler?(value)
+        }
     }
 
     /**
@@ -92,6 +110,34 @@ open class Future<T> {
         if let r = result { //If result was already filled we call the handler with the stored value
             handler(r)
         }
+    }
+
+    /**
+     Method that defines the successHandler of the Future.
+     If a result is already there, the handler will be called right away
+     - parameter handler: The closure that takes the result as parameter
+     */
+    @discardableResult
+    func onSuccess(_ handler: @escaping ((T) -> Void)) -> Future {
+        successHandler = handler
+        if let value = result?.value { //If result was already filled we call the handler with the stored value
+            handler(value)
+        }
+        return self
+    }
+
+    /**
+     Method that defines the errorHandler of the Future.
+     If a result is already there, the handler will be called right away
+      - parameter handler: The closure that takes a NikkaError as parameter
+    */
+    @discardableResult
+    func onError(_ handler: @escaping ((NikkaError) -> Void)) -> Future {
+        errorHandler = handler
+        if let err = result?.error { //If result was already filled we call the handler with the stored value
+            handler(err)
+        }
+        return self
     }
 
     /**
